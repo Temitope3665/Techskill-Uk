@@ -34,13 +34,14 @@ module.exports = {
       colors: {
         primary: "#0E1117",
         secondary: "#14181D",
-        tertiary: "#F3F2FF",
+        yellow: "#FFD832",
         background: "#F2F7FF",
       },
       fontFamily: {
-        gilroyBold: ['gilroyBold', 'sans-serif'],
-        gilroyLight: ['gilroyLight', 'sans-serif'],
-        gilroyMedium: ['gilroyMedium', 'sans-serif'],
+        bold: ['bold', 'sans-serif'],
+        light: ['light', 'sans-serif'],
+        medium: ['medium', 'sans-serif'],
+        semiBold: ['semiBold', 'sans-serif'],
       }
     },
   },

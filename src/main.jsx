@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '../styles/global.css';
+import '@/styles/globals.css';
 import { BrowserRouter } from 'react-router-dom';
 import WebRoutes from './routes/index.jsx';
 

@@ -1,6 +1,6 @@
-import { twMerge } from 'tailwind-merge';
+import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-// helps to merge all duplicates tailwind styles
-export const cn = (...inputs) => {
-    return twMerge(clsx(inputs));
-  };
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
+}
