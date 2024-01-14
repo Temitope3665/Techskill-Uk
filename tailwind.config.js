@@ -42,6 +42,8 @@ module.exports = {
         light: ['light', 'sans-serif'],
         medium: ['medium', 'sans-serif'],
         semiBold: ['semiBold', 'sans-serif'],
+        extraBold: ['extraBold', 'sans-serif'],
+        // extraBold
       }
     },
   },
