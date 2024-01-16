@@ -18,11 +18,11 @@ const Home = () => {
       <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
         <div className="md:pl-8 mt-8 text-center md:text-left">
-          <h1 className="font-gilroyBold text-[30px] leading-[1.4] md:text-[55px]">
+          <h1 className="font-gilroyBold text-[35px] leading-[1.5] md:text-[55px]">
             <span className="text-yellow">Accelerate</span> your career today
             with Digital Transformation
           </h1>
-          <p className="md:w-[80%] mt-2 text-base">
+          <p className="px-4 md:px-0 md:w-[80%] my-4 text-base">
             TechSkill empowers tech enthusiasts through training, mentorship, in
             other to transition into their desired career.
           </p>
