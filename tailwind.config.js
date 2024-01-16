@@ -16,15 +16,6 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    fontFamily: {
-      bold: ['bold', 'sans-serif'],
-      light: ['light', 'sans-serif'],
-      medium: ['medium', 'sans-serif'],
-      semiBold: ['semibold', 'sans-serif'],
-      extraBold: ['extraBold', 'sans-serif'],
-      regular: ['regular', 'sans-serif'],
-      regularItalic: ['regularItalic', 'sans-serif'],
-    },
     extend: {
       keyframes: {
         "accordion-down": {
@@ -47,15 +38,15 @@ module.exports = {
         background: "#F2F7FF",
         grey: "#818992"
       },
-      // fontFamily: {
-      //   bold: ['bold', 'sans-serif'],
-      //   light: ['light', 'sans-serif'],
-      //   medium: ['medium', 'sans-serif'],
-      //   semiBold: ['semibold', 'sans-serif'],
-      //   extraBold: ['extraBold', 'sans-serif'],
-      //   regular: ['regular', 'sans-serif'],
-      //   regularItalic: ['regularItalic', 'sans-serif'],
-      // }
+      fontFamily: {
+        bold: ['bold', 'sans-serif'],
+        light: ['light', 'sans-serif'],
+        medium: ['medium', 'sans-serif'],
+        semiBold: ['semibold', 'sans-serif'],
+        extraBold: ['extraBold', 'sans-serif'],
+        regular: ['regular', 'sans-serif'],
+        regularItalic: ['regularItalic', 'sans-serif'],
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
