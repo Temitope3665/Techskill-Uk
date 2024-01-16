@@ -18,11 +18,11 @@ const Home = () => {
       <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
         <div className="md:pl-8 mt-8 text-center md:text-left">
-          <h1 className="font-extraBold text-[30px] md:text-[55px] leading-tight">
+          <h1 className="font-gilroyBold text-[35px] md:text-[55px] leading-tight">
             <span className="text-yellow">Accelerate</span> your career today
             with Digital Transformation
           </h1>
-          <p className="md:w-[80%] mt-2 md:text-base text-sm">
+          <p className="md:w-[80%] mt-2 text-base">
             TechSkill empowers tech enthusiasts through training, mentorship, in
             other to transition into their desired career.
           </p>
@@ -44,10 +44,10 @@ const Home = () => {
       </main>
       <section className="py-16 md:py-24 bg-primary mt-6 md:mt-12 px-6 md:px-40">
         <div className="text-center w-full" ddata-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-bold">
+          <h1 className="text-[#EFF5FB] text-[35px] md:text-[60px] font-bold">
             What define us
           </h1>
-          <p className="text-sm md:text-base text-grey font-semiBold -mt-2 px-12 md:px-0">
+          <p className="text-base text-grey font-semiBold -mt-2 px-12 md:px-0">
             See who we are and unlock your new potential with us
           </p>
         </div>
@@ -57,7 +57,7 @@ const Home = () => {
             <h2 className="text-yellow font-bold text-[18] md:text-[28px]">
               Get transformed
             </h2>
-            <div className="text-sm md:text-base">
+            <div className="text-base">
               <p className="">
                 TechSkill Accelerate serves as the gateway connecting tech
                 enthusiasts to the tech industry. Our fervour lies in empowering

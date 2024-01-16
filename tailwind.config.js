@@ -39,14 +39,22 @@ module.exports = {
         grey: "#818992"
       },
       fontFamily: {
-        bold: ['bold', 'sans-serif'],
-        light: ['light', 'sans-serif'],
-        medium: ['medium', 'sans-serif'],
-        semiBold: ['semibold', 'sans-serif'],
-        extraBold: ['extraBold', 'sans-serif'],
-        regular: ['regular', 'sans-serif'],
-        regularItalic: ['regularItalic', 'sans-serif'],
-      }
+        gilroyRegular: ['Gilroy-Regular', 'sans-serif'],
+        gilroyMd: ['Gilroy-Medium', 'sans-serif'],
+        gilroyLight: ['Gilroy-Light', 'sans-serif'],
+        gilroyItalic: ['Gilroy-Italic', 'sans-serif'],
+        gilroyHeavy: ['Gilroy-Heavy', 'sans-serif'],
+        gilroyBold: ['Gilroy-Bold', 'sans-serif'],
+      },
+      // fontFamily: {
+      //   bold: ['bold', 'sans-serif'],
+      //   light: ['light', 'sans-serif'],
+      //   medium: ['medium', 'sans-serif'],
+      //   semiBold: ['semibold', 'sans-serif'],
+      //   extraBold: ['extraBold', 'sans-serif'],
+      //   regular: ['regular', 'sans-serif'],
+      //   regularItalic: ['regularItalic', 'sans-serif'],
+      // }
     },
   },
   plugins: [require("tailwindcss-animate")],
