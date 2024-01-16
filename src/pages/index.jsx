@@ -86,7 +86,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-8 md:py-24 px-6 md:px-40 w-full" data-aos="fade-up" data-aos-duration="2000">
+      <section className="py-8 md:py-24 px-6 md:px-40 w-full" data-aos="fade-up" data-aos-duration="1000">
         <div className="text-center w-full">
           <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-gilroyBold">
             Explore our courses
