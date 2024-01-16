@@ -4,7 +4,7 @@ import Stars from "@/assets/icons/stars.png"
 
 const TalkToExpert = () => {
     return (
-        <div className="w-full py-10 relative">
+        <div className="w-full py-10 relative" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <img src={Stars} alt="stars" className="absolute w-[300px] right-0 -top-20" />
             <div className="mx-auto text-center w-[40%]">
                 <h2 className="font-regularItalic text-[55px]">Talk to an Expert ?</h2>

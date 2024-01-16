@@ -9,10 +9,13 @@ import TalkToExpert from '@/components/talk-to-expert';
 import Testimonial from '@/components/testimonial';
 import { testimonials } from '@/config/data';
 import { Input } from '@/components/ui/input';
+import Footer from '@/components/footer';
+import ReactHelment from '@/components/helmet';
 
 const Home = () => {
   return (
     <div>
+      <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between grid-cols-2 px-12 py-6">
         <div className="pl-8 mt-8">
           <h1 className="font-extraBold text-[55px] leading-tight">
@@ -40,7 +43,7 @@ const Home = () => {
         />
       </main>
       <section className="py-24 bg-primary mt-12 px-40">
-        <div className="text-center w-full">
+        <div className="text-center w-full" ddata-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
           <h1 className="text-[#EFF5FB] text-[60px] font-bold">
             What define us
           </h1>
@@ -50,7 +53,7 @@ const Home = () => {
         </div>
 
         <div className="border-[0.5px] border-[#818992] px-4 py-12 rounded-[32px] bg-secondary mt-40 flex justify-between relative">
-          <div className="px-12 w-1/2">
+          <div className="px-12 w-1/2" data-aos="fade-left" data-aos-duration="1000">
             <h2 className="text-yellow font-bold text-[28px]">
               Get transformed
             </h2>
@@ -77,12 +80,13 @@ const Home = () => {
               src={Accelerate}
               alt="Acceletate"
               className="w-[500px] absolute right-0 bottom-0"
+              data-aos="fade-up-right" data-aos-duration="1000"
             />
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-40 w-full">
+      <section className="py-24 px-40 w-full" data-aos="fade-up" data-aos-duration="2000">
         <div className="text-center w-full">
           <h1 className="text-[#EFF5FB] text-[60px] font-bold">
             Explore our courses
@@ -109,7 +113,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="w-full bg-primary relative">
+      <section className="w-full bg-primary relative" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
         <img
           src={SemiCircle}
           alt="semi circle"
@@ -144,8 +148,8 @@ const Home = () => {
         <TalkToExpert />
       </section>
 
-      <section className="bg-secondary px-12 py-8 w-full">
-        <h4 className="font-medium">WHY TECHSKILL UK</h4>
+      <section className="bg-secondary px-12 py-8 w-full mb-9" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+        <h4 className="font-medium text-sm">WHY TECHSKILL UK</h4>
         <h2 className="font-regularItalic text-[35px] text-grey">
           See what people say about us...
         </h2>
@@ -171,6 +175,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
         <div className="overflow-x-hidden">
             <Navbar />
 
-            <div className="pb-8 pt-20">
+            <div className="pt-20">
                 {children}
             </div>
         </div>
