@@ -42,7 +42,6 @@ module.exports = {
         gilroyRegular: ['Gilroy-Regular', 'sans-serif'],
         gilroyMd: ['Gilroy-Medium', 'sans-serif'],
         gilroyLight: ['Gilroy-Light', 'sans-serif'],
-        gilroyItalic: ['Gilroy-Italic', 'sans-serif'],
         gilroyHeavy: ['Gilroy-Heavy', 'sans-serif'],
         gilroyBold: ['Gilroy-Bold', 'sans-serif'],
       },
