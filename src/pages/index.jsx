@@ -18,7 +18,7 @@ const Home = () => {
       <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
         <div className="md:pl-8 mt-8 text-center md:text-left">
-          <h1 className="font-gilroyBold text-[35px] md:text-[55px] leading-tight">
+          <h1 className="font-gilroyBold text-[30px] leading-[1.4] md:text-[55px]">
             <span className="text-yellow">Accelerate</span> your career today
             with Digital Transformation
           </h1>
