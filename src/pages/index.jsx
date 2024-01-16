@@ -28,7 +28,7 @@ const Home = () => {
           </p>
 
           <div className="md:flex md:space-x-8 mt-4 space-x-2 md:mt-8 space-y-3 md:space-y-0">
-            <Button size="lg">
+            <Button size="lg" className="">
               Explore courses <ArrowRightCircle className="ml-2" size={14} />
             </Button>
             <Button size="lg" variant="outline">
@@ -44,17 +44,17 @@ const Home = () => {
       </main>
       <section className="py-16 md:py-24 bg-primary mt-6 md:mt-12 px-6 md:px-40">
         <div className="text-center w-full" ddata-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-          <h1 className="text-[#EFF5FB] text-[35px] md:text-[60px] font-bold">
+          <h1 className="text-[#EFF5FB] text-[35px] md:text-[60px] font-gilroyBold">
             What define us
           </h1>
-          <p className="text-base text-grey font-semiBold -mt-2 px-12 md:px-0">
+          <p className="text-base text-grey font-gilroyMd -mt-2 px-12 md:px-0">
             See who we are and unlock your new potential with us
           </p>
         </div>
 
         <div className="border-[0.5px] border-[#818992] px-6 py-6 md:py-12 rounded-[22px] md:rounded-[32px] bg-secondary mt-12 md:mt-40 flex justify-between relative">
           <div className="px-2 md:px-12 md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
-            <h2 className="text-yellow font-bold text-[18] md:text-[28px]">
+            <h2 className="text-yellow font-gilroyBold text-[18] md:text-[28px]">
               Get transformed
             </h2>
             <div className="text-base">
@@ -88,10 +88,10 @@ const Home = () => {
 
       <section className="py-8 md:py-24 px-6 md:px-40 w-full" data-aos="fade-up" data-aos-duration="2000">
         <div className="text-center w-full">
-          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-bold">
+          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-gilroyBold">
             Explore our courses
           </h1>
-          <p className="text-sm md:text-base text-grey font-semiBold md:-mt-2">
+          <p className="text-sm md:text-base text-grey font-gilroyMd md:-mt-2">
             Explore our courses, speak with a learning advisor and transition
             into tech
           </p>
@@ -120,10 +120,10 @@ const Home = () => {
           className="absolute w-[250px] md:w-[400px]"
         />
         <div className="text-center w-full py-10 md:py-20">
-          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-bold">
+          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-gilroyBold">
             How we help...
           </h1>
-          <p className="md:text-base text-grey font-semiBold text-sm md:-mt-2">
+          <p className="md:text-base text-grey font-gilroyMd text-sm md:-mt-2">
             Find out how we help
           </p>
         </div>
@@ -138,7 +138,7 @@ const Home = () => {
                 alt="skill training icon"
                 className="w-[40px] mt-7"
               />
-              <h3 className="font-bold text-[18px] md:text-[24px] mt-10">{wh.title}</h3>
+              <h3 className="font-gilroyBold text-[18px] md:text-[24px] mt-10">{wh.title}</h3>
               <div className="h-[8px] bg-yellow w-[15%]" />
               <p className="text-sm mt-4 md:mt-8 leading-7">{wh.description}</p>
             </div>
@@ -166,7 +166,7 @@ const Home = () => {
         </div>
 
         <div className="border border-grey p-8 rounded-xl md:w-[45vw] mx-auto mt-8">
-          <h1 className="text-[#EFF5FB] text-[18px] md:text-[30px] font-bold text-center">
+          <h1 className="text-[#EFF5FB] text-[18px] md:text-[30px] font-gilroyBold text-center">
             Ready to join a cohort?
           </h1>
           <div className='flex items-center gap-x-4 mt-4'>
