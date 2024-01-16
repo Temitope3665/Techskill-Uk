@@ -1,5 +1,5 @@
 import SamuelOni from '@/assets/image/samuel-oni.png';
-import Skills from '@/components/courses/learn-a-skill';
+import Skills, { OnlineMentoring } from '@/components/courses/explore-programmes';
 
 export const testimonials = [
     {
@@ -109,6 +109,6 @@ export const footerData = {
 
  export const tabData = [
     { id: '0', title: 'Learn a skill', content: Skills() },
-    { id: '1', title: '1-on-1 online mentoring', content: '' },
+    { id: '1', title: '1-on-1 online mentoring', content: OnlineMentoring() },
     { id: '2', title: 'Demo and project', content: '' },
   ];

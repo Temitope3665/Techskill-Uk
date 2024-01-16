@@ -22,7 +22,9 @@ const CourseTab = ({ tabs }) => {
           </div>
         ))}
       </div>
-      {tabs[Number(activeTab)].content}
+      <div className='min-h-[200px]'>
+        {tabs[Number(activeTab)].content}
+      </div>
     </div>
   );
 };
