@@ -16,18 +16,18 @@ const Home = () => {
   return (
     <div>
       <ReactHelment title="Accelerate your career today" />
-      <main className="grid items-center justify-between grid-cols-2 px-12 py-6">
-        <div className="pl-8 mt-8">
-          <h1 className="font-extraBold text-[55px] leading-tight">
+      <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
+        <div className="md:pl-8 mt-8 text-center md:text-left">
+          <h1 className="font-extraBold text-[30px] md:text-[55px] leading-tight">
             <span className="text-yellow">Accelerate</span> your career today
             with Digital Transformation
           </h1>
-          <p className="w-[80%] mt-2">
+          <p className="md:w-[80%] mt-2 md:text-base text-sm">
             TechSkill empowers tech enthusiasts through training, mentorship, in
             other to transition into their desired career.
           </p>
 
-          <div className="flex space-x-8 mt-8">
+          <div className="md:flex md:space-x-8 mt-4 space-x-2 md:mt-8 space-y-3 md:space-y-0">
             <Button size="lg">
               Explore courses <ArrowRightCircle className="ml-2" size={14} />
             </Button>
@@ -39,25 +39,25 @@ const Home = () => {
         <img
           src={TransformDigitally}
           alt="transforming digitally"
-          className="h-[80vh]"
+          className="md:h-[80vh] -ml-6 md:ml-0"
         />
       </main>
-      <section className="py-24 bg-primary mt-12 px-40">
+      <section className="py-16 md:py-24 bg-primary mt-6 md:mt-12 px-6 md:px-40">
         <div className="text-center w-full" ddata-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-          <h1 className="text-[#EFF5FB] text-[60px] font-bold">
+          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-bold">
             What define us
           </h1>
-          <p className="text-base text-grey font-semiBold -mt-2">
+          <p className="text-sm md:text-base text-grey font-semiBold -mt-2 px-12 md:px-0">
             See who we are and unlock your new potential with us
           </p>
         </div>
 
-        <div className="border-[0.5px] border-[#818992] px-4 py-12 rounded-[32px] bg-secondary mt-40 flex justify-between relative">
-          <div className="px-12 w-1/2" data-aos="fade-left" data-aos-duration="1000">
-            <h2 className="text-yellow font-bold text-[28px]">
+        <div className="border-[0.5px] border-[#818992] px-6 py-6 md:py-12 rounded-[22px] md:rounded-[32px] bg-secondary mt-12 md:mt-40 flex justify-between relative">
+          <div className="px-2 md:px-12 md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+            <h2 className="text-yellow font-bold text-[18] md:text-[28px]">
               Get transformed
             </h2>
-            <div className="text-base">
+            <div className="text-sm md:text-base">
               <p className="">
                 TechSkill Accelerate serves as the gateway connecting tech
                 enthusiasts to the tech industry. Our fervour lies in empowering
@@ -69,7 +69,7 @@ const Home = () => {
                 Our hands-on courses are meticulously crafted for immediate
                 application in the tech sphere.
               </p>
-              <div className="flex text-yellow cursor-pointer mt-12">
+              <div className="flex text-yellow cursor-pointer mt-12 text-sm md:text-base">
                 <CornerDownRight strokeWidth={1} />
                 <p className="ml-1">Learn more</p>
               </div>
@@ -79,24 +79,24 @@ const Home = () => {
             <img
               src={Accelerate}
               alt="Acceletate"
-              className="w-[500px] absolute right-0 bottom-0"
+              className="w-[100px] md:w-[500px] absolute right-0 bottom-0"
               data-aos="fade-up-right" data-aos-duration="1000"
             />
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-40 w-full" data-aos="fade-up" data-aos-duration="2000">
+      <section className="py-8 md:py-24 px-6 md:px-40 w-full" data-aos="fade-up" data-aos-duration="2000">
         <div className="text-center w-full">
-          <h1 className="text-[#EFF5FB] text-[60px] font-bold">
+          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-bold">
             Explore our courses
           </h1>
-          <p className="text-base text-grey font-semiBold -mt-2">
+          <p className="text-sm md:text-base text-grey font-semiBold md:-mt-2">
             Explore our courses, speak with a learning advisor and transition
             into tech
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-3 gap-12">
+        <div className="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
           {courses.slice(0, 3).map((course) => (
             <OurCourses
               title={course.title}
@@ -117,17 +117,17 @@ const Home = () => {
         <img
           src={SemiCircle}
           alt="semi circle"
-          className="absolute w-[400px]"
+          className="absolute w-[250px] md:w-[400px]"
         />
-        <div className="text-center w-full py-20">
-          <h1 className="text-[#EFF5FB] text-[60px] font-bold">
+        <div className="text-center w-full py-10 md:py-20">
+          <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-bold">
             How we help...
           </h1>
-          <p className="text-base text-grey font-semiBold -mt-2">
+          <p className="md:text-base text-grey font-semiBold text-sm md:-mt-2">
             Find out how we help
           </p>
         </div>
-        <div className="grid grid-cols-4 px-12 pb-12 gap-x-8">
+        <div className="grid md:grid-cols-4 px-4 md:px-12 pb-12 md:gap-y-0 gap-y-4 gap-x-8">
           {why.map((wh) => (
             <div
               className="border-grey border border-[0.5] rounded-[16px] p-4"
@@ -138,9 +138,9 @@ const Home = () => {
                 alt="skill training icon"
                 className="w-[40px] mt-7"
               />
-              <h3 className="font-bold text-[24px] mt-10">{wh.title}</h3>
+              <h3 className="font-bold text-[18px] md:text-[24px] mt-10">{wh.title}</h3>
               <div className="h-[8px] bg-yellow w-[15%]" />
-              <p className="text-sm mt-8 leading-7">{wh.description}</p>
+              <p className="text-sm mt-4 md:mt-8 leading-7">{wh.description}</p>
             </div>
           ))}
         </div>
@@ -148,13 +148,13 @@ const Home = () => {
         <TalkToExpert />
       </section>
 
-      <section className="bg-secondary px-12 py-8 w-full mb-9" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+      <section className="bg-secondary px-6 md:px-12 py-8 w-full mb-9" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
         <h4 className="font-medium text-sm">WHY TECHSKILL UK</h4>
-        <h2 className="font-regularItalic text-[35px] text-grey">
+        <h2 className="font-regularItalic text-[24px] md:text-[35px] text-grey">
           See what people say about us...
         </h2>
 
-        <div className="grid grid-cols-3 py-8 gap-x-6">
+        <div className="grid md:grid-cols-3 py-8 gap-x-6 gap-y-4">
           {testimonials.map((testimonial) => (
             <Testimonial
               image={testimonial.image}
@@ -165,8 +165,8 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="border border-grey p-8 rounded-xl w-[45vw] mx-auto mt-8">
-          <h1 className="text-[#EFF5FB] text-[30px] font-bold text-center">
+        <div className="border border-grey p-8 rounded-xl md:w-[45vw] mx-auto mt-8">
+          <h1 className="text-[#EFF5FB] text-[18px] md:text-[30px] font-bold text-center">
             Ready to join a cohort?
           </h1>
           <div className='flex items-center gap-x-4 mt-4'>
