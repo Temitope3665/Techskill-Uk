@@ -1,6 +1,11 @@
 import ProductManagement from "@/assets/image/product-management.png";
 import BusinessAnalyst from "@/assets/image/business-analyst.png";
 import ProductDesign from "@/assets/image/product-design.png";
+import Cybersecurity from "@/assets/image/cybersecurity.png";
+import DataAnalysis from "@/assets/image/data-analysis.png";
+import ITSupport from "@/assets/image/it-support.png";
+import DigitalMarketing from "@/assets/image/digital-marketing.png";
+import AgileProductMgt from "@/assets/image/agile-product-mgt.png";
 import Skills from "@/assets/icons/skills.png";
 import Portfolio from "@/assets/icons/portfolio.png";
 import Mentorship from "@/assets/icons/mentorship.png";
@@ -10,25 +15,49 @@ export const courses = [
     {
         image: ProductManagement,
         title: 'Product Management',
-        desc: 'Explore our courses, speak with a learning advisor and transition into tech. ',
+        desc: 'Learn how to blend creativity and innovation to create user- friendly solutions from product ideation, examining marketing research, etc.',
         href: '#'
     },
     {
         image: BusinessAnalyst,
         title: 'Business Analysis',
-        desc: 'Explore our courses, speak with a learning advisor and transition into tech. ',
+        desc: 'Learn the core principles of business analysis and develop the skills to drive strategic change with any organization.',
         href: '#'
     },
     {
         image: ProductDesign,
         title: 'Product Design',
+        desc: 'Acquire the principles of effective design, prototype and create representation, procreate visually appealing designs, etc.',
+        href: '#'
+    },
+    {
+        image: AgileProductMgt,
+        title: 'Agile Project Management',
         desc: 'Explore our courses, speak with a learning advisor and transition into tech. ',
         href: '#'
     },
     {
-        image: ProductDesign,
-        title: 'Product Design',
-        desc: 'Explore our courses, speak with a learning advisor and transition into tech. ',
+        image: Cybersecurity,
+        title: 'Cybersecurity',
+        desc: 'Learn Agile methodologies and enhance project management efficiency and adaptability.',
+        href: '#'
+    },
+    {
+        image: DataAnalysis,
+        title: 'Data Analysis',
+        desc: 'Learn SQL, Data visualisation, ML, Process mapping and requirement gathering with data analytics.',
+        href: '#'
+    },
+    {
+        image: DigitalMarketing,
+        title: 'Digital Marketing',
+        desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
+        href: '#'
+    },
+    {
+        image: ITSupport,
+        title: 'IT Support',
+        desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
         href: '#'
     },
 ];

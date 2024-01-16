@@ -1,11 +1,11 @@
-import { HOME_URL } from "./paths";
+import { EXPLORE_COURSES_URL, HOME_URL } from "./paths";
 
 const navLinks = [
-    {
-        title: 'Home',
-        href: HOME_URL,
-        hasDropdown: false
-    },
+    // {
+    //     title: 'Home',
+    //     href: HOME_URL,
+    //     hasDropdown: false
+    // },
     {
         title: 'About',
         href: '#',
@@ -13,7 +13,7 @@ const navLinks = [
     },
     {
         title: 'Courses',
-        href: '#',
+        href: EXPLORE_COURSES_URL,
         hasDropdown: true
     },
     {

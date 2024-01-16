@@ -23,7 +23,7 @@ const Navbar = () => {
 
         {!show && <Menu className="md:hidden" onClick={() => setShow(true)} />}
         {show && <X className="md:hidden" onClick={() => setShow(false)} />}
-        <nav className="hidden md:flex justify-between w-[54%] font-gilroyBold">
+        <nav className="hidden md:flex justify-between w-[54%] font-gilroyMd">
           {navLinks.map((nav) => (
             <div
               className={`cursor-pointer hover:text-yellow font-semiBold trans text-sm space-x-1 flex items-center ${
@@ -36,7 +36,7 @@ const Navbar = () => {
             </div>
           ))}
         </nav>
-        <div className="hidden font-semibold text-sm md:flex items-center">
+        <div className="hidden font-gilroyMd text-sm md:flex items-center">
           <Button size="lg">Join a cohort</Button>
         </div>
       </nav>
@@ -44,11 +44,11 @@ const Navbar = () => {
       {/* Small screen nav */}
 
       {show && (
-        <div className="md:hidden h-[100vh] mt-4 font-gilroyBold bg-primary z-30">
+        <div className="md:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
           <nav className="justify-between">
             {navLinks.map((nav) => (
               <div
-                className={`cursor-pointer hover:text-yellow font-semiBold trans text-sm space-x-1 flex items-center py-3 ml-4 ${
+                className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
                   pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
                 }`}
                 key={nav.title}
@@ -59,7 +59,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <Button className="font-gilroyBold text-sm w-full mt-4">Join a cohort</Button>
+          <Button className="font-gilroyMd text-sm w-full mt-4">Join a cohort</Button>
         </div>
       )}
     </div>
