@@ -37,7 +37,7 @@ const Navbar = () => {
           ))}
         </nav>
         <div className="hidden font-semibold text-sm md:flex items-center">
-          <Button>Join a cohort</Button>
+          <Button size="lg">Join a cohort</Button>
         </div>
       </nav>
 
