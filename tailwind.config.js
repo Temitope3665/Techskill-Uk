@@ -36,14 +36,16 @@ module.exports = {
         secondary: "#14181D",
         yellow: "#FFD832",
         background: "#F2F7FF",
+        grey: "#818992"
       },
       fontFamily: {
         bold: ['bold', 'sans-serif'],
         light: ['light', 'sans-serif'],
         medium: ['medium', 'sans-serif'],
-        semiBold: ['semiBold', 'sans-serif'],
+        semiBold: ['semibold', 'sans-serif'],
         extraBold: ['extraBold', 'sans-serif'],
-        // extraBold
+        regular: ['regular', 'sans-serif'],
+        regularItalic: ['regularItalic', 'sans-serif'],
       }
     },
   },

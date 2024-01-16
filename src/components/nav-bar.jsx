@@ -9,7 +9,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="bg-primary py-4 px-12 fixed w-full">
+    <div className="bg-primary py-4 px-12 fixed w-full z-10">
       <nav className="flex items-center justify-between">
         <a href={HOME_URL}>
           <img src={Logo} alt="Techskill logo" width={180} className="" />
@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav className="flex justify-between w-[54%]">
           {navLinks.map((nav) => (
             <div
-              className={`cursor-pointer hover:text-yellow font-medium trans text-sm space-x-1 flex items-center ${
+              className={`cursor-pointer hover:text-yellow font-semiBold trans text-sm space-x-1 flex items-center ${
                 pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
               }`}
               key={nav.title}

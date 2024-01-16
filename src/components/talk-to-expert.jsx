@@ -1,0 +1,21 @@
+import { PhoneIncoming } from "lucide-react";
+import { Button } from "./ui/button";
+import Stars from "@/assets/icons/stars.png"
+
+const TalkToExpert = () => {
+    return (
+        <div className="w-full py-10 relative">
+            <img src={Stars} alt="stars" className="absolute w-[300px] right-0 -top-20" />
+            <div className="mx-auto text-center w-[40%]">
+                <h2 className="font-regularItalic text-[55px]">Talk to an Expert ?</h2>
+                <p className="text-grey">Ready to take a step in you tech career but unsure where to begin ?  Book a call 
+                with our  learning advisor today! Get personalised guidance,  choose the 
+                perfect tech program and enrol confidently</p>
+
+                <Button className="font-bold text-[20px] h-[50px] w-[25vw] hover:bg-white mt-8 bg-white">Book a free call <PhoneIncoming className="ml-4" size={16} /></Button>
+            </div>
+        </div>
+    )
+};
+
+export default TalkToExpert;
