@@ -68,18 +68,32 @@
 }
 
 @font-face {
+  font-family: 'regular';
+  src: local('Gilroy-Regular'), url(../src/assets/fonts/Gilroy-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regularItalic';
+  src: local('Gilroy-Italic'), url(../src/assets/fonts/Gilroy-RegularItalic.ttf) format('truetype');
+}
+
+@font-face {
   font-family: 'semibold';
   src: local('Gilroy-SemiBold'), url(../src/assets/fonts/Gilroy-SemiBold.ttf) format('truetype');
 }
-
 
 @font-face {
   font-family: 'light';
   src: local('Gilroy-Light'), url(../src/assets/fonts/Gilroy-Light.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'extraBold';
+  src: local('Gilroy-ExtraBold'), url(../src/assets/fonts/Gilroy-ExtraBold.ttf) format('truetype');
+}
+
 body {
-  font-family: 'light';
+  font-family: 'regular';
 }
 
 .trans {
