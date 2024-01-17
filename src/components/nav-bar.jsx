@@ -23,17 +23,19 @@ const Navbar = () => {
 
         {!show && <Menu className="md:hidden" onClick={() => setShow(true)} />}
         {show && <X className="md:hidden" onClick={() => setShow(false)} />}
-        <nav className="hidden md:flex justify-between w-[54%] font-gilroyMd">
+        <nav className="hidden md:flex justify-between w-[50%] font-gilroyMd">
           {navLinks.map((nav) => (
-            <div
-              className={`cursor-pointer hover:text-yellow font-semiBold trans text-sm space-x-1 flex items-center ${
-                pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
-              }`}
-              key={nav.title}
-            >
-              <a>{nav.title}</a>
-              {nav.hasDropdown && <ChevronDown width={14} />}
-            </div>
+            <a href={nav.href}>
+              <div
+                className={`cursor-pointer hover:text-yellow font-semiBold trans text-sm space-x-1 flex items-center ${
+                  pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
+                }`}
+                key={nav.title}
+              >
+                <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>{nav.title}</p>
+                {nav.hasDropdown && <ChevronDown width={14} />}
+              </div>
+            </a>
           ))}
         </nav>
         <div className="hidden font-gilroyMd text-sm md:flex items-center">
@@ -47,19 +49,25 @@ const Navbar = () => {
         <div className="md:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
           <nav className="justify-between">
             {navLinks.map((nav) => (
-              <div
-                className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
-                  pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
-                }`}
-                key={nav.title}
-              >
-                <a>{nav.title}</a>
-                {nav.hasDropdown && <ChevronDown width={14} />}
-              </div>
+              <a href={nav.href}>
+                <div
+                  className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
+                    pathname.includes(nav.href)
+                      ? 'text-white'
+                      : 'text-[#818992]'
+                  }`}
+                  key={nav.title}
+                >
+                  {nav.title}
+                  {nav.hasDropdown && <ChevronDown width={14} />}
+                </div>
+              </a>
             ))}
           </nav>
 
-          <Button className="font-gilroyMd text-sm w-full mt-4">Join a cohort</Button>
+          <Button className="font-gilroyMd text-sm w-full mt-4">
+            Join a cohort
+          </Button>
         </div>
       )}
     </div>
