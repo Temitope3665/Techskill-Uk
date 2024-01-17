@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages';
 import Layout from '../layouts/default-layout';
-import { EXPLORE_COURSES_URL, HOME_URL } from '../config/paths';
+import { ABOUT_US_URL, EXPLORE_COURSES_URL, HOME_URL } from '../config/paths';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AllCourses from '@/pages/courses';
+import AboutUs from '@/pages/about-us';
 
 const WebRoutes = () => {
   useEffect(() => {
@@ -15,7 +16,8 @@ const WebRoutes = () => {
     <Layout>
       <Routes>
         <Route index path={HOME_URL} element={<Home />} />
-        <Route index path={EXPLORE_COURSES_URL} element={<AllCourses />} />
+        <Route path={EXPLORE_COURSES_URL} element={<AllCourses />} />
+        <Route path={ABOUT_US_URL} element={<AboutUs />} />
       </Routes>
     </Layout>
   );
