@@ -1,6 +1,7 @@
 import { courses } from '@/config/courses';
 import OurCourses from './our-courses';
-import Mentoring from '@/assets/image/online-mentoring.png'
+import Mentoring from '@/assets/image/online-mentoring.png';
+import DemoDayImage from '@/assets/image/demo-day.png';
 import { CalendarCheck } from 'lucide-react';
 import { Button } from '../ui/button';
 
@@ -20,7 +21,7 @@ const Skills = () => (
 export default Skills;
 
 export const OnlineMentoring = () => (
-  <div className="md:flex mt-7 md:mt-14 items-center">
+  <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8">
     <div className='md:40%'>
       <h1 className='text-[24px] md:text-[55px] font-gilroyBold'>1-on-1 online mentoring</h1>
       <p className='text-grey md:text-base text-[13px] md:w-[80%]'>Accelerate your career triumph through our tailored one-on-one career coaching sessions.</p>
@@ -36,14 +37,14 @@ export const OnlineMentoring = () => (
         </div>
       </div>
 
-      <Button className="w-full md:w-[40%]">Book a call</Button>
+      <Button className="w-full md:w-[40%] md:my-0 my-4">Book a call</Button>
     </div>
-    <img src={Mentoring} alt="online mentoring" className='md:w-[45%] hidden md:block' />
+    <img src={Mentoring} alt="online mentoring" className='md:w-[45%]' />
   </div>
 );
 
 export const DemoDay = () => (
-  <div className="md:flex mt-7 md:mt-14 items-center">
+  <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8">
     <div className='md:40%'>
       <h1 className='text-[24px] md:text-[55px] font-gilroyBold'>Demo day</h1>
       <p className='text-grey md:text-base text-[13px] md:w-[80%]'>We guide individuals on a personalized path to professional success through insightful and individualized coaching sessions.</p>
@@ -59,8 +60,8 @@ export const DemoDay = () => (
         </div>
       </div>
 
-      <Button className="w-full md:w-[40%]">Join meeting</Button>
+      <Button className="w-full md:w-[40%] md:my-0 my-4">Join meeting</Button>
     </div>
-    <img src={Mentoring} alt="online mentoring" className='md:w-[45%] hidden md:block' />
+    <img src={DemoDayImage} alt="professional lady working" className='md:w-[45%]' />
   </div>
 );
