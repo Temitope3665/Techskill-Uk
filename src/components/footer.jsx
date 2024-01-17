@@ -1,5 +1,5 @@
 import Logo from '@/assets/icons/logo-black.png';
-import { footerData } from '@/config/data';
+import { footerData } from '@/config/dataa';
 
 const Footer = () => {
   return (
@@ -10,19 +10,25 @@ const Footer = () => {
         <div>
           <p className="font-gilroyBold mb-4">Company</p>
           {footerData.company.map((com) => (
-            <p key={com.title} className='py-2 md:py-3 font-gilroyMd'>{com.title}</p>
+            <p key={com.title} className="py-2 md:py-3 font-gilroyMd">
+              {com.title}
+            </p>
           ))}
         </div>
         <div>
           <p className="font-gilroyBold mb-4">Our Courses</p>
           {footerData.courses.map((com) => (
-            <p key={com.title} className='py-2 md:py-3 font-gilroyMd'>{com.title}</p>
+            <p key={com.title} className="py-2 md:py-3 font-gilroyMd">
+              {com.title}
+            </p>
           ))}
         </div>
         <div>
           <p className="font-gilroyBold mb-4">Our Contact</p>
           {footerData.contact.map((com) => (
-            <p key={com.title} className='py-2 md:py-3 font-gilroyMd'>{com.title}</p>
+            <p key={com.title} className="py-2 md:py-3 font-gilroyMd">
+              {com.title}
+            </p>
           ))}
         </div>
       </div>

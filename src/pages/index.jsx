@@ -2,15 +2,17 @@ import TransformDigitally from '@/assets/image/landing-banner.png';
 import { Button } from '@/components/ui/button';
 import { ArrowRightCircle, CornerDownRight } from 'lucide-react';
 import Accelerate from '@/assets/image/accelerate.png';
-import OurCourses from '@/components/our-courses';
+import OurCourses from '@/components/courses/our-courses';
 import { courses, why } from '@/config/courses';
 import SemiCircle from '@/assets/icons/semi-circle.png';
 import TalkToExpert from '@/components/talk-to-expert';
 import Testimonial from '@/components/testimonial';
-import { testimonials } from '@/config/data';
+import { testimonials } from '@/config/dataa';
 import { Input } from '@/components/ui/input';
 import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
+import { Link } from 'react-router-dom';
+import { EXPLORE_COURSES_URL } from '@/config/paths';
 
 const Home = () => {
   return (
@@ -28,9 +30,11 @@ const Home = () => {
           </p>
 
           <div className="md:flex md:space-x-8 mt-4 space-x-2 md:mt-8 space-y-3 md:space-y-0">
-            <Button size="lg" className="">
-              Explore courses <ArrowRightCircle className="ml-2" size={14} />
-            </Button>
+            <Link to={`${EXPLORE_COURSES_URL}?tab=0`}>
+              <Button size="lg" className="">
+                Explore courses <ArrowRightCircle className="ml-2" size={14} />
+              </Button>
+            </Link>
             <Button size="lg" variant="outline">
               Pay for a cohort
             </Button>
@@ -43,7 +47,12 @@ const Home = () => {
         />
       </main>
       <section className="py-16 md:py-24 bg-primary mt-6 md:mt-12 px-6 md:px-40">
-        <div className="text-center w-full" ddata-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+        <div
+          className="text-center w-full"
+          ddata-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
           <h1 className="text-[#EFF5FB] text-[35px] md:text-[60px] font-gilroyBold">
             What define us
           </h1>
@@ -53,7 +62,11 @@ const Home = () => {
         </div>
 
         <div className="border-[0.5px] border-[#818992] px-6 py-6 md:py-12 rounded-[22px] md:rounded-[32px] bg-secondary mt-12 md:mt-40 flex justify-between relative">
-          <div className="px-2 md:px-12 md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+          <div
+            className="px-2 md:px-12 md:w-1/2"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <h2 className="text-yellow font-gilroyBold text-[18] md:text-[28px]">
               Get transformed
             </h2>
@@ -80,13 +93,18 @@ const Home = () => {
               src={Accelerate}
               alt="Acceletate"
               className="w-[100px] md:w-[500px] absolute right-0 bottom-0"
-              data-aos="fade-up-right" data-aos-duration="1000"
+              data-aos="fade-up-right"
+              data-aos-duration="1000"
             />
           </div>
         </div>
       </section>
 
-      <section className="py-8 md:py-24 px-6 md:px-40 w-full" data-aos="fade-up" data-aos-duration="1000">
+      <section
+        className="py-8 md:py-24 px-6 md:px-40 w-full"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <div className="text-center w-full">
           <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-gilroyBold">
             Explore our courses
@@ -113,7 +131,12 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="w-full bg-primary relative" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+      <section
+        className="w-full bg-primary relative"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
         <img
           src={SemiCircle}
           alt="semi circle"
@@ -138,7 +161,9 @@ const Home = () => {
                 alt="skill training icon"
                 className="w-[40px] mt-7"
               />
-              <h3 className="font-gilroyBold text-[18px] md:text-[24px] mt-10">{wh.title}</h3>
+              <h3 className="font-gilroyBold text-[18px] md:text-[24px] mt-10">
+                {wh.title}
+              </h3>
               <div className="h-[8px] bg-yellow w-[15%]" />
               <p className="text-sm mt-4 md:mt-8 leading-7">{wh.description}</p>
             </div>
@@ -148,7 +173,12 @@ const Home = () => {
         <TalkToExpert />
       </section>
 
-      <section className="bg-secondary px-6 md:px-12 py-8 w-full mb-9" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+      <section
+        className="bg-secondary px-6 md:px-12 py-8 w-full mb-9"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
         <h4 className="font-medium text-sm">WHY TECHSKILL UK</h4>
         <h2 className="font-regularItalic text-[24px] md:text-[35px] text-grey">
           See what people say about us...
@@ -169,8 +199,12 @@ const Home = () => {
           <h1 className="text-[#EFF5FB] text-[18px] md:text-[30px] font-gilroyBold text-center">
             Ready to join a cohort?
           </h1>
-          <div className='flex items-center gap-x-4 mt-4'>
-            <Input className="bg-secondary" type='email' placeholder='Enter your email' />
+          <div className="flex items-center gap-x-4 mt-4">
+            <Input
+              className="bg-secondary"
+              type="email"
+              placeholder="Enter your email"
+            />
             <Button size="lg">Join</Button>
           </div>
         </div>
