@@ -19,7 +19,7 @@ const AllCourses = () => {
         <img
           src={Woman}
           alt="happy-african-in-libary"
-          className="h-[200px] lg:h-full obj object-cover rounded-xl"
+          className="h-[200px] lg:h-full obj object-cover rounded-xl w-full"
         />
         <div className="absolute top-[25%] lg:top-[35%] lg:right-[25%] text-center lg:w-1/2">
           <h1 className="font-gilroyBold text-[25px] lg:text-[50px]">
