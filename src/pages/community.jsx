@@ -21,7 +21,7 @@ const Community = () => {
             guidance, choose the perfect tech program and enrol confidently
           </p>
         </div>
-        <div className="lg:w-[45%] mt-8 lg:mt-0">
+        <div className="lg:w-[45%] mt-8 lg:mt-0 ml-6 lg:ml-0">
           <img src={Connect} alt="connect tech leaders" />
         </div>
       </div>
@@ -33,7 +33,7 @@ const Community = () => {
           data-aos-easing="linear"
           data-aos-duration="1000"
         >
-          <h1 className="text-[30px] lg:text-[50px] font-gilroyBold leading-[48px] -mt-8">
+          <h1 className="text-[30px] lg:text-[50px] font-gilroyBold leading-[48px] lg:-mt-8">
             Learn from a diverse group of peers
           </h1>
           <div className="lg:w-[90%] mt-2 lg:mt-8">
@@ -63,7 +63,7 @@ const Community = () => {
       </div>
 
       <div className="lg:py-12 px-6 lg:px-12">
-        <h1 className="text-[25px] lg:text-[50px] font-gilroyBold">
+        <h1 className="text-[25px] lg:text-[50px] font-gilroyBold text-center lg:text-left">
           Upcoming Events
         </h1>
         <div className="h-1 w-[10%] bg-yellow -mt-1 hidden lg:flex" />
