@@ -13,11 +13,10 @@ import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import { Link } from 'react-router-dom';
 import { EXPLORE_COURSES_URL } from '@/config/paths';
-import Layout from '@/layouts/default-layout';
 
 const Home = () => {
   return (
-    <Layout>
+    <div>
       <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
         <div className="md:pl-8 mt-8 text-center md:text-left">
@@ -212,7 +211,7 @@ const Home = () => {
       </section>
 
       <Footer />
-    </Layout>
+    </div>
   );
 };
 
