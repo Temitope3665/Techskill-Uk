@@ -5,8 +5,6 @@ import Star3 from '@/assets/icons/stars-3.png';
 import { experts, us } from '@/config/dataa';
 import Accelerate from '@/assets/image/accelerate-2.png';
 import HumanStanding from '@/assets/image/humans-standing.png';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import Footer from '@/components/footer';
 import JoinOurCommunity from '@/components/join-community';
 import ReactHelment from '@/components/helmet';

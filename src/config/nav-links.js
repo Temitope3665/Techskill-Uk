@@ -1,4 +1,4 @@
-import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL } from "./paths";
+import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL, OFFERINGS_URL } from "./paths";
 
 const navLinks = [
     // {
@@ -7,7 +7,7 @@ const navLinks = [
     //     hasDropdown: false
     // },
     {
-        title: 'About',
+        title: 'About Us',
         href: ABOUT_US_URL,
         hasDropdown: false
     },
@@ -18,7 +18,7 @@ const navLinks = [
     },
     {
         title: 'Offerings',
-        href: '#',
+        href: OFFERINGS_URL,
         hasDropdown: true
     },
     {
