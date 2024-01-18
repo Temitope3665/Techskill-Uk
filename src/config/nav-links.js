@@ -1,4 +1,4 @@
-import { ABOUT_US_URL, EXPLORE_COURSES_URL } from "./paths";
+import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL } from "./paths";
 
 const navLinks = [
     // {
@@ -28,7 +28,7 @@ const navLinks = [
     },
     {
         title: 'Community',
-        href: '#',
+        href: COMMUNITY_URL,
         hasDropdown: false
     },
     {
