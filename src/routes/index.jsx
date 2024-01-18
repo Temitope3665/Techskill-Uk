@@ -5,7 +5,7 @@ import { ABOUT_US_URL, EXPLORE_COURSES_URL, HOME_URL } from '../config/paths';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import AllCourses from '@/pages/courses';
+import AllCourses from '@/pages/explore-courses';
 import AboutUs from '@/pages/about-us';
 
 const WebRoutes = () => {
@@ -13,13 +13,13 @@ const WebRoutes = () => {
     AOS.init();
   }, []);
   return (
-    <Layout>
+    // <Layout>
       <Routes>
         <Route index path={HOME_URL} element={<Home />} />
         <Route path={EXPLORE_COURSES_URL} element={<AllCourses />} />
         <Route path={ABOUT_US_URL} element={<AboutUs />} />
       </Routes>
-    </Layout>
+    // </Layout>
   );
 };
 
