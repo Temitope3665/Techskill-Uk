@@ -1,5 +1,6 @@
 import Woman from '@/assets/image/happy-african-in-libary.png';
 import CourseTab from '@/components/courses/course-tab';
+import ReactHelment from '@/components/helmet';
 import { tabData } from '@/config/dataa';
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -15,6 +16,7 @@ const AllCourses = () => {
   }, []);
   return (
     <div className="px-6 lg:px-12 lg:py-6">
+      <ReactHelment title="Explore Our Courses" />
       <div className="mt-5 relative w-full">
         <img
           src={Woman}

@@ -178,4 +178,31 @@ export const experts = [
         image: SegunAllen,
         position: 'Data Analyst'
     },
+];
+
+export const Faque = [
+    {
+        q: 'What skill does Techskill UK offers?',
+        a: 'We offer courses in Business Analysis, product design, product management, project management and more'
+    },
+    {
+        q: 'How long are the training programs?',
+        a: 'Our typical courses run for 5 weeks with specialized training sessions, practice sessions and mentorship opportunities.'
+    },
+    {
+        q: 'Do you offer any career support after course completion?',
+        a: 'Absolutely! We provide professional CV writing, job application support, and a dedicated service to help our graduates find placement in the global job market. '
+    },
+    {
+        q: 'How are your courses delivered?',
+        a: 'Our courses are delivered online, allowing learners flexibility and access from anywhere in the world.'
+    },
+    {
+        q: 'What is the cost of enrolling in a Techskill UK course?',
+        a: 'Our standard course fee is 600 GBP. However, we often have promotions and discounts, so it is best to check our website or contact us directly for current pricing.'
+    },
+    {
+        q: 'Is there any financial assistance or payment plan available',
+        a: 'Yes, we offer flexible payment plans, and and at times, discounted rates to assist our learners.'
+    },
 ]
