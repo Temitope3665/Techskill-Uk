@@ -13,13 +13,13 @@ const WebRoutes = () => {
     AOS.init();
   }, []);
   return (
-    // <Layout>
+    <Layout>
       <Routes>
         <Route index path={HOME_URL} element={<Home />} />
         <Route path={EXPLORE_COURSES_URL} element={<AllCourses />} />
         <Route path={ABOUT_US_URL} element={<AboutUs />} />
       </Routes>
-    // </Layout>
+    </Layout>
   );
 };
 

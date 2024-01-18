@@ -1,8 +1,18 @@
 import Woman from '@/assets/image/happy-african-in-libary.png';
 import CourseTab from '@/components/courses/course-tab';
 import { tabData } from '@/config/dataa';
+import { useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const AllCourses = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab');
+  useEffect(() => {
+    if (!activeTab) {
+      navigate('?tab=0');
+    }
+  }, []);
   return (
     <div className="px-6 md:px-12 md:py-6">
       <div className="mt-5 relative w-full">
