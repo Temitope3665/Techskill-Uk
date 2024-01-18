@@ -2,6 +2,7 @@ import Connect from '@/assets/image/connect-tech-leaders.png';
 import Learning from '@/assets/image/learning.png';
 import Twitter from '@/assets/image/twitter.png';
 import Footer from '@/components/footer';
+import ReactHelment from '@/components/helmet';
 import JoinOurCommunity from '@/components/join-community';
 import { Button } from '@/components/ui/button';
 import { CalendarCheck, MoveRight, TimerIcon } from 'lucide-react';
@@ -9,6 +10,7 @@ import { CalendarCheck, MoveRight, TimerIcon } from 'lucide-react';
 const Community = () => {
   return (
     <div className="py-8">
+      <ReactHelment title="Our Community" />
       <div className="lg:flex justify-between w-full items-center mt-4 lg:mt-16 px-6 lg:px-12">
         <div className="lg:w-[45%] text-center lg:text-left">
           <h1 className="text-[30px] lg:text-[60px] font-gilroyBold">
