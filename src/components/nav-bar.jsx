@@ -27,8 +27,8 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <a href={nav.href}>
               <div
-                className={`cursor-pointer hover:text-yellow font-semiBold trans text-sm space-x-1 flex items-center ${
-                  pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
+                className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center ${
+                  pathname.includes(nav.href) ? 'text-white font-gilroyBold' : 'text-[#818992]'
                 }`}
                 key={nav.title}
               >

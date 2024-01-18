@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const OurCourses = ({ className, image, title, description, href }) => {
   return (
-    <div className={cn(className)}>
-      <div className="border border-yellow bg-primary rounded-[14px] md:rounded-[18px] p-3 md:min-h-[260px]">
+    <div>
+      <div className={cn(className, 'border border-yellow bg-primary rounded-[14px] md:rounded-[18px] p-3 md:min-h-[260px]')}>
         <img src={image} alt={title} />
         <h3 className="text-[18px] font-gilroyBold md:text-[22px] pt-3 h-[50px]">
           {title}
