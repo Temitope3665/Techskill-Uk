@@ -21,9 +21,9 @@ const Navbar = () => {
           />
         </a>
 
-        {!show && <Menu className="md:hidden" onClick={() => setShow(true)} />}
-        {show && <X className="md:hidden" onClick={() => setShow(false)} />}
-        <nav className="hidden md:flex justify-between w-[50%] font-gilroyMd">
+        {!show && <Menu className="lg:hidden" onClick={() => setShow(true)} />}
+        {show && <X className="lg:hidden" onClick={() => setShow(false)} />}
+        <nav className="hidden lg:flex justify-between w-[50%] font-gilroyMd">
           {navLinks.map((nav) => (
             <a href={nav.href}>
               <div
@@ -38,7 +38,7 @@ const Navbar = () => {
             </a>
           ))}
         </nav>
-        <div className="hidden font-gilroyMd text-sm md:flex items-center">
+        <div className="hidden font-gilroyMd text-sm lg:flex items-center">
           <Button size="lg">Join a cohort</Button>
         </div>
       </nav>
@@ -46,7 +46,7 @@ const Navbar = () => {
       {/* Small screen nav */}
 
       {show && (
-        <div className="md:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
+        <div className="lg:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
           <nav className="justify-between">
             {navLinks.map((nav) => (
               <a href={nav.href}>

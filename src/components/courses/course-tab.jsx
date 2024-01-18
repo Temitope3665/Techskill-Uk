@@ -6,7 +6,7 @@ const CourseTab = ({ tabs }) => {
   const activeTab = searchParams.get('tab');
 
   return (
-    <div>
+    <div className='mb-8'>
       <div className="grid grid-cols-3 gap-4 md:flex items-center justify-between md:my-8">
         {tabs.map((tab) => (
           <div
@@ -22,7 +22,9 @@ const CourseTab = ({ tabs }) => {
           </div>
         ))}
       </div>
-      <div className='md:min-h-[200px]'>
+      <div className='md:min-h-[200px]' data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000">
         {tabs[Number(activeTab)].content}
       </div>
     </div>
