@@ -1,5 +1,11 @@
 import SamuelOni from '@/assets/image/samuel-oni.png';
 import Skills, { DemoDay, OnlineMentoring } from '@/components/courses/explore-programmes';
+import CoreValueIcon from '@/assets/icons/core-values.png';
+import CoreMissionIcon from '@/assets/icons/mission-icon.png';
+import VisionIcon from '@/assets/icons/vision-icon.png';
+import JohnOnifade from '@/assets/experts/john-onifade.png';
+import SegunAllen from '@/assets/experts/segun-allen.png';
+import Hannat from '@/assets/experts/hannat.png';
 
 export const testimonials = [
     {
@@ -112,3 +118,64 @@ export const footerData = {
     { id: '1', title: '1-on-1 online mentoring', content: OnlineMentoring() },
     { id: '2', title: 'Demo and project', content: DemoDay() },
   ];
+
+  export const us = [
+    {
+        icon: CoreValueIcon,
+        title: 'Core values',
+        description: 'Our core values are the guiding principles of our company and services to you. We are dedicated to supporting our students every step of the way, from training to career support.'
+    },
+    {
+        icon: CoreMissionIcon,
+        title: 'Our Mission',
+        description: 'Our mission is to empower individuals with in-demand tech skills, bridging the gap between talent and job opportunities.'
+    },
+    {
+        icon: VisionIcon,
+        title: 'Our Vision',
+        description: 'We aim to create a unique yet, authentic presence emphasizing that anyone, regardless of their background, can thrive in tech and transition easily to.'
+    },
+];
+
+export const experts = [
+    {
+        name: 'Segun Allen',
+        image: SegunAllen,
+        position: 'Business Analyst'
+    },
+    {
+        name: 'John Onifade',
+        image: JohnOnifade,
+        position: 'Business Analyst'
+    },
+    {
+        name: 'Brian-Gabriel Ndubuisi',
+        image: SegunAllen,
+        position: 'Product Designer'
+    },
+    {
+        name: 'Olabode Ajilore',
+        image: JohnOnifade,
+        position: 'Scrum Master'
+    },
+    {
+        name: 'Kolade Norman',
+        image: Hannat,
+        position: 'Cyber Security Specialist'
+    },
+    {
+        name: 'Hannat Amuda',
+        image: Hannat,
+        position: 'Business Analyst'
+    },
+    {
+        name: 'Oge Ojiki',
+        image: JohnOnifade,
+        position: 'IT Support Specialist'
+    },
+    {
+        name: 'Iretiola Fola-Bolumole',
+        image: SegunAllen,
+        position: 'Data Analyst'
+    },
+]
