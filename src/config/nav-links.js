@@ -121,7 +121,7 @@ export const aboutUsList = [
         icon: WhoAreWe,
         title: 'Who are we',
         desc: 'Learn more about us and our core values',
-        href: '#'
+        href: ABOUT_US_URL
     },
 ];
 
@@ -133,13 +133,13 @@ const navLinks = [
     // },
     {
         title: 'About Us',
-        href: ABOUT_US_URL,
+        href: "#",
         hasDropdown: true,
         options: navDropdown(aboutUsList, 'w-[22vw]')
     },
     {
         title: 'Courses',
-        href: EXPLORE_COURSES_URL,
+        href: "#",
         hasDropdown: true,
         options: navDropdown(coursesDropdownList)
     },
