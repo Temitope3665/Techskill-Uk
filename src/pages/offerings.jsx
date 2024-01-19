@@ -105,7 +105,7 @@ const Offerings = () => {
         </div>
       </div>
 
-      <div className="lg:flex justify-between items-center px-6 lg:px-24 py-12">
+      <div className="lg:flex justify-between items-center px-6 lg:px-24 py-4 lg:py-12">
         <div className="lg:w-[50%]">
           <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">Global Talent Visa</h1>
           <p className="text-grey lg:text-base text-sm text-center lg:text-left">

@@ -3,7 +3,7 @@ import Logo from '../assets/icons/logo.png';
 import navLinks from '../config/nav-links';
 import { HOME_URL } from '../config/paths';
 import { Button } from './ui/button';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -23,21 +23,30 @@ const Navbar = () => {
 
         {!show && <Menu className="lg:hidden" onClick={() => setShow(true)} />}
         {show && <X className="lg:hidden" onClick={() => setShow(false)} />}
+
         <nav className="hidden lg:flex justify-between w-[50%] font-gilroyMd">
           {navLinks.map((nav) => (
-            <a href={nav.href}>
-              <div
-                className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center ${
-                  pathname.includes(nav.href) ? 'text-white font-gilroyBold' : 'text-[#818992]'
-                }`}
-                key={nav.title}
-              >
-                <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>{nav.title}</p>
-                {nav.hasDropdown && <ChevronDown width={14} />}
-              </div>
-            </a>
+            <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
+              <Link to={nav.href} key={nav.title}>
+                <div
+                  className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center pb-3 ${
+                    pathname.includes(nav.href)
+                      ? 'text-white font-gilroyBold'
+                      : 'text-[#818992]'
+                  }`}
+                >
+                  <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>
+                    {nav.title}
+                  </p>
+                  {nav.hasDropdown && <ChevronDown width={14} />}
+                </div>
+              </Link>
+
+              {nav.hasDropdown && nav.options}
+            </div>
           ))}
         </nav>
+
         <div className="hidden font-gilroyMd text-sm lg:flex items-center">
           <Button size="lg">Join a cohort</Button>
         </div>
@@ -49,17 +58,21 @@ const Navbar = () => {
         <div className="lg:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
           <nav className="justify-between">
             {navLinks.map((nav) => (
-              <a href={nav.href}>
+              <a href={nav.href} key={nav.title}>
                 <div
-                  className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
-                    pathname.includes(nav.href)
-                      ? 'text-white'
-                      : 'text-[#818992]'
-                  }`}
-                  key={nav.title}
+                  className={`${nav.hasDropdown && 'group'}`}
                 >
-                  {nav.title}
-                  {nav.hasDropdown && <ChevronDown width={14} />}
+                  <div
+                    className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
+                      pathname.includes(nav.href)
+                        ? 'text-white'
+                        : 'text-[#818992]'
+                    }`}
+                    key={nav.title}
+                  >
+                    {nav.title}
+                    {nav.hasDropdown && <ChevronDown width={14} />}
+                  </div>
                 </div>
               </a>
             ))}

@@ -191,6 +191,7 @@ const Home = () => {
               name={testimonial.name}
               review={testimonial.review}
               position={testimonial.position}
+              key={testimonial.name}
             />
           ))}
         </div>
