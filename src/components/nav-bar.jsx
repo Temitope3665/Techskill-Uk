@@ -23,21 +23,31 @@ const Navbar = () => {
 
         {!show && <Menu className="lg:hidden" onClick={() => setShow(true)} />}
         {show && <X className="lg:hidden" onClick={() => setShow(false)} />}
+
+
         <nav className="hidden lg:flex justify-between w-[50%] font-gilroyMd">
           {navLinks.map((nav) => (
-            <a href={nav.href}>
+            <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
               <div
-                className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center ${
-                  pathname.includes(nav.href) ? 'text-white font-gilroyBold' : 'text-[#818992]'
+                className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center pb-3 ${
+                  pathname.includes(nav.href)
+                    ? 'text-white font-gilroyBold'
+                    : 'text-[#818992]'
                 }`}
                 key={nav.title}
               >
-                <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>{nav.title}</p>
+                <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>
+                  {nav.title}
+                </p>
                 {nav.hasDropdown && <ChevronDown width={14} />}
               </div>
-            </a>
+
+              {nav.hasDropdown && nav.options}
+            </div>
           ))}
         </nav>
+
+        
         <div className="hidden font-gilroyMd text-sm lg:flex items-center">
           <Button size="lg">Join a cohort</Button>
         </div>

@@ -55,6 +55,9 @@ module.exports = {
       //   regularItalic: ['regularItalic', 'sans-serif'],
       // }
     },
+    variants: {
+      display: ['group-hover'],
+    },
   },
   plugins: [require("tailwindcss-animate")],
 }
