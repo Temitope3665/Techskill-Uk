@@ -12,7 +12,7 @@ import { Input } from '@/components/ui/input';
 import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import { Link } from 'react-router-dom';
-import { EXPLORE_COURSES_URL } from '@/config/paths';
+import { EXPLORE_COURSES_URL, REGISTRATION_URL } from '@/config/paths';
 
 const Home = () => {
   return (
@@ -35,9 +35,11 @@ const Home = () => {
                 Explore courses <ArrowRightCircle className="ml-2" size={14} />
               </Button>
             </Link>
-            <Button size="lg" variant="outline">
-              Pay for a cohort
-            </Button>
+            <Link to={REGISTRATION_URL}>
+              <Button size="lg" variant="outline">
+                Pay for a cohort
+              </Button>
+            </Link>
           </div>
         </div>
         <img

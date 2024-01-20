@@ -10,9 +10,9 @@ const UserRegistration = () => {
           <img
             src={UserRegisterImage}
             alt="beautiful lady registering for her course"
-            className="h-[30vh] w-full lg:w-fit lg:h-[80vh] lg:fixed object-cover"
+            className="h-[30vh] w-full lg:w-fit lg:h-[80vh] object-cover"
           />
-          <h1 className="top-[20%] lg:right-[70%] font-gilroyLight text-[40px] lg:w-[20vw] text-center lg:fixed absolute">
+          <h1 className="top-[20%] lg:right-[32%] font-gilroyLight text-[40px] lg:w-[20vw] text-center absolute">
             We want to know you
           </h1>
         </div>
