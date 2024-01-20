@@ -1,7 +1,7 @@
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Logo from '../assets/icons/logo.png';
 import navLinks from '../config/nav-links';
-import { HOME_URL } from '../config/paths';
+import { HOME_URL, REGISTRATION_URL } from '../config/paths';
 import { Button } from './ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
@@ -48,7 +48,9 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden font-gilroyMd text-sm lg:flex items-center">
-          <Button size="lg">Join a cohort</Button>
+          <Link to={REGISTRATION_URL}>
+            <Button size="lg">Join a cohort</Button>
+          </Link>
         </div>
       </nav>
 
@@ -59,9 +61,7 @@ const Navbar = () => {
           <nav className="justify-between">
             {navLinks.map((nav) => (
               <a href={nav.href} key={nav.title}>
-                <div
-                  className={`${nav.hasDropdown && 'group'}`}
-                >
+                <div className={`${nav.hasDropdown && 'group'}`}>
                   <div
                     className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
                       pathname.includes(nav.href)
@@ -78,9 +78,11 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <Button className="font-gilroyMd text-sm w-full mt-4">
-            Join a cohort
-          </Button>
+          <Link to={REGISTRATION_URL}>
+            <Button className="font-gilroyMd text-sm w-full mt-4">
+              Join a cohort
+            </Button>
+          </Link>
         </div>
       )}
     </div>
