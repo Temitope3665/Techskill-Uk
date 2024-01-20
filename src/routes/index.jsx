@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages';
 import Layout from '../layouts/default-layout';
-import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL, HOME_URL, OFFERINGS_URL } from '../config/paths';
+import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL, HOME_URL, OFFERINGS_URL, REGISTRATION_URL } from '../config/paths';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -10,6 +10,7 @@ import AboutUs from '@/pages/about-us';
 import Community from '@/pages/community';
 import Faq from '@/pages/faq';
 import Offerings from '@/pages/offerings';
+import UserRegistration from '@/pages/user-registration';
 
 const WebRoutes = () => {
   useEffect(() => {
@@ -24,6 +25,8 @@ const WebRoutes = () => {
         <Route path={COMMUNITY_URL} element={<Community />} />
         <Route path={FAQ_URL} element={<Faq />} />
         <Route path={OFFERINGS_URL} element={<Offerings />} />
+        <Route path={REGISTRATION_URL} element={<UserRegistration />} />
+
       </Routes>
     </Layout>
   );

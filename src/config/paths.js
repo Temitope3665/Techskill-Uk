@@ -4,3 +4,4 @@ export const ABOUT_US_URL = 'about-us';
 export const COMMUNITY_URL = 'community';
 export const FAQ_URL = 'faq';
 export const OFFERINGS_URL = 'offerings';
+export const REGISTRATION_URL = 'user-registration';

@@ -64,7 +64,7 @@ body {
 .trans {
     transition: all 0.3s ease;
   }
-
+  
 @media (prefers-color-scheme: light) {
   :root {
     background-color: #14181D;
