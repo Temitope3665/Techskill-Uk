@@ -73,19 +73,19 @@ export const offeringsDropdownList = [
         icon: ExploreIcon,
         title: 'Explore our Training Programmes',
         desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
-        href: '#'
+        href: `${EXPLORE_COURSES_URL}?tab=0`
     },
     {
         icon: GlobalTalent,
         title: 'Global Talent Visa',
         desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
-        href: '#'
+        href: `${OFFERINGS_URL}/#globalTalent`
     },
     {
         icon: JobSupport,
         title: 'Job Support Offering',
         desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
-        href: '#'
+        href: `${OFFERINGS_URL}/#jobSupport`
     },
     {
         icon: BookMentorship,
