@@ -1,12 +1,14 @@
 import OurOfferings from '@/assets/image/offerings.png';
 import { Button } from '@/components/ui/button';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Star2 from '@/assets/image/stars-2.png';
+import JobSupport from '@/assets/image/job-supporting.png';
 import GlobalTalent from '@/assets/image/global-talent.png';
 import { ChevronLeftCircle, ChevronRightCircle } from 'lucide-react';
 import OurCourses from '@/components/courses/our-courses';
 import { courses } from '@/config/courses';
 import Footer from '@/components/footer';
+import { useLocation } from 'react-router-dom';
 
 const Offerings = () => {
   const scrollContainerRef = useRef(null);
@@ -23,17 +25,34 @@ const Offerings = () => {
   const handleScrollRight = () => {
     scrollContainerRef.current.scrollLeft += 100; // Adjust the scroll amount as needed
   };
+
   const disableLeftScroll =
     scrollContainerRef.current &&
     scrollLeft ===
       scrollContainerRef.current.scrollWidth -
         scrollContainerRef.current.clientWidth;
+
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if there is a hash in the URL
+    if (location.hash) {
+      const targetElement = document.querySelector(location.hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'instant' });
+      }
+    }
+  }, [location.hash]);
   return (
-    <div className="">
+    <div className="mt-12">
       <div className="px-6 lg:px-12 relative">
         <div className="lg:flex justify-between items-center lg:px-24">
           <div className="lg:w-[45%]">
-            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">Offerings</h1>
+            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
+              Offerings
+            </h1>
             <p className="text-grey lg:text-base text-sm text-center lg:text-left">
               Ready to take a step in you tech career but unsure where to begin
               ? Book a call with our learning advisor today! Get personalised
@@ -54,7 +73,12 @@ const Offerings = () => {
         </div>
       </div>
 
-      <div className="bg-primary py-8 my-12 px-6 lg:px-12 ">
+      <div
+        className="bg-primary py-8 my-12 px-6 lg:px-12"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
         <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center">
           Explore our training programmes
         </h1>
@@ -105,20 +129,61 @@ const Offerings = () => {
         </div>
       </div>
 
-      <div className="lg:flex justify-between items-center px-6 lg:px-24 py-4 lg:py-12">
+      <section>
+        <div
+          className="lg:flex justify-between items-center px-6 lg:px-24 py-4 lg:py-12"
+          id="globalTalent"
+          ref={section1Ref}
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <div className="lg:w-[50%]">
+            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
+              Global Talent Visa
+            </h1>
+            <p className="text-grey lg:text-base text-sm text-center lg:text-left">
+              Ready to take a step in you tech career but unsure where to begin
+              ? Book a call with our learning advisor today! Get personalised
+              guidance, choose the perfect tech program and enrol confidently
+            </p>
+            <Button size="lg" className="lg:w-[50%] w-full mt-6">
+              Book consultation
+            </Button>
+          </div>
+          <div className="lg:w-[35%] hidden lg:block h-[500px]">
+            <img src={GlobalTalent} alt="global talent" className="h-full" />
+          </div>
+        </div>
+      </section>
+
+      <div
+        className="lg:flex justify-between items-center px-6 lg:px-24 py-4 lg:py-12 bg-primary"
+        id="jobSupport"
+        ref={section2Ref}
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
+        <div className="lg:w-[35%] hidden lg:block h-[500px]">
+          <img
+            src={JobSupport}
+            alt="groups supporting job"
+            className="h-full"
+          />
+        </div>
         <div className="lg:w-[50%]">
-          <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">Global Talent Visa</h1>
+          <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
+            Job support offering
+          </h1>
           <p className="text-grey lg:text-base text-sm text-center lg:text-left">
             Ready to take a step in you tech career but unsure where to begin ?
             Book a call with our learning advisor today! Get personalised
             guidance, choose the perfect tech program and enrol confidently
           </p>
-          <Button size="lg" className="lg:w-[80%] w-full mt-6">
-            Book consultation
+          <Button size="lg" className="lg:w-[40%] w-full mt-6">
+            Learn more
           </Button>
-        </div>
-        <div className="lg:w-[35%] hidden lg:block">
-          <img src={GlobalTalent} alt="global talent" />
         </div>
       </div>
 
