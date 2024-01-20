@@ -6,7 +6,7 @@ const UserRegistration = () => {
   return (
     <div className="my-4 lg:my-10 lg:px-16 px-8">
       <section className="w-full lg:flex">
-        <div className="w-full lg:w-[45%] relative">
+        <div className="w-full lg:w-[45%] hidden lg:block relative">
           <img
             src={UserRegisterImage}
             alt="beautiful lady registering for her course"
@@ -17,7 +17,7 @@ const UserRegistration = () => {
           </h1>
         </div>
         <div className="lg:w-[70%]">
-          {/* <h1 className='text-[25px]'>Register now</h1> */}
+          <h1 className='text-[25px] lg:hidden flex'>Registeration Form</h1>
           <div className='rounded-tr-lg rounded-tl-lg w-full px-4 pt-2 -pb-3 bg-[#242832] mt-6 lg:hidden'>
             <p className='text-yellow text-sm'>Step 1</p>
             <img src={ArrowLeftRight} alt="direction" className='py-2' />

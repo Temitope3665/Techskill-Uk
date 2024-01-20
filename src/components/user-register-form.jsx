@@ -123,9 +123,9 @@ const UserRegistrationForm = () => {
                   <PhoneInput
                     specialLabel={''}
                     country={'ng'}
-                    inputStyle={{ backgroundColor: '#2F3441', width: '100%', height: '44px' }}
+                    inputStyle={{ backgroundColor: '#2F3441', width: '100%', height: '44px', borderColor: '#818992' }}
                     dropdownStyle={{ backgroundColor: '#2F3441', color: '#818992' }}
-                    buttonStyle={{ backgroundColor: '#2F3441' }}
+                    buttonStyle={{ backgroundColor: '#2F3441', borderColor: '#818992' }}
                     {...field}
                   />
                 </FormControl>
@@ -170,7 +170,7 @@ const UserRegistrationForm = () => {
                   <Input
                     autoComplete="none"
                     type="date"
-                    className="bg-[#2F3441]"
+                    className="bg-[#2F3441] w-full"
                     autoCorrect="off"
                     autoCapitalize="none"
                     placeholder="Enter your date of birth"
