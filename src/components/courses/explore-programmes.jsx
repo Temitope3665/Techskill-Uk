@@ -13,6 +13,7 @@ const Skills = () => (
         image={course.image}
         key={course.title}
         description={course.desc}
+        id={course.id}
       />
     ))}
   </div>

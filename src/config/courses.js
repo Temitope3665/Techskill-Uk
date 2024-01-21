@@ -10,55 +10,56 @@ import Skills from "@/assets/icons/skills.png";
 import Portfolio from "@/assets/icons/portfolio.png";
 import Mentorship from "@/assets/icons/mentorship.png";
 import CareerSupport from "@/assets/icons/career-support.png";
+import { COURSE_DETAILS_URL, EXPLORE_COURSES_URL } from "./paths";
 
 export const courses = [
     {
         image: ProductManagement,
         title: 'Product Management',
         desc: 'Learn how to blend creativity and innovation to create user- friendly solutions from product ideation, examining marketing research, etc.',
-        href: '#'
+        id: 1
     },
     {
         image: BusinessAnalyst,
         title: 'Business Analysis',
         desc: 'Learn the core principles of business analysis and develop the skills to drive strategic change with any organization.',
-        href: '#'
+        id: 2,
     },
     {
         image: ProductDesign,
         title: 'Product Design',
         desc: 'Acquire the principles of effective design, prototype and create representation, procreate visually appealing designs, etc.',
-        href: '#'
+        id: 3,
     },
     {
         image: AgileProductMgt,
         title: 'Agile Project Management',
         desc: 'Explore our courses, speak with a learning advisor and transition into tech. ',
-        href: '#'
+        id: 4,
     },
     {
         image: Cybersecurity,
         title: 'Cybersecurity',
         desc: 'Learn Agile methodologies and enhance project management efficiency and adaptability.',
-        href: '#'
+        id: 5
     },
     {
         image: DataAnalysis,
         title: 'Data Analysis',
         desc: 'Learn SQL, Data visualisation, ML, Process mapping and requirement gathering with data analytics.',
-        href: '#'
+        id: 6,
     },
     {
         image: DigitalMarketing,
         title: 'Digital Marketing',
         desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
-        href: '#'
+        id: 7
     },
     {
         image: ITSupport,
         title: 'IT Support',
         desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
-        href: '#'
+        id: 8
     },
 ];
 

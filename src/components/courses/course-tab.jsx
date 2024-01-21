@@ -22,9 +22,7 @@ const CourseTab = ({ tabs }) => {
           </div>
         ))}
       </div>
-      <div className='md:min-h-[200px]' data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="1000">
+      <div className='md:min-h-[200px]'>
         {tabs[Number(activeTab)].content}
       </div>
     </div>
