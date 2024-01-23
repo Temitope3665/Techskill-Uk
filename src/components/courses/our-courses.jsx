@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 import { Link } from 'react-router-dom';
 
-const OurCourses = ({ className, image, title, description, id }) => {
+const OurCourses = ({ className, image, title, description, href }) => {
   return (
     <div>
       <div className={cn(className, 'border border-yellow bg-primary rounded-[14px] md:rounded-[18px] p-3 md:min-h-[260px]')}>
@@ -13,7 +13,7 @@ const OurCourses = ({ className, image, title, description, id }) => {
         <p className="text-grey mt-2 text-sm md:text-base h-[75px] overflow-auto">
           {description}
         </p>
-        <Link to={`details/${id}`}>
+        <Link to={href}>
           <Button className="w-full mt-8">Enroll now</Button>
         </Link>
       </div>

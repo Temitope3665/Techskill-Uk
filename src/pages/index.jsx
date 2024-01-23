@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRightCircle, CornerDownRight } from 'lucide-react';
 import Accelerate from '@/assets/image/accelerate.png';
 import OurCourses from '@/components/courses/our-courses';
-import { courses, why } from '@/config/courses';
+import { why } from '@/config/courses';
 import SemiCircle from '@/assets/icons/semi-circle.png';
 import TalkToExpert from '@/components/talk-to-expert';
 import Testimonial from '@/components/testimonial';
@@ -13,20 +13,52 @@ import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import { Link } from 'react-router-dom';
 import { EXPLORE_COURSES_URL, REGISTRATION_URL } from '@/config/paths';
+import { createClient } from 'contentful';
+import { useContext, useEffect, useState } from 'react';
+import Loading from '@/assets/animation/loading.svg';
+import { CourseContext } from '@/contexts/course-context';
 
 const Home = () => {
+  const { allCourses, isLoading } = useContext(CourseContext);
+  const [banner, setBanner] = useState({ image: '', title: '', desc: '' });
+  const client = createClient({
+    space: process.env.VITE_REACT_APP_SPACE_ID,
+    accessToken: process.env.VITE_REACT_APP_ACCESS_TOKEN,
+  });
+
+  console.log(allCourses, '->');
+
+  useEffect(() => {
+    const getAllAssets = async () => {
+      try {
+        const assets = await client.getAssets();
+        const total = assets.total;
+        const asset = assets?.items[total - 1];
+        setBanner({
+          image: asset.fields.url,
+          title: asset.fields.title,
+          desc: asset.fields.description,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAllAssets();
+  }, []);
   return (
     <div>
       <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
         <div className="md:pl-8 mt-8 text-center md:text-left">
           <h1 className="font-gilroyBold text-[35px] leading-[1.5] md:text-[55px]">
-            <span className="text-yellow">Accelerate</span> your career today
-            with Digital Transformation
+            <span className="text-yellow">
+              {banner.title.split(' ')[0] || 'Accelerate'}
+            </span>{' '}
+            your career today with Digital Transformation
           </h1>
           <p className="px-4 md:px-0 md:w-[80%] my-4 text-base">
-            TechSkill empowers tech enthusiasts through training, mentorship, in
-            other to transition into their desired career.
+            {banner.desc ||
+              'TechSkill empowers tech enthusiasts through training, mentorship, in other to transition into their desired career.'}
           </p>
 
           <div className="md:flex md:space-x-8 mt-4 space-x-2 md:mt-8 space-y-3 md:space-y-0">
@@ -43,7 +75,7 @@ const Home = () => {
           </div>
         </div>
         <img
-          src={TransformDigitally}
+          src={banner.image || TransformDigitally}
           alt="transforming digitally"
           className="md:h-[80vh] -ml-6 md:ml-0"
         />
@@ -117,19 +149,30 @@ const Home = () => {
           </p>
         </div>
         <div className="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
-          {courses.slice(0, 3).map((course) => (
-            <OurCourses
-              title={course.title}
-              image={course.image}
-              key={course.title}
-              description={course.desc}
-            />
-          ))}
+          {isLoading ? (
+            <div className="w-full flex justify-center">
+              <img src={Loading} alt="loading" />
+            </div>
+          ) : (
+            <>
+              {allCourses?.slice(0, 3).map((course) => (
+                <OurCourses
+                  title={course?.fields?.title}
+                  image={course?.fields?.image?.fields?.file?.url}
+                  key={course?.fields?.title}
+                  description={course?.fields?.description}
+                  href={`explore-courses/details/${course?.sys?.id}`}
+                />
+              ))}
+            </>
+          )}
         </div>
         <div className="w-full flex justify-center">
-          <Button size="lg" variant="outline" className="mt-10">
-            Explore more courses
-          </Button>
+          <Link to={`${EXPLORE_COURSES_URL}?tab=0`}>
+            <Button size="lg" variant="outline" className="mt-10">
+              Explore more courses
+            </Button>
+          </Link>
         </div>
       </section>
 

@@ -1,14 +1,17 @@
+import { CourseProvider } from "@/contexts/course-context";
 import Navbar from "../components/nav-bar";
 
 const Layout = ({ children }) => {
     return (
-        <div className="overflow-x-hidden">
-            <Navbar />
+        <CourseProvider>
+            <div className="overflow-x-hidden">
+                <Navbar />
 
-            <div className="pt-20">
-                {children}
+                <div className="pt-20">
+                    {children}
+                </div>
             </div>
-        </div>
+        </CourseProvider>
     )
 };
 

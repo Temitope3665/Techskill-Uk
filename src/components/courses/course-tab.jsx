@@ -1,6 +1,7 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import Loading from "@/assets/animation/loading.svg"
 
-const CourseTab = ({ tabs }) => {
+const CourseTab = ({ tabs, isLoading }) => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const activeTab = searchParams.get('tab');
@@ -23,7 +24,9 @@ const CourseTab = ({ tabs }) => {
         ))}
       </div>
       <div className='md:min-h-[200px]'>
-        {tabs[Number(activeTab)].content}
+        {isLoading ? <div className='w-full flex justify-center'><img src={Loading} alt="loading" /></div> : (
+          <>{tabs[Number(activeTab)].content}</>
+        )}
       </div>
     </div>
   );

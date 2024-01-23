@@ -10,7 +10,6 @@ import Skills from "@/assets/icons/skills.png";
 import Portfolio from "@/assets/icons/portfolio.png";
 import Mentorship from "@/assets/icons/mentorship.png";
 import CareerSupport from "@/assets/icons/career-support.png";
-import { COURSE_DETAILS_URL, EXPLORE_COURSES_URL } from "./paths";
 
 export const courses = [
     {
@@ -84,4 +83,87 @@ export const why = [
         title: 'Career support',
         description: 'Begin your success in the tech world with our job support services, referencing and other resources. Get your profile optimized for increase reach, a curriculum vitae that projects your experience and experts that assist in tailored adverts.'
     }
+];
+
+export const outlines = [
+    'About the course',
+    'Learning objectives',
+    'Courses schedules',
+    'Benefits',
+    'Pricing',
+    'Tools you’ll learn from',
+    'Upcoming Cohort',
+    '1-1 career coaching',
+  ];
+
+export const objectives = ['Identify who your customer are, what and how they think', 'Transition your idea to reality', 'Create the ultimate go-to-market strategy', 'Utilize design thinking to solve business problems', 'Win over hiring managers the right way'];
+
+export const schedules = [
+    {
+        week: 'Week 1',
+        title: 'Introduction to Product Management'
+    },
+    {
+        week: 'Week 2',
+        title: 'Project intuition, business structures and models'
+    },
+    {
+        week: 'Week 3',
+        title: 'Product strategy and validation'
+    },
+    {
+        week: 'Week 4',
+        title: 'Project leadership, communication and product manangement'
+    },
+    {
+        week: 'Week 5',
+        title: 'Product management career development'
+    },
+];
+
+export const weekSchedules = [
+    {
+        time: 'Mon',
+        schedule: '1 hour in week 1',
+        detail: 'Mentorship'
+    },
+    {
+        time: 'Tue',
+        schedule: '',
+        detail: 'Personal Study'
+    },
+    {
+        time: 'Wed',
+        schedule: '1hour for 5weeks (5 hours)',
+        detail: 'Assessment classes'
+    },
+    {
+        time: 'Thurs',
+        schedule: '',
+        detail: 'Personal Study'
+    },
+    {
+        time: 'Fri & Sat',
+        schedule: '2PM -4PM (EST)',
+        detail: 'Personal Study'
+    },
+];
+
+export const benefits = [
+    {
+        title: 'Product Ideation and Market Research',
+        desc: 'Learn to generate innovative product ideas and conduct market research to validate demand and uncover potential opportunities.'
+    },
+    {
+        title: 'Product Lifecycle Management',
+        desc: 'Learn to manage products throughout their lifecycle, from ideation to discontinuation, ensuring sustained growth and profitability.'
+    },
+    {
+        title: 'Launch Strategies',
+        desc: 'Acquire the knowledge to create and execute effective product launch strategies and maximize reach and drive customer engagement.'
+    },
+    {
+        title: 'Product Development',
+        desc: 'Master the process of transforming product concepts into reality, while maintaining quality, budget, and timeline constraints.'
+    },
 ]
