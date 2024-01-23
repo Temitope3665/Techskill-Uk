@@ -17,8 +17,25 @@ import { createClient } from 'contentful';
 import { useContext, useEffect, useState } from 'react';
 import Loading from '@/assets/animation/loading.svg';
 import { CourseContext } from '@/contexts/course-context';
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
+  const [_, setPaymentPlan] = useState('');
   const { allCourses, isLoading } = useContext(CourseContext);
   const [banner, setBanner] = useState({ image: '', title: '', desc: '' });
   const client = createClient({
@@ -67,11 +84,11 @@ const Home = () => {
                 Explore courses <ArrowRightCircle className="ml-2" size={14} />
               </Button>
             </Link>
-            <Link to={REGISTRATION_URL}>
-              <Button size="lg" variant="outline">
+
+              <Button size="lg" variant="outline" onClick={() => setOpen(true)}>
                 Pay for a cohort
               </Button>
-            </Link>
+
           </div>
         </div>
         <img
@@ -255,6 +272,41 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <AlertDialog onOpenChange={setOpen} open={open} defaultOpen={true}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-black font-gilroyBold">
+              Choose Payment Plan
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              You have the option of paying now for a discount or paying in
+              installments.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <div>
+            <Select
+              onValueChange={(value) => setPaymentPlan(value)}
+              defaultValue="£250"
+            >
+              <SelectTrigger className="w-full text-primary font-gilroyMd">
+                <SelectValue placeholder="Select a plan" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectItem value="£250">Upfront - £250</SelectItem>
+                  <SelectItem value="£600">Pay full - £600</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+          <Link to="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA">
+            <Button type="submit" size="sm" className="w-full">
+              Make payment
+            </Button>
+          </Link>
+        </AlertDialogContent>
+      </AlertDialog>
 
       <Footer />
     </div>
