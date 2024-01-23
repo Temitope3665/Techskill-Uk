@@ -1,22 +1,25 @@
-import { courses } from '@/config/courses';
+
 import OurCourses from './our-courses';
 import Mentoring from '@/assets/image/online-mentoring.png';
 import DemoDayImage from '@/assets/image/demo-day.png';
 import { CalendarCheck } from 'lucide-react';
 import { Button } from '../ui/button';
 
-const Skills = () => (
+const Skills = (courses) => {
+return (
   <div className="grid md:grid-cols-3 gap-5 md:gap-10 mt-7 md:mt-14">
-    {courses.map((course) => (
+    {courses?.map((course) => (
       <OurCourses
-        title={course.title}
-        image={course.image}
-        key={course.title}
-        description={course.desc}
+        title={course?.fields?.title}
+        image={course?.fields?.image?.fields?.file?.url}
+        key={course?.fields?.title}
+        description={course?.fields?.description}
+        href={`details/${course?.sys?.id}`}
       />
     ))}
   </div>
 );
+    };
 
 export default Skills;
 

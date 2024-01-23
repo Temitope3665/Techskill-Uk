@@ -16,49 +16,49 @@ export const courses = [
         image: ProductManagement,
         title: 'Product Management',
         desc: 'Learn how to blend creativity and innovation to create user- friendly solutions from product ideation, examining marketing research, etc.',
-        href: '#'
+        id: 1
     },
     {
         image: BusinessAnalyst,
         title: 'Business Analysis',
         desc: 'Learn the core principles of business analysis and develop the skills to drive strategic change with any organization.',
-        href: '#'
+        id: 2,
     },
     {
         image: ProductDesign,
         title: 'Product Design',
         desc: 'Acquire the principles of effective design, prototype and create representation, procreate visually appealing designs, etc.',
-        href: '#'
+        id: 3,
     },
     {
         image: AgileProductMgt,
         title: 'Agile Project Management',
         desc: 'Explore our courses, speak with a learning advisor and transition into tech. ',
-        href: '#'
+        id: 4,
     },
     {
         image: Cybersecurity,
         title: 'Cybersecurity',
         desc: 'Learn Agile methodologies and enhance project management efficiency and adaptability.',
-        href: '#'
+        id: 5
     },
     {
         image: DataAnalysis,
         title: 'Data Analysis',
         desc: 'Learn SQL, Data visualisation, ML, Process mapping and requirement gathering with data analytics.',
-        href: '#'
+        id: 6,
     },
     {
         image: DigitalMarketing,
         title: 'Digital Marketing',
         desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
-        href: '#'
+        id: 7
     },
     {
         image: ITSupport,
         title: 'IT Support',
         desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
-        href: '#'
+        id: 8
     },
 ];
 
@@ -83,4 +83,87 @@ export const why = [
         title: 'Career support',
         description: 'Begin your success in the tech world with our job support services, referencing and other resources. Get your profile optimized for increase reach, a curriculum vitae that projects your experience and experts that assist in tailored adverts.'
     }
+];
+
+export const outlines = [
+    'About the course',
+    'Learning objectives',
+    'Courses schedules',
+    'Benefits',
+    'Pricing',
+    'Tools you’ll learn from',
+    'Upcoming Cohort',
+    '1-1 career coaching',
+  ];
+
+export const objectives = ['Identify who your customer are, what and how they think', 'Transition your idea to reality', 'Create the ultimate go-to-market strategy', 'Utilize design thinking to solve business problems', 'Win over hiring managers the right way'];
+
+export const schedules = [
+    {
+        week: 'Week 1',
+        title: 'Introduction to Product Management'
+    },
+    {
+        week: 'Week 2',
+        title: 'Project intuition, business structures and models'
+    },
+    {
+        week: 'Week 3',
+        title: 'Product strategy and validation'
+    },
+    {
+        week: 'Week 4',
+        title: 'Project leadership, communication and product manangement'
+    },
+    {
+        week: 'Week 5',
+        title: 'Product management career development'
+    },
+];
+
+export const weekSchedules = [
+    {
+        time: 'Mon',
+        schedule: '1 hour in week 1',
+        detail: 'Mentorship'
+    },
+    {
+        time: 'Tue',
+        schedule: '',
+        detail: 'Personal Study'
+    },
+    {
+        time: 'Wed',
+        schedule: '1hour for 5weeks (5 hours)',
+        detail: 'Assessment classes'
+    },
+    {
+        time: 'Thurs',
+        schedule: '',
+        detail: 'Personal Study'
+    },
+    {
+        time: 'Fri & Sat',
+        schedule: '2PM -4PM (EST)',
+        detail: 'Personal Study'
+    },
+];
+
+export const benefits = [
+    {
+        title: 'Product Ideation and Market Research',
+        desc: 'Learn to generate innovative product ideas and conduct market research to validate demand and uncover potential opportunities.'
+    },
+    {
+        title: 'Product Lifecycle Management',
+        desc: 'Learn to manage products throughout their lifecycle, from ideation to discontinuation, ensuring sustained growth and profitability.'
+    },
+    {
+        title: 'Launch Strategies',
+        desc: 'Acquire the knowledge to create and execute effective product launch strategies and maximize reach and drive customer engagement.'
+    },
+    {
+        title: 'Product Development',
+        desc: 'Master the process of transforming product concepts into reality, while maintaining quality, budget, and timeline constraints.'
+    },
 ]

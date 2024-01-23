@@ -21,8 +21,19 @@ import {
 import { Checkbox } from './ui/checkbox';
 import { MoveRight } from 'lucide-react';
 import PhoneInput from 'react-phone-input-2';
+import { CourseContext } from '@/contexts/course-context';
+import { useContext, useState } from 'react';
+import axios from 'axios';
+import { headers_, registerUserApi } from '@/config/api';
+import { useParams } from 'react-router-dom';
+import { toast } from './ui/use-toast';
 
 const UserRegistrationForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { slug } = useParams();
+  const { allCourses, isLoading } = useContext(CourseContext);
+  const [isChecked, setIsChecked] = useState(true);
+
   const form = useForm({
     defaultValues: {
       firstName: '',
@@ -33,11 +44,46 @@ const UserRegistrationForm = () => {
       dob: '',
       howYouAboutUs: '',
       interestedCourse: '',
+      ref: '',
     },
     resolver: yupResolver(userRegisterSchema),
   });
+  const where = ['Friends', 'School Portal', 'Twitter', 'Conference'];
+
   const onSubmit = (data) => {
-    console.log(data);
+    setIsSubmitting(true);
+    axios
+      .post(
+        registerUserApi,
+        {
+          "fields": {
+            'First Name': data.firstName,
+            'Last Name': data.lastName,
+            'Email': data.email,
+            'Phone Number': data.phoneNumber,
+            'Address': data.address,
+            'Date of Birth': data.dob,
+            'How did you hear about us': data.howYouAboutUs,
+            'Selected Course': data.interestedCourse,
+            'Course Id': slug,
+            'Reference Code': data.ref,
+          },
+        },
+        { headers: headers_ }
+      )
+      .then(() =>
+        toast({
+          description: `You've successfully registered for ${data.interestedCourse} course`,
+        })
+      )
+      .catch(() =>
+        toast({
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem with your request.',
+        })
+      )
+      .finally(() => setIsSubmitting(false));
   };
   return (
     <Form {...form}>
@@ -123,9 +169,20 @@ const UserRegistrationForm = () => {
                   <PhoneInput
                     specialLabel={''}
                     country={'ng'}
-                    inputStyle={{ backgroundColor: '#2F3441', width: '100%', height: '44px', borderColor: '#818992' }}
-                    dropdownStyle={{ backgroundColor: '#2F3441', color: '#818992' }}
-                    buttonStyle={{ backgroundColor: '#2F3441', borderColor: '#818992' }}
+                    inputStyle={{
+                      backgroundColor: '#2F3441',
+                      width: '100%',
+                      height: '44px',
+                      borderColor: '#818992',
+                    }}
+                    dropdownStyle={{
+                      backgroundColor: '#2F3441',
+                      color: '#818992',
+                    }}
+                    buttonStyle={{
+                      backgroundColor: '#2F3441',
+                      borderColor: '#818992',
+                    }}
                     {...field}
                   />
                 </FormControl>
@@ -173,6 +230,7 @@ const UserRegistrationForm = () => {
                     className="bg-[#2F3441] w-full"
                     autoCorrect="off"
                     autoCapitalize="none"
+                    max="2012-12-31"
                     placeholder="Enter your date of birth"
                     invalid={fieldState.invalid}
                     {...field}
@@ -201,7 +259,11 @@ const UserRegistrationForm = () => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="m@example.com">m@example.com</SelectItem>
+                    {where.map((wh) => (
+                      <SelectItem value={wh} key={wh} className="font-gilroyMd">
+                        {wh}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -229,7 +291,20 @@ const UserRegistrationForm = () => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="m@example.com">m@example.com</SelectItem>
+                    {isLoading ? (
+                      'Loading...'
+                    ) : (
+                      <>
+                        {allCourses?.map((course) => (
+                          <SelectItem
+                            value={course?.fields?.title}
+                            className="font-gilroyMd"
+                          >
+                            {course?.fields?.title}
+                          </SelectItem>
+                        ))}
+                      </>
+                    )}
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -237,36 +312,43 @@ const UserRegistrationForm = () => {
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="refCode"
-            render={({ field, fieldState }) => (
-              <FormItem>
-                <FormLabel className="text-[12px]">Reference code</FormLabel>
-                <FormControl>
-                  <Input
-                    autoComplete="none"
-                    className="bg-[#2F3441] text-[12px]"
-                    autoCorrect="off"
-                    autoCapitalize="none"
-                    placeholder="Enter your reference code"
-                    invalid={fieldState.invalid}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          {isChecked && (
+            <FormField
+              control={form.control}
+              name="ref"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel className="text-[12px]">Reference code</FormLabel>
+                  <FormControl>
+                    <Input
+                      autoComplete="none"
+                      className="bg-[#2F3441] text-[12px]"
+                      autoCorrect="off"
+                      autoCapitalize="none"
+                      placeholder="Enter your reference code"
+                      invalid={fieldState.invalid}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
         </div>
 
         <div className="flex items-center space-x-2">
-          <Checkbox id="terms" className="border-white" />
+          <Checkbox
+            id="terms"
+            className="border-white"
+            onCheckedChange={(value) => setIsChecked(value)}
+            defaultChecked
+          />
           <label
             htmlFor="terms"
             className="text-[12px] font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 leading-4 pl-2"
           >
-            If you have a reference code, please enter it below. This code may
+            If you have a reference code, please enter it above. This code may
             have been provided to you by a friend or colleague who referred you
             to TechSkilll Accelerate. Entering a valid reference code may
             entitle you to special offers or discounts.
@@ -274,9 +356,10 @@ const UserRegistrationForm = () => {
         </div>
         <Button
           type="submit"
-          loadingText="Please wait"
+          loadingText="Submitting..."
+          loading={isSubmitting}
           size="lg"
-          className="w-full font-medium bg-yellow text-[#000]"
+          className="w-full font-medium bg-yellow text-[#000] text-sm"
         >
           Proceed to make payment
           <MoveRight className="ml-2" />

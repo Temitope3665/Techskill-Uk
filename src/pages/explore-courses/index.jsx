@@ -2,10 +2,12 @@ import Woman from '@/assets/image/happy-african-in-libary.png';
 import CourseTab from '@/components/courses/course-tab';
 import ReactHelment from '@/components/helmet';
 import { tabData } from '@/config/dataa';
-import { useEffect } from 'react';
+import { CourseContext } from '@/contexts/course-context';
+import { useContext, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const AllCourses = () => {
+  const { allCourses, isLoading } = useContext(CourseContext);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const activeTab = searchParams.get('tab');
@@ -40,7 +42,7 @@ const AllCourses = () => {
           Explore our courses
         </h1>
 
-        <CourseTab tabs={tabData} />
+        <CourseTab tabs={tabData(allCourses)} isLoading={isLoading} />
       </div>
     </div>
   );
