@@ -115,7 +115,7 @@ export const footerData = {
 
  export const tabData = (courses) => [
     { id: '0', title: 'Learn a skill', content: Skills(courses) },
-    { id: '1', title: '1-on-1 online mentoring', content: OnlineMentoring() },
+    { id: '1', title: '1-on-1 online mentoring', content: OnlineMentoring({imageWidth : ''}) },
     { id: '2', title: 'Demo and project', content: DemoDay() },
   ];
 
