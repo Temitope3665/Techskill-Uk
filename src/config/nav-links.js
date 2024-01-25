@@ -15,7 +15,7 @@ import TechQuizIcon from '@/assets/icons/tech-quiz-icon.png';
 import SoftSKillIcon from '@/assets/icons/soft-skill.png';
 import WhoAreWe from '@/assets/icons/who-are-we.png';
 import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL, OFFERINGS_URL } from "./paths";
-import navDropdown from '@/components/nav-dropdown';
+import navDropdown, { coursesNavDropdown } from '@/components/nav-dropdown';
 
 export const coursesDropdownList = [
     {
@@ -125,7 +125,7 @@ export const aboutUsList = [
     },
 ];
 
-const navLinks = [
+const navLinks = (courses) => [
     // {
     //     title: 'Home',
     //     href: HOME_URL,
@@ -135,25 +135,25 @@ const navLinks = [
         title: 'About Us',
         href: "#",
         hasDropdown: true,
-        options: navDropdown(aboutUsList, 'w-[22vw]')
+        options: navDropdown(aboutUsList, 'lg:w-[22vw] w-[85vw]')
     },
     {
         title: 'Courses',
         href: "#",
         hasDropdown: true,
-        options: navDropdown(coursesDropdownList)
+        options: coursesNavDropdown(courses)
     },
     {
         title: 'Offerings',
         href: OFFERINGS_URL,
         hasDropdown: true,
-        options: navDropdown(offeringsDropdownList, 'w-[22vw]')
+        options: navDropdown(offeringsDropdownList, 'lg:w-[22vw] w-[85vw]')
     },
     {
         title: 'Find a talent',
         href: '#',
         hasDropdown: true,
-        options: navDropdown(findTalentList, 'w-[22vw]')
+        options: navDropdown(findTalentList, 'lg:w-[22vw] w-[85vw]')
     },
     {
         title: 'Community',

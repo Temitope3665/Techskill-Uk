@@ -4,9 +4,12 @@ import navLinks from '../config/nav-links';
 import { HOME_URL, REGISTRATION_URL } from '../config/paths';
 import { Button } from './ui/button';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CourseContext } from '@/contexts/course-context';
 
 const Navbar = () => {
+  const { allCourses, isLoading } = useContext(CourseContext);
+
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
 
@@ -25,26 +28,35 @@ const Navbar = () => {
         {show && <X className="lg:hidden" onClick={() => setShow(false)} />}
 
         <nav className="hidden lg:flex justify-between w-[50%] font-gilroyMd">
-          {navLinks.map((nav) => (
-            <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
-              <Link to={nav.href} key={nav.title}>
+          {isLoading ? (
+            'Loading...'
+          ) : (
+            <>
+              {navLinks(allCourses).map((nav) => (
                 <div
-                  className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center pb-3 ${
-                    pathname.includes(nav.href)
-                      ? 'text-white font-gilroyBold'
-                      : 'text-[#818992]'
-                  }`}
+                  key={nav.title}
+                  className={`${nav.hasDropdown && 'group'}`}
                 >
-                  <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>
-                    {nav.title}
-                  </p>
-                  {nav.hasDropdown && <ChevronDown width={14} />}
-                </div>
-              </Link>
+                  <Link to={nav.href} key={nav.title}>
+                    <div
+                      className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center pb-3 ${
+                        pathname.includes(nav.href)
+                          ? 'text-white font-gilroyBold'
+                          : 'text-[#818992]'
+                      }`}
+                    >
+                      <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>
+                        {nav.title}
+                      </p>
+                      {nav.hasDropdown && <ChevronDown width={14} />}
+                    </div>
+                  </Link>
 
-              {nav.hasDropdown && nav.options}
-            </div>
-          ))}
+                  {nav.hasDropdown && nav.options}
+                </div>
+              ))}
+            </>
+          )}
         </nav>
 
         <div className="hidden font-gilroyMd text-sm lg:flex items-center">
@@ -59,23 +71,36 @@ const Navbar = () => {
       {show && (
         <div className="lg:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
           <nav className="justify-between">
-            {navLinks.map((nav) => (
-              <a href={nav.href} key={nav.title}>
-                <div className={`${nav.hasDropdown && 'group'}`}>
+            {isLoading ? (
+              'Loading...'
+            ) : (
+              <div className="w-full">
+                {navLinks(allCourses).map((nav) => (
                   <div
-                    className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
-                      pathname.includes(nav.href)
-                        ? 'text-white'
-                        : 'text-[#818992]'
-                    }`}
                     key={nav.title}
+                    className={`${nav.hasDropdown && 'group'}`}
                   >
-                    {nav.title}
-                    {nav.hasDropdown && <ChevronDown width={14} />}
+                    <a href={nav.href} key={nav.title}>
+                      <div className={`${nav.hasDropdown && 'group'}`}>
+                        <div
+                          className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
+                            pathname.includes(nav.href)
+                              ? 'text-white'
+                              : 'text-[#818992]'
+                          }`}
+                          key={nav.title}
+                        >
+                          {nav.title}
+                          {nav.hasDropdown && <ChevronDown width={14} />}
+                        </div>
+                      </div>
+                    </a>
+
+                    {nav.hasDropdown && nav.options}
                   </div>
-                </div>
-              </a>
-            ))}
+                ))}
+              </div>
+            )}
           </nav>
 
           <Link to={REGISTRATION_URL}>
