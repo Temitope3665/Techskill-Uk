@@ -23,10 +23,10 @@ return (
 
 export default Skills;
 
-export const OnlineMentoring = () => (
-  <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8">
+export const OnlineMentoring = ({ imageWidth }) => (
+  <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8 justify-between">
     <div className='md:40%'>
-      <h1 className='text-[24px] md:text-[55px] font-gilroyBold'>1-on-1 online mentoring</h1>
+      <h1 className='text-[24px] md:text-[45px] font-gilroyBold'>1-on-1 online mentoring</h1>
       <p className='text-grey md:text-base text-[13px] md:w-[80%]'>Accelerate your career triumph through our tailored one-on-one career coaching sessions.</p>
 
       <div className='my-4 md:my-12 md:flex space-y-3 md:space-y-0 block items-center'>
@@ -42,7 +42,7 @@ export const OnlineMentoring = () => (
 
       <Button className="w-full md:w-[40%] md:my-0 my-4">Book a call</Button>
     </div>
-    <img src={Mentoring} alt="online mentoring" className='md:w-[45%]' />
+    <img src={Mentoring} alt="online mentoring" className={`${imageWidth || 'md:w-[45%]'}`} />
   </div>
 );
 
