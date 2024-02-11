@@ -4,6 +4,7 @@ import Mentoring from '@/assets/image/online-mentoring.png';
 import DemoDayImage from '@/assets/image/demo-day.png';
 import { CalendarCheck } from 'lucide-react';
 import { Button } from '../ui/button';
+import BookACall from '../book-a-call';
 
 const Skills = (courses) => {
 return (
@@ -13,7 +14,7 @@ return (
         title={course?.fields?.title}
         image={course?.fields?.image?.fields?.file?.url}
         key={course?.fields?.title}
-        description={course?.fields?.description}
+        description={course?.fields?.shortDescription}
         href={`details/${course?.sys?.id}`}
       />
     ))}
@@ -40,7 +41,7 @@ export const OnlineMentoring = ({ imageWidth }) => (
         </div>
       </div>
 
-      <Button className="w-full md:w-[40%] md:my-0 my-4">Book a call</Button>
+      <BookACall ctaTitle="Book a call" callTitle="Techskill Uk 1-on-1 Mentoring Info" />
     </div>
     <img src={Mentoring} alt="online mentoring" className={`${imageWidth || 'md:w-[45%]'}`} />
   </div>

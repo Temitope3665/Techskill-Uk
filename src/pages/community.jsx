@@ -31,9 +31,6 @@ const Community = () => {
       <div className="bg-primary px-6 lg:px-12 lg:flex justify-between items-center py-6 lg:py-16">
         <div
           className="lg:w-[50%] text-center lg:text-left"
-          data-aos="fade-right"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
         >
           <h1 className="text-[30px] lg:text-[50px] font-gilroyBold leading-[48px] lg:-mt-8">
             Learn from a diverse group of peers
@@ -57,9 +54,6 @@ const Community = () => {
             src={Learning}
             alt="learning from diverse groups"
             className="pb-12"
-            data-aos="fade-left"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
           />
         </div>
       </div>

@@ -12,7 +12,7 @@ import { Input } from '@/components/ui/input';
 import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import { Link } from 'react-router-dom';
-import { EXPLORE_COURSES_URL, REGISTRATION_URL } from '@/config/paths';
+import { EXPLORE_COURSES_URL } from '@/config/paths';
 import { createClient } from 'contentful';
 import { useContext, useEffect, useState } from 'react';
 import Loading from '@/assets/animation/loading.svg';
@@ -32,8 +32,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import axios from 'axios';
+import { headers_, registerEmailApi } from '@/config/api';
+import { toast } from '@/components/ui/use-toast';
 
 const Home = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isValidEmail, setIsValidEmail] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [open, setOpen] = useState(false);
   const [_, setPaymentPlan] = useState('');
   const { allCourses, isLoading } = useContext(CourseContext);
@@ -43,7 +50,49 @@ const Home = () => {
     accessToken: process.env.VITE_REACT_APP_ACCESS_TOKEN,
   });
 
-  console.log(allCourses, '->');
+  const handleChange = (value) => {
+    setEmail(value);
+    // Reset error message when the user types
+    setShowError(false);
+    // Validate email format
+    const isValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+    setIsValidEmail(isValid);
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isValidEmail) {
+      setShowError(true);
+      return;
+    }
+
+      setIsSubmitting(true);
+      axios
+        .post(
+          registerEmailApi,
+          {
+            "fields": {
+              'Emails': email,
+            },
+          },
+          { headers: headers_ }
+        )
+        .then(() => {
+          setEmail('')
+          toast({
+            description: "You've successfully joined our waiting list",
+          });
+        }
+        )
+        .catch(() =>
+          toast({
+            variant: 'destructive',
+            title: 'Uh oh! Something went wrong.',
+            description: 'There was a problem with your request.',
+          })
+        )
+        .finally(() => setIsSubmitting(false));
+  };
 
   useEffect(() => {
     const getAllAssets = async () => {
@@ -177,7 +226,7 @@ const Home = () => {
                   title={course?.fields?.title}
                   image={course?.fields?.image?.fields?.file?.url}
                   key={course?.fields?.title}
-                  description={course?.fields?.description}
+                  description={course?.fields?.shortDescription}
                   href={`explore-courses/details/${course?.sys?.id}`}
                 />
               ))}
@@ -262,14 +311,20 @@ const Home = () => {
           <h1 className="text-[#EFF5FB] text-[18px] md:text-[30px] font-gilroyBold text-center">
             Ready to join a cohort?
           </h1>
+            <form onSubmit={handleSubmit}>
           <div className="flex items-center gap-x-4 mt-4">
-            <Input
-              className="bg-secondary"
-              type="email"
-              placeholder="Enter your email"
-            />
-            <Button size="lg">Join</Button>
+              <Input
+                className="bg-secondary"
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                defaultValue=''
+                onChange={({ target }) => handleChange(target.value)}
+              />
+              <Button size="lg" loading={isSubmitting} loadingText="Joining...">Join</Button>
           </div>
+            </form>
+            {showError && !isValidEmail && <div className='text-[#c34141] text-sm mt-1'>Please enter a valid email address.</div>}
         </div>
       </section>
 

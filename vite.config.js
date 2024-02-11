@@ -5,7 +5,8 @@ import EnvironmentPlugin from "vite-plugin-environment";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), EnvironmentPlugin(["VITE_REACT_APP_ACCESS_TOKEN", "VITE_REACT_APP_SPACE_ID", "VITE_ARITABLE_TOKEN"]),],
+  plugins: [react(), EnvironmentPlugin(["VITE_REACT_APP_ACCESS_TOKEN", "VITE_REACT_APP_SPACE_ID", 
+  "VITE_ARITABLE_TOKEN", "REACT_APP_DISCOVERY_DOCS", "REACT_APP_SCOPES", "REACT_APP_GOOGLE_API_KEY", "REACT_APP_CLIENT_ID"]),],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

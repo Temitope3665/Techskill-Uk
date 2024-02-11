@@ -6,6 +6,7 @@ import VisionIcon from '@/assets/icons/vision-icon.png';
 import JohnOnifade from '@/assets/experts/john-onifade.png';
 import SegunAllen from '@/assets/experts/segun-allen.png';
 import Hannat from '@/assets/experts/hannat.png';
+import { ABOUT_US_URL, FAQ_URL } from './paths';
 
 export const testimonials = [
     {
@@ -32,15 +33,15 @@ export const footerData = {
     company: [
         {
             title: 'About us',
-            href: "#"
+            href: ABOUT_US_URL
         },
         {
             title: 'Courses',
-            href: "#"
+            href: '/explore-courses?tab=0'
         },
         {
             title: 'Offerings',
-            href: "#"
+            href: '/explore-courses?tab=0'
         },
         {
             title: 'Find a Talent',
@@ -48,50 +49,16 @@ export const footerData = {
         },
         {
             title: 'FAQs',
-            href: "#"
+            href: FAQ_URL
         },
-        {
-            title: 'Pricing',
-            href: "#"
-        },
-        {
-            title: 'Reach us',
-            href: "#"
-        },
-    ],
-    courses: [
-        {
-            title: 'Business Analysis',
-            href: "#"
-        },
-        {
-            title: 'Product Management',
-            href: "#"
-        },
-        {
-            title: 'Product Design',
-            href: "#"
-        },
-        {
-            title: 'Agile Project Management',
-            href: "#"
-        },
-        {
-            title: 'Cybersecurity',
-            href: "#"
-        },
-        {
-            title: 'Data Analysis',
-            href: "#"
-        },
-        {
-            title: 'Digital Marketing',
-            href: "#"
-        },
-        {
-            title: 'IT Supoort',
-            href: "#"
-        },
+        // {
+        //     title: 'Pricing',
+        //     href: "#"
+        // },
+        // {
+        //     title: 'Reach us',
+        //     href: "#"
+        // },
     ],
     contact: [
         {
