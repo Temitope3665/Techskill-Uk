@@ -25,7 +25,6 @@ const navDropdown = (lists, w) => {
 export default navDropdown;
 
 export const coursesNavDropdown = (lists, w) => {
-  console.log(lists)
   return (
     <div
       className={`rounded-lg bg-secondary border-grey border-[0.5px] p-2 cursor-pointer absolute hidden group-hover:block z-10 ${

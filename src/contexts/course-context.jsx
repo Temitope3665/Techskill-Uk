@@ -21,7 +21,6 @@ export const CourseProvider = ({ children }) => {
         setAllCourses(courses.items);
         setIsLoading(false)
       } catch (error) {
-        console.log(error);
         toast({
           variant: "destructive",
           title: "Uh oh! Something went wrong.",

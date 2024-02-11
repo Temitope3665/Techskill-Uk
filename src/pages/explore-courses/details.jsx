@@ -25,11 +25,9 @@ const CourseDetails = () => {
     const getCourseById = async () => {
       try {
         const currentCourse = await client.getEntry(slug);
-        console.log(currentCourse);
         setCourse(currentCourse?.fields);
         setIsLoading(false)
       } catch (error) {
-        console.log(error);
         toast({
           variant: "destructive",
           title: "Uh oh! Something went wrong.",
@@ -42,7 +40,6 @@ const CourseDetails = () => {
     getCourseById();
   }, []);
 
-  console.log(course, '-?');
   return (
     <>
     {isLoading ? <div className='w-full flex justify-center'><img src={Loading} alt="loading" /></div>  : (

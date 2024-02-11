@@ -1,5 +1,4 @@
 import OurOfferings from '@/assets/image/offerings.png';
-import { Button } from '@/components/ui/button';
 import { useEffect, useRef, useState } from 'react';
 import Star2 from '@/assets/image/stars-2.png';
 import JobSupport from '@/assets/image/job-supporting.png';
@@ -9,6 +8,7 @@ import OurCourses from '@/components/courses/our-courses';
 import { courses } from '@/config/courses';
 import Footer from '@/components/footer';
 import { useLocation } from 'react-router-dom';
+import BookACall from '@/components/book-a-call';
 
 const Offerings = () => {
   const scrollContainerRef = useRef(null);
@@ -41,7 +41,11 @@ const Offerings = () => {
     if (location.hash) {
       const targetElement = document.querySelector(location.hash);
       if (targetElement) {
-        targetElement.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'instant' });
+        targetElement.scrollIntoView({
+          block: 'start',
+          inline: 'nearest',
+          behavior: 'instant',
+        });
       }
     }
   }, [location.hash]);
@@ -58,9 +62,7 @@ const Offerings = () => {
               ? Book a call with our learning advisor today! Get personalised
               guidance, choose the perfect tech program and enrol confidently
             </p>
-            <Button size="lg" className="lg:w-[80%] mt-6 w-full">
-              Book a call
-            </Button>
+            <BookACall ctaTitle="Book a call" callTitle="Techskill Uk Offerings" />
           </div>
           <div className="lg:w-[35%] mt-8 lg:mt-0">
             <img src={OurOfferings} alt="humans learning on their laptop" />
@@ -147,9 +149,7 @@ const Offerings = () => {
               ? Book a call with our learning advisor today! Get personalised
               guidance, choose the perfect tech program and enrol confidently
             </p>
-            <Button size="lg" className="lg:w-[50%] w-full mt-6">
-              Book consultation
-            </Button>
+            <BookACall ctaTitle="Book consultation" callTitle="Global Talent Visa With Techskill Uk" />
           </div>
           <div className="lg:w-[35%] hidden lg:block h-[500px]">
             <img src={GlobalTalent} alt="global talent" className="h-full" />
@@ -181,9 +181,8 @@ const Offerings = () => {
             Book a call with our learning advisor today! Get personalised
             guidance, choose the perfect tech program and enrol confidently
           </p>
-          <Button size="lg" className="lg:w-[40%] w-full mt-6">
-            Learn more
-          </Button>
+
+          <BookACall ctaTitle="Learn more" callTitle="Learn more about Techskill Uk Job Support" />
         </div>
       </div>
 
