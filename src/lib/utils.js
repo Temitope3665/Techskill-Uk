@@ -30,10 +30,33 @@ export const handleClick = (event, setBooked) => {
       var request = gapi.client.calendar.events.insert({
         'calendarId': 'primary',
         'resource': event,
+        calendarId: 'primary',
+        sendNotifications: true,
+        conferenceDataVersion: 1,
+        eventId: 'ft5op4im1aqfidi222b7462jks_20240215T130000Z'
       })
 
       request.execute(event => {
-        window.open(event.htmlLink)
+        console.log(event, '-> event');
+        // window.open(event.htmlLink)
+
+        // const eventPatch = {
+        //   conferenceData: {
+        //     createRequest: { requestId: "7qxalsvy0e" }
+        //   }
+        // };
+
+        // gapi.client.calendar.events
+        // .patch({
+        //   calendarId: 'primary',
+        //   eventId: event.id + "_" + new Date(event.start.dateTime).toISOString().replace(/[:-]/g, "").replace(".000Z", "Z"), // id + startdate.toISOString()
+        //   resource: eventPatch,
+        //   sendNotifications: true,
+        //   conferenceDataVersion: 1
+        // })
+        // .execute(function(event) {
+        //   console.log("Conference created for event: %s", event);
+        // });
       })
       setBooked(true);
       
