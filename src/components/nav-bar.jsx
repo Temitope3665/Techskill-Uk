@@ -29,7 +29,7 @@ const Navbar = () => {
 
         <nav className="hidden lg:flex justify-between w-[50%] font-gilroyMd">
           {isLoading ? (
-            'Loading...'
+            ''
           ) : (
             <>
               {navLinks(allCourses).map((nav) => (
