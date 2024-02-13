@@ -44,6 +44,14 @@ const BookACall = ({ ctaTitle, callTitle }) => {
       dateTime: endDateTime,
       timeZone: 'Europe/London',
     },
+    conferenceData: {
+      createRequest: {
+        requestId: '399xhjd902',
+        conferenceSolutionKey: {
+          type: 'hangoutsMeet',
+        },
+      },
+    },
     attendees: [{ email: 'tope@techskill.uk' }],
     reminders: {
       useDefault: false,
@@ -125,10 +133,18 @@ const BookACall = ({ ctaTitle, callTitle }) => {
             </div>
           </div>
         ) : (
-          <div className='w-full text-center flex justify-center text-primary'>
-            <div className='w-full'>
-              <img src={SuccessIcon} alt="success" width={100} height={100} className='mx-auto' />
-              <h1 className='text-[24px] mt-4 font-gilroyBold'>Successfully booked</h1>
+          <div className="w-full text-center flex justify-center text-primary">
+            <div className="w-full">
+              <img
+                src={SuccessIcon}
+                alt="success"
+                width={100}
+                height={100}
+                className="mx-auto"
+              />
+              <h1 className="text-[24px] mt-4 font-gilroyBold">
+                Successfully booked
+              </h1>
               <p>Event has been added to your calendar</p>
             </div>
           </div>
@@ -138,7 +154,10 @@ const BookACall = ({ ctaTitle, callTitle }) => {
           {!isBooked ? (
             <>
               <Button
-                onClick={() => {setOpen(false); setBooked(false)}}
+                onClick={() => {
+                  setOpen(false);
+                  setBooked(false);
+                }}
                 variant="outline"
                 className="border border-primary text-primary"
               >
@@ -154,7 +173,10 @@ const BookACall = ({ ctaTitle, callTitle }) => {
             </>
           ) : (
             <Button
-              onClick={() => { setOpen(false); setBooked(false)}}
+              onClick={() => {
+                setOpen(false);
+                setBooked(false);
+              }}
               variant="outline"
               className="border border-primary text-primary"
             >

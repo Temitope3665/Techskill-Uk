@@ -4,9 +4,12 @@ import Mentoring from '@/assets/image/online-mentoring.png';
 import DemoDayImage from '@/assets/image/demo-day.png';
 import { CalendarCheck } from 'lucide-react';
 import { Button } from '../ui/button';
-import BookACall from '../book-a-call';
+import { PopupButton, useCalendlyEventListener } from 'react-calendly';
 
 const Skills = (courses) => {
+  useCalendlyEventListener({
+    onEventScheduled: (e) => console.log(e.data.payload),
+  });
 return (
   <div className="grid md:grid-cols-3 gap-5 md:gap-10 mt-7 md:mt-14">
     {courses?.map((course) => (
@@ -40,14 +43,24 @@ export const OnlineMentoring = ({ imageWidth }) => (
           <p className='px-2 md:text-base text-[12px]'>4 Days (1 hr each)</p>
         </div>
       </div>
-
-      <BookACall ctaTitle="Book a call" callTitle="Techskill Uk 1-on-1 Mentoring Info" />
+      <Button size="lg" className="lg:w-[50%] w-full mt-6">
+              <PopupButton
+                url={`${process.env.REACT_CALENDLY_URL}`}
+                rootElement={document.getElementById('root')}
+                text="Book a call"
+                styles={{ width: '100%', height: '100%' }}
+              />
+            </Button>
     </div>
     <img src={Mentoring} alt="online mentoring" className={`${imageWidth || 'md:w-[45%]'}`} />
   </div>
 );
 
-export const DemoDay = () => (
+export const DemoDay = () => {
+  useCalendlyEventListener({
+    onEventScheduled: (e) => console.log(e.data.payload),
+  });
+return (
   <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8">
     <div className='md:40%'>
       <h1 className='text-[24px] md:text-[55px] font-gilroyBold'>Demo day</h1>
@@ -64,8 +77,16 @@ export const DemoDay = () => (
         </div>
       </div>
 
-      <Button className="w-full md:w-[40%] md:my-0 my-4">Join meeting</Button>
+      <Button size="lg" className="lg:w-[50%] w-full mt-6">
+              <PopupButton
+                url={`${process.env.REACT_CALENDLY_URL}`}
+                rootElement={document.getElementById('root')}
+                text="Join meeting"
+                styles={{ width: '100%', height: '100%' }}
+              />
+            </Button>
     </div>
     <img src={DemoDayImage} alt="professional lady working" className='md:w-[45%]' />
   </div>
 );
+};

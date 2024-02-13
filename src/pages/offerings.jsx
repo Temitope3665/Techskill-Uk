@@ -1,5 +1,5 @@
 import OurOfferings from '@/assets/image/offerings.png';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Star2 from '@/assets/image/stars-2.png';
 import JobSupport from '@/assets/image/job-supporting.png';
 import GlobalTalent from '@/assets/image/global-talent.png';
@@ -8,9 +8,12 @@ import OurCourses from '@/components/courses/our-courses';
 import { courses } from '@/config/courses';
 import Footer from '@/components/footer';
 import { useLocation } from 'react-router-dom';
-import BookACall from '@/components/book-a-call';
+import { PopupButton, useCalendlyEventListener } from 'react-calendly';
+import { Button } from '@/components/ui/button';
+import { CourseContext } from '@/contexts/course-context';
 
 const Offerings = () => {
+  const { allCourses, isLoading } = useContext(CourseContext);
   const scrollContainerRef = useRef(null);
   const [scrollLeft, setScrollLeft] = useState(0);
 
@@ -35,6 +38,10 @@ const Offerings = () => {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const location = useLocation();
+
+  useCalendlyEventListener({
+    onEventScheduled: (e) => console.log(e.data.payload),
+  });
 
   useEffect(() => {
     // Check if there is a hash in the URL
@@ -62,7 +69,18 @@ const Offerings = () => {
               ? Book a call with our learning advisor today! Get personalised
               guidance, choose the perfect tech program and enrol confidently
             </p>
-            <BookACall ctaTitle="Book a call" callTitle="Techskill Uk Offerings" />
+            <Button size="lg" className="lg:w-[50%] w-full mt-6">
+              <PopupButton
+                url={`${process.env.REACT_CALENDLY_URL}`}
+                rootElement={document.getElementById('root')}
+                text="Book a call"
+                styles={{ width: '100%', height: '100%' }}
+              />
+            </Button>
+            {/* <BookACall
+              ctaTitle="Book a call"
+              callTitle="Techskill Uk Offerings"
+            /> */}
           </div>
           <div className="lg:w-[35%] mt-8 lg:mt-0">
             <img src={OurOfferings} alt="humans learning on their laptop" />
@@ -107,15 +125,24 @@ const Offerings = () => {
             ref={scrollContainerRef}
             onScroll={handleScroll}
           >
-            {courses.map((course) => (
-              <OurCourses
-                title={course.title}
-                image={course.image}
-                key={course.title}
-                description={course.desc}
-                className="lg:w-[300px] my-6 lg:my-0"
-              />
-            ))}
+            <>
+              {isLoading ? (
+                ''
+              ) : (
+                <>
+                  {allCourses?.map((course) => (
+                    <OurCourses
+                      title={course?.fields?.title}
+                      image={course?.fields?.image?.fields?.file?.url}
+                      key={course?.fields?.title}
+                      description={course?.fields?.shortDescription}
+                      href={`details/${course?.sys?.id}`}
+                      className="lg:w-[300px] my-6 lg:my-0"
+                    />
+                  ))}
+                </>
+              )}
+            </>
           </div>
           <ChevronRightCircle
             className={`text-yellow lg:flex hidden ${
@@ -149,7 +176,15 @@ const Offerings = () => {
               ? Book a call with our learning advisor today! Get personalised
               guidance, choose the perfect tech program and enrol confidently
             </p>
-            <BookACall ctaTitle="Book consultation" callTitle="Global Talent Visa With Techskill Uk" />
+
+            <Button size="lg" className="lg:w-[50%] w-full mt-6">
+              <PopupButton
+                url={`${process.env.REACT_CALENDLY_URL}`}
+                rootElement={document.getElementById('root')}
+                text="Book consultation"
+                styles={{ width: '100%', height: '100%' }}
+              />
+            </Button>
           </div>
           <div className="lg:w-[35%] hidden lg:block h-[500px]">
             <img src={GlobalTalent} alt="global talent" className="h-full" />
@@ -182,7 +217,14 @@ const Offerings = () => {
             guidance, choose the perfect tech program and enrol confidently
           </p>
 
-          <BookACall ctaTitle="Learn more" callTitle="Learn more about Techskill Uk Job Support" />
+          <Button size="lg" className="lg:w-[50%] w-full mt-6">
+            <PopupButton
+              url={`${process.env.REACT_CALENDLY_URL}`}
+              rootElement={document.getElementById('root')}
+              text="Learn more"
+              styles={{ width: '100%', height: '100%' }}
+            />
+          </Button>
         </div>
       </div>
 
