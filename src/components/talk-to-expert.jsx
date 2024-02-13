@@ -1,6 +1,7 @@
 import { PhoneIncoming } from "lucide-react";
 import { Button } from "./ui/button";
 import Stars from "@/assets/icons/stars.png"
+import { PopupButton } from "react-calendly";
 
 const TalkToExpert = () => {
     return (
@@ -12,7 +13,15 @@ const TalkToExpert = () => {
                 with our  learning advisor today! Get personalised guidance,  choose the 
                 perfect tech program and enrol confidently</p>
 
-                <Button className="font-bold text-[20px] h-[50px] md:w-[25vw] hover:bg-white mt-8 bg-white">Book a free call <PhoneIncoming className="ml-4" size={16} /></Button>
+                <Button className="font-bold text-[20px] h-[50px] md:w-[25vw] hover:bg-white mt-8 bg-white">
+                    <PopupButton
+                        url={`${process.env.REACT_CALENDLY_URL}`}
+                        rootElement={document.getElementById('root')}
+                        text={<div className="flex items-center justify-center">Book a free call <PhoneIncoming className="ml-4" size={16} /></div>}
+                        styles={{ width: '100%', height: '100%' }}
+                    />
+                    
+                </Button>
             </div>
         </div>
     )
