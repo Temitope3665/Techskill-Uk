@@ -14,7 +14,7 @@ import HumanIcon from '@/assets/icons/human-icon.png';
 import TechQuizIcon from '@/assets/icons/tech-quiz-icon.png';
 import SoftSKillIcon from '@/assets/icons/soft-skill.png';
 import WhoAreWe from '@/assets/icons/who-are-we.png';
-import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL, OFFERINGS_URL } from "./paths";
+import { ABOUT_US_URL, COMMUNITY_URL, EXPLORE_COURSES_URL, FAQ_URL, HIRE_ALUMNI_URL, OFFERINGS_URL } from "./paths";
 import navDropdown, { coursesNavDropdown } from '@/components/nav-dropdown';
 
 export const coursesDropdownList = [
@@ -99,19 +99,19 @@ export const findTalentList = [
     {
         icon: HumanIcon,
         title: 'Hire an Alumni',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
-        href: '#'
+        desc: 'Meet and chat with our alumni',
+        href: HIRE_ALUMNI_URL
     },
     {
         icon: TechQuizIcon,
         title: 'Tech Quiz',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
+        desc: 'Coming soon',
         href: '#'
     },
     {
         icon: SoftSKillIcon,
         title: 'Soft skill',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
+        desc: 'Coming soon',
         href: '#'
     },
 ];
@@ -151,7 +151,7 @@ const navLinks = (courses) => [
     },
     {
         title: 'Find a talent',
-        href: '#',
+        href: HIRE_ALUMNI_URL,
         hasDropdown: true,
         options: navDropdown(findTalentList, 'lg:w-[22vw] w-[85vw]')
     },

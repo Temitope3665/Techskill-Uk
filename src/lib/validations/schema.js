@@ -9,3 +9,9 @@ export const userRegisterSchema = yup.object({
   dob: yup.string().required('Date of birth is required'),
   interestedCourse: yup.string().required('Interested course is required'),
 });
+
+export const contactUsSchema = yup.object({
+  Name: yup.string().min(2, 'Full name must be at least two letter').required('Full name is required'),
+  Email: yup.string().required('Email is required'),
+  Reasons: yup.string().required('Question is required'),
+});

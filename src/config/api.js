@@ -1,4 +1,5 @@
 export const registerUserApi = "https://api.airtable.com/v0/appyVoGshoAmlEEOg/Users";
+export const contactUsApi = "https://api.airtable.com/v0/appyVoGshoAmlEEOg/ContactUs";
 export const registerEmailApi = "https://api.airtable.com/v0/appyVoGshoAmlEEOg/Emails";
 
 export const headers_ = {
