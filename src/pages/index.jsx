@@ -35,6 +35,7 @@ import {
 import axios from 'axios';
 import { headers_, registerEmailApi } from '@/config/api';
 import { toast } from '@/components/ui/use-toast';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 const Home = () => {
   const [email, setEmail] = useState('');
@@ -328,17 +329,17 @@ const Home = () => {
         </div>
       </section>
 
-      <AlertDialog onOpenChange={setOpen} open={open} defaultOpen={true}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle className="text-black font-gilroyBold">
+      <Dialog onOpenChange={setOpen} open={open}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-black font-gilroyBold">
               Choose Payment Plan
-            </AlertDialogTitle>
-            <AlertDialogDescription>
+            </DialogTitle>
+            <DialogDescription>
               You have the option of paying now for a discount or paying in
               installments.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
+            </DialogDescription>
+          </DialogHeader>
           <div>
             <Select
               onValueChange={(value) => setPaymentPlan(value)}
@@ -360,8 +361,8 @@ const Home = () => {
               Make payment
             </Button>
           </Link>
-        </AlertDialogContent>
-      </AlertDialog>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>

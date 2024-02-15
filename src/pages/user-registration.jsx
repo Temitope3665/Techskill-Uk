@@ -1,6 +1,6 @@
 import UserRegisterImage from '@/assets/image/register-image.png';
 import ArrowLeftRight from '@/assets/image/arrow-left-right.png';
-import UserRegistrationForm from '@/components/user-register-form';
+import UserRegistrationForm from '@/components/forms/user-register-form';
 
 const UserRegistration = () => {
   return (
@@ -17,13 +17,13 @@ const UserRegistration = () => {
           </h1>
         </div>
         <div className="lg:w-[70%]">
-          <h1 className='text-[25px] lg:hidden flex'>Registeration Form</h1>
-          <div className='rounded-tr-lg rounded-tl-lg w-full px-4 pt-2 -pb-3 bg-[#242832] mt-6 lg:hidden'>
-            <p className='text-yellow text-sm'>Step 1</p>
-            <img src={ArrowLeftRight} alt="direction" className='py-2' />
+          <h1 className="text-[25px] lg:hidden flex">Registeration Form</h1>
+          <div className="rounded-tr-lg rounded-tl-lg w-full px-4 pt-2 -pb-3 bg-[#242832] mt-6 lg:hidden">
+            <p className="text-yellow text-sm">Step 1</p>
+            <img src={ArrowLeftRight} alt="direction" className="py-2" />
           </div>
 
-          <div className='rounded-br-lg rounded-bl-lg w-full px-4 py-2 bg-[#242832] mt-2'>
+          <div className="rounded-br-lg rounded-bl-lg w-full px-4 py-2 bg-[#242832] mt-2">
             <UserRegistrationForm />
           </div>
         </div>

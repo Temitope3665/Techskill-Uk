@@ -6,6 +6,7 @@ import ReactHelment from '@/components/helmet';
 import JoinOurCommunity from '@/components/join-community';
 import { Button } from '@/components/ui/button';
 import { CalendarCheck, MoveRight, TimerIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Community = () => {
   return (
@@ -17,11 +18,14 @@ const Community = () => {
             Join the Techskill community
           </h1>
           <div className="h-1 w-[30%] bg-yellow -mt-3 hidden lg:flex" />
-          <p className="lg:mt-6 lg:w-[80%] text-base text-grey">
-            Ready to take a step in you tech career but unsure where to begin ?
-            Book a call with our learning advisor today! Get personalised
-            guidance, choose the perfect tech program and enrol confidently
-          </p>
+            <p className="lg:mt-6 lg:w-[80%] text-base text-grey">
+              Ready to take a step in you tech career but unsure where to begin ?
+              Book a call with our learning advisor today! Get personalised
+              guidance, choose the perfect tech program and enrol confidently.
+            </p>
+            <Link to="https://join.slack.com/t/techskilluk/shared_invite/zt-2cqhiufbo-8Mb0rMywpW4ay8MNqT~UZg" target='_blank'>
+              <Button className="px-20 mt-6">Join our community</Button>
+            </Link>
         </div>
         <div className="lg:w-[45%] mt-8 lg:mt-0 ml-6 lg:ml-0">
           <img src={Connect} alt="connect tech leaders" />
@@ -37,15 +41,14 @@ const Community = () => {
           </h1>
           <div className="lg:w-[90%] mt-2 lg:mt-8">
             <p className="text-[18px] text-grey">
-              Ready to take a step in you tech career but unsure where to begin
-              ? Book a call with our learning advisor today! Get personalised
+              Ready to take a step in you tech career but unsure where to begin?
+               Book a call with our learning advisor today! Get personalised
               guidance, choose the perfect tech program and enrol confidently
             </p>
-            <p className="text-grey mt-8">
-              Ready to take a step in you tech career but unsure where to begin
-              ? Book a call with our learning advisor today! Get personalised
-              guidance, choose the perfect tech program and enrol confidently
-            </p>
+
+            <Link to="https://join.slack.com/t/techskilluk/shared_invite/zt-2cqhiufbo-8Mb0rMywpW4ay8MNqT~UZg" target='_blank'>
+              <Button className="px-20 mt-6">Join our community</Button>
+            </Link>
           </div>
         </div>
 
