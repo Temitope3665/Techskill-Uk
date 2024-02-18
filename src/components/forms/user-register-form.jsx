@@ -181,7 +181,7 @@ const UserRegistrationForm = () => {
                   <FormControl>
                     <PhoneInput
                       specialLabel={''}
-                      country={'ng'}
+                      country={'gbp'}
                       inputStyle={{
                         backgroundColor: '#2F3441',
                         width: '100%',
@@ -314,7 +314,7 @@ const UserRegistrationForm = () => {
                         <>
                           {allCourses?.map((course) => (
                             <SelectItem
-                              value={course?.fields?.title}
+                              value={course?.fields?.id}
                               className="font-gilroyMd"
                             >
                               {course?.fields?.title}

@@ -21,7 +21,7 @@ const HireAlumni = () => {
       </div>
 
       <div className='grid grid-cols-4 mt-6 gap-4'>
-        <div className='border border-[#818992] p-2 rounded-lg w-full'>
+        <div className='border border-[#818992] p-4 rounded-lg w-full'>
             <div className='h-[200px] w-full rounded-lg'> 
                 <img src={Woman} alt="young girl expert" className='h-full w-full object-cover rounded-lg' />
             </div>
