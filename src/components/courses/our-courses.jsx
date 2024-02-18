@@ -6,7 +6,7 @@ const OurCourses = ({ className, image, title, description, href }) => {
   return (
     <div>
       <div className={cn(className, 'border border-yellow bg-primary rounded-[14px] md:rounded-[18px] p-3 md:min-h-[260px]')}>
-        <img src={image} alt={title} />
+        <img src={image} alt={title} className='h-[300px] object-cover w-full' />
         <h3 className="text-[18px] font-gilroyBold md:text-[22px] pt-3 h-[50px]">
           {title}
         </h3>

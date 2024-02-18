@@ -74,8 +74,8 @@ const UserRegistrationForm = () => {
             Address: data.address,
             'Date of Birth': data.dob,
             'How did you hear about us': data.howYouAboutUs,
-            'Selected Course': data.interestedCourse,
-            'Course Id': slug === ':slug' ? '' : slug,
+            'Selected Course': data.interestedCourse || slug,
+            'Course Id': slug || '',
             'Reference Code': data.ref,
           },
         },
@@ -181,7 +181,7 @@ const UserRegistrationForm = () => {
                   <FormControl>
                     <PhoneInput
                       specialLabel={''}
-                      country={'gbp'}
+                      country={'gb'}
                       inputStyle={{
                         backgroundColor: '#2F3441',
                         width: '100%',
@@ -314,7 +314,7 @@ const UserRegistrationForm = () => {
                         <>
                           {allCourses?.map((course) => (
                             <SelectItem
-                              value={course?.fields?.id}
+                              value={course?.fields?.title}
                               className="font-gilroyMd"
                             >
                               {course?.fields?.title}

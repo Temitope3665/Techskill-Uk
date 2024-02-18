@@ -149,7 +149,7 @@ export const availableTime = [
 
 // format date filter
 export const formatDate = (date) => {
-  return date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+  return date && date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
 };
 
 export function formatDateToISO(dateString) {
@@ -157,3 +157,31 @@ export function formatDateToISO(dateString) {
   const nextDay = addDays(date, 1);
   return format(nextDay, 'yyyy-MM-dd');
 }
+
+export function formatDatee(dateString) {
+  const date = new Date(dateString);
+  const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
+}
+
+export function convertToWAT(dateTimeString) {
+  // Parse the date-time string
+  const dateTime = new Date(dateTimeString);
+  
+  // Adjust the time to WAT time zone (add 10 hours)
+  dateTime.setHours(dateTime.getHours() + 10);
+  
+  // Format the time component
+  const time = dateTime.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: false // Use 24-hour format
+  });
+  
+  return `${time} WAT`;
+}
+
+// // Example usage:
+// const dateTimeString = "2024-03-21T05:00-10:00";
+// const watTime = convertToWAT(dateTimeString);
+// console.log(watTime); // Output: "5:00 WAT"

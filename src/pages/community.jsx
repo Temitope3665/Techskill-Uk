@@ -5,10 +5,15 @@ import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import JoinOurCommunity from '@/components/join-community';
 import { Button } from '@/components/ui/button';
+import { CourseContext } from '@/contexts/course-context';
+import { convertToWAT, formatDate, formatDatee } from '@/lib/utils';
 import { CalendarCheck, MoveRight, TimerIcon } from 'lucide-react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 const Community = () => {
+    const { events, loadingEvents } = useContext(CourseContext);
+    console.log(events, '-> event');
   return (
     <div className="py-8">
       <ReactHelment title="Our Community" />
@@ -23,7 +28,7 @@ const Community = () => {
               Book a call with our learning advisor today! Get personalised
               guidance, choose the perfect tech program and enrol confidently.
             </p>
-            <Link to="https://join.slack.com/t/techskilluk/shared_invite/zt-2cqhiufbo-8Mb0rMywpW4ay8MNqT~UZg" target='_blank'>
+            <Link to={`${process.env.REACT_SLACK_URL}`} target='_blank'>
               <Button className="px-20 mt-6">Join our community</Button>
             </Link>
         </div>
@@ -46,7 +51,7 @@ const Community = () => {
               guidance, choose the perfect tech program and enrol confidently
             </p>
 
-            <Link to="https://join.slack.com/t/techskilluk/shared_invite/zt-2cqhiufbo-8Mb0rMywpW4ay8MNqT~UZg" target='_blank'>
+            <Link to={`${process.env.REACT_SLACK_URL}`} target='_blank'>
               <Button className="px-20 mt-6">Join our community</Button>
             </Link>
           </div>
@@ -72,7 +77,7 @@ const Community = () => {
             <img src={Twitter} alt="twitter space" className='h-[450px]' />
           </div>
 
-          <div className="lg:w-[50%] mt-8 lg:mt-0">
+          <div className="lg:w-[55%] mt-8 lg:mt-0">
             <h2 className="text-[24px] lg:text-[40px] text-grey font-gilroyBold">
               Join us on X Space{' '}
               <span className="text-yellow">@techskilluk</span>
@@ -80,29 +85,31 @@ const Community = () => {
             <div className="border border-grey rounded-xl lg:w-[90%] p-6 mt-2">
               <p>Topic:</p>
               <h2 className="text-[18px] lg:text-[30px] font-gilroyHeavy py-4 lg:py-0">
-                Things You Should Know Before Becoming a Tech Bro/Sis
+                {events?.fields?.topic}
               </h2>
 
               <div className="md:my-6 md:flex space-y-3 md:space-y-0 block items-center">
                 <div className="border border-grey flex items-center rounded-[24px] p-2">
                   <CalendarCheck size={20} className="pl-1" color="#818992" />
                   <p className="px-2 md:text-sm text-[12px]">
-                    Tuesday, 21st March, 2024
+                    {formatDatee(events?.fields?.timeAndDate)}
                   </p>
                 </div>
                 <div className="w-[0.5px] bg-grey h-8 mx-3 hidden md:flex" />
                 <div className="border border-grey flex items-center rounded-[24px] p-2">
                   <TimerIcon size={20} className="pl-1" color="#818992" />
                   <p className="px-2 md:text-sm text-[12px]">
-                    5:00PM WAT | 10: 00 UTC
+                    {events?.fields?.timewat} WAT | {events?.fields?.timeukTime} UTC+01:00
                   </p>
                 </div>
               </div>
 
-              <Button className="w-full md:my-2 mt-6 lg:mt-4 flex items-center">
-                Join X Space
-                <MoveRight className="ml-2" />
-              </Button>
+              <Link to={events?.fields?.url} target='_blank'>
+                <Button className="w-full md:my-2 mt-6 lg:mt-4 flex items-center">
+                  Join X Space
+                  <MoveRight className="ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
