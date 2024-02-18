@@ -252,7 +252,7 @@ const CourseDetails = () => {
             Benefits
             </h1>
   <p className='font-gilroyMd'>Our {course?.benefits?.objectives?.length} benefits will give you the confidence to ace a real one</p>
-  <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10'>
+  <div className='grid grid-cols-1 lg:grid-cols-4 gap-10 mt-10'>
             {course?.benefits?.objectives?.map((benefit) => (
               <div key={benefit.title} className="text-sm border-white border-[0.5px] rounded-lg p-4">
                   <img src={BenefitsArch} alt="benefits point" width={20} />
@@ -276,9 +276,9 @@ const CourseDetails = () => {
           <p className='font-gilroyMd lg:w-[50%] text-sm lg:text-base'>With our flexible pricing plans, we’ve made it easier for you to pay for the course. You have the option of paying now for a discount or paying in installments</p>
           <div className='grid lg:grid-cols-2 gap-8 mt-10'>
             <Pricing description="Get the best deal by 
-          paying upfront" description2="save 80% by paying instalmentally" title="Upfront" price="250" href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
+          paying upfront" description2="save 80% by paying instalmentally" title="Upfront" price={course?.upfrontPrice} href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
             <Pricing description="Get the best deal by 
-          paying upfront" description2="save 80% by paying instalmentally" title="Pay full" price="600" href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
+          paying upfront" description2="save 80% by paying instalmentally" title="Pay full" price={course?.fullPrice} href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
 
           </div>
           </div>
@@ -292,7 +292,7 @@ const CourseDetails = () => {
             </h1>
           <div className={`grid grid-cols-${course?.linkToToolsToLearn?.links?.length} gap-8 mt-10`}>
             {course?.linkToToolsToLearn?.links?.map((link) => (
-              <div className='bg-secondary px-3 py-8 rounded-lg flex justify-center items-center'>
+              <div className='bg-white px-3 py-8 rounded-lg flex justify-center items-center'>
                 <img src={link} alt={link} width={200} />
               </div>
               ))}

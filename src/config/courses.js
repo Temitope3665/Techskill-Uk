@@ -66,12 +66,12 @@ export const why = [
     {
         icon: Skills,
         title: 'Immersive Skill Training',
-        description: 'Transition into in-demand tech skills worth our course offerings: Business Analysis, AI Technology, Product Management, Agile Project Management, Product Design, Data Analysis and Cybersecurity. Develop a strong foundation for a successful career in the industry.'
+        description: 'Transition into in-demand tech skills with our course offerings. Business Analysis, Product Management, Agile Project Management, Product Design, Data Analysis, and Cybersecurity. Develop a strong foundation for a successful career in the industry'
     },
     {
         icon: Portfolio,
         title: 'Portfolio development',
-        description: 'Project development build your tech knowledge when you work with cross-functional teams on real time projects and hands-on practicals to improve your experience and accelerate confidently into the tech world.'
+        description: 'Experience accelerated growth in the tech world through our project development programme. Collaborate with cross-functional teams on real-time projects and engage in hands-on practicals to enhance your skills and accelerate confidently into the tech world'
     },
     {
         icon: Mentorship,
@@ -81,7 +81,7 @@ export const why = [
     {
         icon: CareerSupport,
         title: 'Career support',
-        description: 'Begin your success in the tech world with our job support services, referencing and other resources. Get your profile optimized for increase reach, a curriculum vitae that projects your experience and experts that assist in tailored adverts.'
+        description: 'Begin your success in the tech world with our job support services, referencing and other resources. Get your profile optimised for increased reach, a curriculum vitae that projects your experience and experts that assist in tailored adverts.'
     }
 ];
 

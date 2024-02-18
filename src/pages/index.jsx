@@ -12,18 +12,11 @@ import { Input } from '@/components/ui/input';
 import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import { Link } from 'react-router-dom';
-import { EXPLORE_COURSES_URL } from '@/config/paths';
+import { ABOUT_US_URL, EXPLORE_COURSES_URL } from '@/config/paths';
 import { createClient } from 'contentful';
 import { useContext, useEffect, useState } from 'react';
 import Loading from '@/assets/animation/loading.svg';
 import { CourseContext } from '@/contexts/course-context';
-import {
-  AlertDialog,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
 import {
   Select,
   SelectContent,
@@ -116,8 +109,8 @@ const Home = () => {
     <div>
       <ReactHelment title="Accelerate your career today" />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
-        <div className="md:pl-8 mt-8 text-center md:text-left">
-          <h1 className="font-gilroyBold text-[35px] leading-[1.5] md:text-[55px]">
+        <div className="md:pl-8 mt-8 text-center md:text-left capitalize">
+          <h1 className="font-gilroyBold text-[35px] leading-[1.3] md:text-[55px]">
             <span className="text-yellow">
               {banner.title.split(' ')[0] || 'Accelerate'}
             </span>{' '}
@@ -155,7 +148,7 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <h1 className="text-[#EFF5FB] text-[35px] md:text-[60px] font-gilroyBold">
-            What define us
+            What defines us
           </h1>
           <p className="text-base text-grey font-gilroyMd -mt-2 px-12 md:px-0">
             See who we are and unlock your new potential with us
@@ -185,7 +178,7 @@ const Home = () => {
               </p>
               <div className="flex text-yellow cursor-pointer mt-12 text-sm md:text-base">
                 <CornerDownRight strokeWidth={1} />
-                <p className="ml-1">Learn more</p>
+                <Link to={ABOUT_US_URL} className="ml-1">Learn more</Link>
               </div>
             </div>
           </div>

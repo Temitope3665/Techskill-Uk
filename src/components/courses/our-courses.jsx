@@ -14,7 +14,7 @@ const OurCourses = ({ className, image, title, description, href }) => {
           {description}
         </p>
         <Link to={href}>
-          <Button className="w-full mt-8">Enroll now</Button>
+          <Button className="w-full mt-8">View course</Button>
         </Link>
       </div>
     </div>
