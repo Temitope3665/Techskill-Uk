@@ -25,7 +25,8 @@ const CourseDetails = () => {
     const getCourseById = async () => {
       try {
         const currentCourse = await client.getEntry(slug);
-        setCourse(currentCourse?.fields);
+        console.log(currentCourse, '--> current course');
+        setCourse({...currentCourse?.fields, courseId: currentCourse?.sys?.id});
         setIsLoading(false)
       } catch (error) {
         toast({
@@ -58,12 +59,13 @@ const CourseDetails = () => {
               time={course?.daysPerWeek}
             />
 
-            <Link to={REGISTRATION_URL}>
+            {console.log(course, '-> cour')}
+
+            <Link to={`/explore-courses/user-registration/${course?.courseId}`}>
               <Button size="lg" className="lg:w-[40%] w-full mt-4">
                 Enroll now <MoveRight className="ml-3" />{' '}
               </Button>
             </Link>
-
             <Perks perks={course?.perks?.perk} />
           </div>
           <div className="lg:w-[40%] mt-6 lg:mt-0">

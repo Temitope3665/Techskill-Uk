@@ -116,7 +116,8 @@ const Home = () => {
             </span>{' '}
             your career today with Digital Transformation
           </h1>
-          <p className="px-4 md:px-0 md:w-[80%] my-4 text-base">
+
+          <p className="px-4 md:px-0 md:w-[80%] my-4 normal-case">
             {banner.desc ||
               'TechSkill empowers tech enthusiasts through training, mentorship, in other to transition into their desired career.'}
           </p>
@@ -215,7 +216,7 @@ const Home = () => {
             </div>
           ) : (
             <>
-              {allCourses?.slice(0, 3).map((course) => (
+              {allCourses?.slice(2, 5).map((course) => (
                 <OurCourses
                   title={course?.fields?.title}
                   image={course?.fields?.image?.fields?.file?.url}
