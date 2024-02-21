@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import axios from 'axios';
-import { headers_, registerEmailApi } from '@/config/api';
+import { headers_, registerUserApi } from '@/config/api';
 import { toast } from './ui/use-toast';
 
 const JoinOurCommunity = () => {
@@ -30,10 +30,11 @@ const JoinOurCommunity = () => {
       setIsSubmitting(true);
       axios
         .post(
-          registerEmailApi,
+          registerUserApi,
           {
             "fields": {
-              'Emails': email,
+              'Email': email,
+              'Faqs': 'I want to join the community'
             },
           },
           { headers: headers_ }

@@ -25,7 +25,6 @@ const CourseDetails = () => {
     const getCourseById = async () => {
       try {
         const currentCourse = await client.getEntry(slug);
-        console.log(currentCourse, '--> current course');
         setCourse({...currentCourse?.fields, courseId: currentCourse?.sys?.id});
         setIsLoading(false)
       } catch (error) {
@@ -277,8 +276,8 @@ const CourseDetails = () => {
           <p className='font-gilroyMd lg:w-[50%] text-sm lg:text-base'>With our flexible pricing plans, we’ve made it easier for you to pay for the course. You have the option of paying now for a discount or paying in installments</p>
           <div className='grid lg:grid-cols-2 gap-8 mt-10'>
             <Pricing description="Get the best deal by 
-          paying for our training" description2="This covers our training only" title="Training Fee" price={course?.upfrontPrice} href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
-            <Pricing description="Get the best deal at discounted rate of 80%" description2="This includes additional benefits such as career support" title="Premium Package" price={course?.fullPrice} href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
+          paying for our training" description2="This covers our training only" title="Training Fee Only" price={course?.upfrontPrice} href="https://book.stripe.com/3cscOh2Dn98I3hCdQT" />
+            <Pricing description="Get the best deal at discounted rate of 80%" description2="This includes additional benefits such as career support, consultation" title="Premium Package" price={course?.fullPrice} href="https://buy.stripe.com/aEU29DgudgBag4obIR" />
 
           </div>
           </div>

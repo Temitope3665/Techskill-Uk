@@ -11,7 +11,8 @@ export const userRegisterSchema = yup.object({
 });
 
 export const contactUsSchema = yup.object({
-  Name: yup.string().min(2, 'Full name must be at least two letter').required('Full name is required'),
+  'First Name': yup.string().min(2, 'Full name must be at least two letter').required('Full name is required'),
+  'Last Name': yup.string().min(2, 'Full name must be at least two letter').required('Full name is required'),
   Email: yup.string().required('Email is required'),
-  Reasons: yup.string().required('Question is required'),
+  'Faqs': yup.string().required('Question is required'),
 });

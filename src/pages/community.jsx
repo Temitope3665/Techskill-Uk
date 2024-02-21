@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 
 const Community = () => {
   const { events, loadingEvents } = useContext(CourseContext);
-  console.log(events, '-> event');
   return (
     <div className="py-8">
       <ReactHelment title="Our Community" />

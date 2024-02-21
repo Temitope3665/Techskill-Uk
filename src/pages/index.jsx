@@ -26,9 +26,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import axios from 'axios';
-import { headers_, registerEmailApi } from '@/config/api';
+import { headers_, registerUserApi } from '@/config/api';
 import { toast } from '@/components/ui/use-toast';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { paymentPlans } from '@/lib/utils';
 
 const Home = () => {
   const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ const Home = () => {
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [showError, setShowError] = useState(false);
   const [open, setOpen] = useState(false);
-  const [_, setPaymentPlan] = useState('');
+  const [paymentPlan, setPaymentPlan] = useState('');
   const { allCourses, isLoading } = useContext(CourseContext);
   const [banner, setBanner] = useState({ image: '', title: '', desc: '' });
   const client = createClient({
@@ -63,10 +64,11 @@ const Home = () => {
       setIsSubmitting(true);
       axios
         .post(
-          registerEmailApi,
+          registerUserApi,
           {
             "fields": {
-              'Emails': email,
+              'Email': email,
+              'Faqs': 'I want to join the community'
             },
           },
           { headers: headers_ }
@@ -337,20 +339,21 @@ const Home = () => {
           <div>
             <Select
               onValueChange={(value) => setPaymentPlan(value)}
-              defaultValue="£1000"
+              defaultValue={paymentPlans[0].paymentLink}
             >
               <SelectTrigger className="w-full text-primary font-gilroyMd">
                 <SelectValue placeholder="Select a plan" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="£1000">Training Fee - £1000</SelectItem>
-                  <SelectItem value="£1250">Premium Package - <span className='line-through'>£1250</span> £1000 </SelectItem>
+                {paymentPlans.map((plan) => (
+                  <SelectItem value={plan.paymentLink}>{plan.title}</SelectItem>
+                  ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
-          <Link to="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA">
+          <Link to={paymentPlan}>
             <Button type="submit" size="sm" className="w-full">
               Make payment
             </Button>

@@ -47,7 +47,6 @@ export const coursesNavDropdown = (lists, w) => {
               width={24}
             />
           </div>
-          {console.log(list?.fields)}
           <div className="ml-4">
             <p className="font-gilroyBold text-sm">{list?.fields?.title}</p>
             <p className="text-[12px] text-grey">

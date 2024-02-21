@@ -35,10 +35,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '../ui/alert-dialog';
+import { paymentPlans } from '@/lib/utils';
 
 const UserRegistrationForm = () => {
   const [open, setOpen] = useState(false);
-  const [_, setPaymentPlan] = useState('');
+  const [paymentPlan, setPaymentPlan] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { slug } = useParams();
   const { allCourses, isLoading } = useContext(CourseContext);
@@ -73,9 +74,9 @@ const UserRegistrationForm = () => {
             'Phone Number': data.phoneNumber,
             Address: data.address,
             'Date of Birth': data.dob,
-            'How did you hear about us': data.howYouAboutUs,
-            'Selected Course': data.interestedCourse || slug,
-            'Course Id': slug || '',
+            'Channel of Engagement': data.howYouAboutUs,
+            'Service': data.interestedCourse || slug,
+            'Course ID': slug || '',
             'Reference Code': data.ref,
           },
         },
@@ -400,20 +401,21 @@ const UserRegistrationForm = () => {
           <div>
             <Select
               onValueChange={(value) => setPaymentPlan(value)}
-              defaultValue="£1000"
+              defaultValue={paymentPlans[0].paymentLink}
             >
               <SelectTrigger className="w-full text-primary font-gilroyMd">
                 <SelectValue placeholder="Select a plan" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="£1000">Upfront - £1000</SelectItem>
-                  <SelectItem value="£1250">Pay full - £1250</SelectItem>
+                  {paymentPlans.map((plan) => (
+                  <SelectItem value={plan.paymentLink}>{plan.title}</SelectItem>
+                  ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
-          <Link to="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA">
+          <Link to={paymentPlan}>
             <Button type="submit" size="sm" className="w-full">
               Make payment
             </Button>
