@@ -30,20 +30,13 @@ export default Skills;
 export const OnlineMentoring = ({ imageWidth }) => (
   <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8 justify-between">
     <div className='md:40%'>
-      <h1 className='text-[24px] md:text-[45px] font-gilroyBold'>1-on-1 online mentoring</h1>
-      <p className='text-grey md:text-base text-[13px] md:w-[80%]'>Accelerate your career triumph through our tailored one-on-one career coaching sessions.</p>
+      <h1 className='text-[24px] md:text-[45px] font-gilroyBold'>One-on-One <br/>Online Mentoring</h1>
+      <p className='text-grey md:text-base text-[13px] md:w-[80%]'>Accelerate your career through our tailored one-on-one career mentoring sessions.</p>
 
-      <div className='my-4 md:my-12 md:flex space-y-3 md:space-y-0 block items-center'>
-        <div className='border border-grey flex items-center rounded-[24px] p-2'>
-          <CalendarCheck size={20} className='pl-1' color='#818992' />
-          <p className='px-2 md:text-base text-[12px]'>Weekdays 5- 9PM & Sat 10- 3PM (EST)</p>
-        </div>
-        <div className='w-[0.5px] bg-grey h-8 mx-3 hidden md:flex' />
-        <div className='border border-grey flex items-center rounded-[24px] p-2'>
-          <p className='px-2 md:text-base text-[12px]'>4 Days (1 hr each)</p>
-        </div>
+      <div className='my-4 md:my-8 md:flex space-y-3 md:space-y-0 block items-center'>
+          <p className='md:text-base text-[12px]'>Two mentorship sessions during the program: <br/>1 hour each in the first week and after the training program.</p>
       </div>
-      <Button size="lg" className="lg:w-[50%] w-full mt-6">
+      <Button size="lg" className="lg:w-[50%] w-full">
               <PopupButton
                 url={`${process.env.REACT_CALENDLY_URL}`}
                 rootElement={document.getElementById('root')}

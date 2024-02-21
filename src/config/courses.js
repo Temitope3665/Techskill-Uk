@@ -86,14 +86,14 @@ export const why = [
 ];
 
 export const outlines = [
-    'About the course',
+    'About this course',
     'Learning objectives',
-    'Courses schedules',
+    'Course schedules',
     'Benefits',
     'Pricing',
     'Tools you’ll learn from',
     'Upcoming Cohort',
-    '1-1 career coaching',
+    'One-on-One career coaching',
   ];
 
 export const objectives = ['Identify who your customer are, what and how they think', 'Transition your idea to reality', 'Create the ultimate go-to-market strategy', 'Utilize design thinking to solve business problems', 'Win over hiring managers the right way'];

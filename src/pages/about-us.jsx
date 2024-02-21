@@ -22,7 +22,7 @@ const AboutUs = () => {
             <div className="h-1 w-[30%] bg-yellow -mt-3 hidden lg:flex" />
             <p className="lg:mt-6 lg:w-[80%] text-base">
               TechSkill empowers tech enthusiasts through training, mentorship,
-              in other to transition into their desired career.
+              and career support to transition into their desired careers.
             </p>
           </div>
           <div className="lg:w-[45%] mt-8 lg:mt-0">
@@ -53,25 +53,25 @@ const AboutUs = () => {
           </h1>
           <div className="lg:w-[90%] mt-3 lg:mt-8 text-center lg:text-left">
             <p className="text-[14px] lg:text-[18px]">
-              We are a Global Training Institute. Techskill provides
+              We are a global training institute. Techskill provides
               instructor-led, expert training to help motivated professionals
-              attain dream careers.
+              attain their dream careers.
             </p>
             <p className="mt-4 text-[14px] lg:text-[18px]">
-              Our immersive, hands-on courses teach cutting-edge, high in
-              demand, technical, and strategic skills that create resilient
+              Our immersive, hands-on courses teach cutting-edge, highly
+              in-demand technical and strategic skills that create resilient
               careers.
             </p>
             <p className="mt-4 text-[14px] lg:text-[18px]">
               Leverage our expert instructors’ decades of global experience to
-              accelerate your career. Pivot, transition and grow, with a mentor
+              accelerate your career. Pivot, transition, and grow with a mentor
               by your side.
             </p>
           </div>
           <img
             src={Star2}
             alt="star"
-            className="absolute bottom-0 w-[100px] lg:w-[400px] right-0"
+            className="absolute bottom-10 w-[100px] lg:w-[400px] right-0"
           />
         </div>
       </div>

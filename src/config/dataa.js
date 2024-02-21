@@ -82,7 +82,7 @@ export const footerData = {
 
  export const tabData = (courses) => [
     { id: '0', title: 'Learn a skill', content: Skills(courses) },
-    { id: '1', title: '1-on-1 online mentoring', content: OnlineMentoring({imageWidth : ''}) },
+    { id: '1', title: 'One-on-One online mentoring', content: OnlineMentoring({imageWidth : ''}) },
     { id: '2', title: 'Demo and project', content: DemoDay() },
   ];
 
@@ -100,7 +100,7 @@ export const footerData = {
     {
         icon: VisionIcon,
         title: 'Our Vision',
-        description: 'We aim to create a unique yet, authentic presence emphasizing that anyone, regardless of their background, can thrive in tech and transition easily to.'
+        description: 'We aim to create a unique yet authentic presence, emphasising that anyone, regardless of their background, can thrive in tech and easily transition.'
     },
 ];
 
@@ -170,6 +170,6 @@ export const Faque = [
     },
     {
         q: 'Is there any financial assistance or payment plan available',
-        a: 'Yes, we offer flexible payment plans, and and at times, discounted rates to assist our learners.'
+        a: 'Yes, we offer flexible payment plans, and at times, discounted rates to assist our learners.'
     },
 ]

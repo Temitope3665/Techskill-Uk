@@ -3,7 +3,7 @@ import Logo from '../assets/icons/logo.png';
 import navLinks from '../config/nav-links';
 import { HOME_URL, REGISTRATION_URL } from '../config/paths';
 import { Button } from './ui/button';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { CourseContext } from '@/contexts/course-context';
 

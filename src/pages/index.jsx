@@ -337,15 +337,15 @@ const Home = () => {
           <div>
             <Select
               onValueChange={(value) => setPaymentPlan(value)}
-              defaultValue="£250"
+              defaultValue="£1000"
             >
               <SelectTrigger className="w-full text-primary font-gilroyMd">
                 <SelectValue placeholder="Select a plan" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="£250">Upfront - £250</SelectItem>
-                  <SelectItem value="£600">Pay full - £600</SelectItem>
+                  <SelectItem value="£1000">Training Fee - £1000</SelectItem>
+                  <SelectItem value="£1250">Premium Package - <span className='line-through'>£1250</span> £1000 </SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>

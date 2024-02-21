@@ -58,7 +58,7 @@ const UserRegistrationForm = () => {
     },
     resolver: yupResolver(userRegisterSchema),
   });
-  const where = ['Friends', 'School Portal', 'Twitter', 'Conference'];
+  const where = ['Twitter', 'Instagram', 'LinkedIn', 'Friends/Colleagues'];
 
   const onSubmit = (data) => {
     setIsSubmitting(true);
@@ -400,15 +400,15 @@ const UserRegistrationForm = () => {
           <div>
             <Select
               onValueChange={(value) => setPaymentPlan(value)}
-              defaultValue="£250"
+              defaultValue="£1000"
             >
               <SelectTrigger className="w-full text-primary font-gilroyMd">
                 <SelectValue placeholder="Select a plan" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="£250">Upfront - £250</SelectItem>
-                  <SelectItem value="£600">Pay full - £600</SelectItem>
+                  <SelectItem value="£1000">Upfront - £1000</SelectItem>
+                  <SelectItem value="£1250">Pay full - £1250</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>

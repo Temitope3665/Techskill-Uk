@@ -71,26 +71,26 @@ export const coursesDropdownList = [
 export const offeringsDropdownList = [
     {
         icon: ExploreIcon,
-        title: 'Explore our Training Programmes',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
+        title: 'Our Training Programmes',
+        desc: 'Explore our courses, speak with a learning advisor, and transition into the tech field',
         href: `${EXPLORE_COURSES_URL}?tab=0`
     },
     {
         icon: GlobalTalent,
         title: 'Global Talent Visa',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
+        desc: 'Process your visa application through our specialised service designed to cater to professionals seeking global opportunities.',
         href: `${OFFERINGS_URL}/#globalTalent`
     },
     {
         icon: JobSupport,
         title: 'Job Support Offering',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
+        desc: 'Land your dream job through our career support services, including CV writing, job application, and interview preparation',
         href: `${OFFERINGS_URL}/#jobSupport`
     },
     {
         icon: BookMentorship,
         title: 'Book Mentorship and Consultation',
-        desc: 'Ut enim ad minima veniam, quis nostrum exercitationeml',
+        desc: 'Accelerate your career through our tailored one-on-one career mentoring sessions',
         href: '#'
     },
 ];
