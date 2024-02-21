@@ -12,8 +12,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 const Community = () => {
-    const { events, loadingEvents } = useContext(CourseContext);
-    console.log(events, '-> event');
+  const { events, loadingEvents } = useContext(CourseContext);
   return (
     <div className="py-8">
       <ReactHelment title="Our Community" />
@@ -23,14 +22,14 @@ const Community = () => {
             Join the Techskill community
           </h1>
           <div className="h-1 w-[30%] bg-yellow -mt-3 hidden lg:flex" />
-            <p className="lg:mt-6 lg:w-[80%] text-base text-grey">
-              Ready to take a step in you tech career but unsure where to begin ?
-              Book a call with our learning advisor today! Get personalised
-              guidance, choose the perfect tech program and enrol confidently.
-            </p>
-            <Link to={`${process.env.REACT_SLACK_URL}`} target='_blank'>
-              <Button className="px-20 mt-6">Join our community</Button>
-            </Link>
+          <p className="lg:mt-6 lg:w-[80%] text-base text-grey">
+            Ready to take a step in your tech career but unsure where to begin?
+            Book a call with our learning advisor today! Get personalised
+            guidance, choose the perfect tech program, and enrol confidently.
+          </p>
+          <Link to={`${process.env.REACT_SLACK_URL}`} target="_blank">
+            <Button className="px-20 mt-6">Join our community</Button>
+          </Link>
         </div>
         <div className="lg:w-[45%] mt-8 lg:mt-0 ml-6 lg:ml-0">
           <img src={Connect} alt="connect tech leaders" />
@@ -38,20 +37,18 @@ const Community = () => {
       </div>
 
       <div className="bg-primary px-6 lg:px-12 lg:flex justify-between items-center py-6 lg:py-16">
-        <div
-          className="lg:w-[50%] text-center lg:text-left"
-        >
+        <div className="lg:w-[50%] text-center lg:text-left">
           <h1 className="text-[30px] lg:text-[50px] font-gilroyBold leading-[48px] lg:-mt-8">
             Learn from a diverse group of peers
           </h1>
           <div className="lg:w-[90%] mt-2 lg:mt-8">
             <p className="text-[18px] text-grey">
-              Ready to take a step in you tech career but unsure where to begin?
-               Book a call with our learning advisor today! Get personalised
-              guidance, choose the perfect tech program and enrol confidently
+              Learn from a diverse group of peers, gaining valuable insights
+              from different backgrounds and experiences to enhance your
+              learning journey in the dynamic tech landscape.
             </p>
 
-            <Link to={`${process.env.REACT_SLACK_URL}`} target='_blank'>
+            <Link to={`${process.env.REACT_SLACK_URL}`} target="_blank">
               <Button className="px-20 mt-6">Join our community</Button>
             </Link>
           </div>
@@ -74,7 +71,7 @@ const Community = () => {
 
         <div className="lg:flex justify-between items-center py-12 lg:px-16">
           <div className="lg:w-[50%]">
-            <img src={Twitter} alt="twitter space" className='h-[450px]' />
+            <img src={Twitter} alt="twitter space" className="h-[450px]" />
           </div>
 
           <div className="lg:w-[55%] mt-8 lg:mt-0">
@@ -99,12 +96,13 @@ const Community = () => {
                 <div className="border border-grey flex items-center rounded-[24px] p-2">
                   <TimerIcon size={20} className="pl-1" color="#818992" />
                   <p className="px-2 md:text-sm text-[12px]">
-                    {events?.fields?.timewat} WAT | {events?.fields?.timeukTime} UTC+01:00
+                    {events?.fields?.timewat} WAT | {events?.fields?.timeukTime}{' '}
+                    UTC+01:00
                   </p>
                 </div>
               </div>
 
-              <Link to={events?.fields?.url} target='_blank'>
+              <Link to={events?.fields?.url} target="_blank">
                 <Button className="w-full md:my-2 mt-6 lg:mt-4 flex items-center">
                   Join X Space
                   <MoveRight className="ml-2" />
@@ -115,9 +113,9 @@ const Community = () => {
         </div>
       </div>
 
-        <div className='bg-primary pb-6'> 
-      <JoinOurCommunity />
-        </div>
+      <div className="bg-primary pb-6">
+        <JoinOurCommunity />
+      </div>
 
       <Footer />
     </div>

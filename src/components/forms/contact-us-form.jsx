@@ -9,9 +9,10 @@ import { Textarea } from "../ui/textarea";
 const ContactUsForm = ({ handleSubmit, isSubmitting }) => {
     const form = useForm({
         defaultValues: {
-          Name: '',
+          'First Name': '',
+          'Last Name': '',
           Email: '',
-          Reasons: '',
+          Faqs: '',
         },
         resolver: yupResolver(contactUsSchema),
       });
@@ -29,17 +30,39 @@ const ContactUsForm = ({ handleSubmit, isSubmitting }) => {
         >
             <FormField
               control={form.control}
-              name="Name"
+              name="First Name"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel className="text-[14px] text-primary">Full Name</FormLabel>
+                  <FormLabel className="text-[14px] text-primary">First Name</FormLabel>
                   <FormControl>
                     <Input
                       autoComplete="none"
                       className="text-primary"
                       autoCorrect="off"
                       autoCapitalize="none"
-                      placeholder="Enter your full name"
+                      placeholder="Enter your first name"
+                      invalid={fieldState.invalid}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+<FormField
+              control={form.control}
+              name="Last Name"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel className="text-[14px] text-primary">Last Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      autoComplete="none"
+                      className="text-primary"
+                      autoCorrect="off"
+                      autoCapitalize="none"
+                      placeholder="Enter your last name"
                       invalid={fieldState.invalid}
                       {...field}
                     />
@@ -75,7 +98,7 @@ const ContactUsForm = ({ handleSubmit, isSubmitting }) => {
 
           <FormField
             control={form.control}
-            name="Reasons"
+            name="Faqs"
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormLabel className="text-[14px] text-primary">Ask your question</FormLabel>

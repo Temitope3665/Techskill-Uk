@@ -65,9 +65,11 @@ const Offerings = () => {
               Offerings
             </h1>
             <p className="text-grey lg:text-base text-sm text-center lg:text-left">
-              Ready to take a step in you tech career but unsure where to begin
-              ? Book a call with our learning advisor today! Get personalised
-              guidance, choose the perfect tech program and enrol confidently
+              TechSkill empowers tech enthusiasts through comprehensive
+              training, personalised mentorship, and dedicated career support.
+              Our holistic approach equips individuals with the skills and
+              guidance needed to seamlessly transition into their desired
+              careers in the tech industry.
             </p>
             <Button size="lg" className="lg:w-[50%] w-full mt-6">
               <PopupButton
@@ -77,10 +79,6 @@ const Offerings = () => {
                 styles={{ width: '100%', height: '100%' }}
               />
             </Button>
-            {/* <BookACall
-              ctaTitle="Book a call"
-              callTitle="Techskill Uk Offerings"
-            /> */}
           </div>
           <div className="lg:w-[35%] mt-8 lg:mt-0">
             <img src={OurOfferings} alt="humans learning on their laptop" />
@@ -172,9 +170,11 @@ const Offerings = () => {
               Global Talent Visa
             </h1>
             <p className="text-grey lg:text-base text-sm text-center lg:text-left">
-              Ready to take a step in you tech career but unsure where to begin
-              ? Book a call with our learning advisor today! Get personalised
-              guidance, choose the perfect tech program and enrol confidently
+              Streamline your visa application process with our specialised
+              service designed to cater to tech professionals seeking global
+              opportunities. Benefit from our expertise and guidance as we
+              assist you through the intricate visa application procedures,
+              ensuring a smooth and efficient process.
             </p>
 
             <Button size="lg" className="lg:w-[50%] w-full mt-6">
@@ -209,12 +209,17 @@ const Offerings = () => {
         </div>
         <div className="lg:w-[50%]">
           <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
-            Job support offering
+            Career Support
           </h1>
           <p className="text-grey lg:text-base text-sm text-center lg:text-left">
-            Ready to take a step in you tech career but unsure where to begin ?
-            Book a call with our learning advisor today! Get personalised
-            guidance, choose the perfect tech program and enrol confidently
+            Elevate your job search with our comprehensive career support
+            offerings tailored to tech professionals. Our expert team assists
+            you in crafting compelling CVs that highlight your skills and
+            experiences effectively. Receive personalised guidance on job
+            applications, including strategies for targeting key opportunities
+            in the tech industry. Prepare confidently for interviews with our
+            tailored coaching sessions, equipping you with the skills and
+            confidence needed to land your dream job in the tech field.
           </p>
 
           <Button size="lg" className="lg:w-[50%] w-full mt-6">

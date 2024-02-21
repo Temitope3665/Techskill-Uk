@@ -1,8 +1,7 @@
-import CoursePeriod, { Perks, Pricing } from '@/components/courses/course-perks';
+import { Perks, Pricing } from '@/components/courses/course-perks';
 import { Button } from '@/components/ui/button';
-import { REGISTRATION_URL } from '@/config/paths';
-import { Check, ChevronDown, Circle, MoveRight, Star } from 'lucide-react';
-import { Link, useParams } from 'react-router-dom';
+import { Check, ChevronDown, Circle, MoveLeft, MoveRight, Star } from 'lucide-react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import BenefitsArch from '@/assets/icons/benefit-arch.png';
 import { createClient } from 'contentful'
 import Loading from "@/assets/animation/loading.svg"
@@ -12,6 +11,7 @@ import Footer from '@/components/footer';
 
 const CourseDetails = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [course, setCourse] = useState();
 
@@ -25,7 +25,6 @@ const CourseDetails = () => {
     const getCourseById = async () => {
       try {
         const currentCourse = await client.getEntry(slug);
-        console.log(currentCourse, '--> current course');
         setCourse({...currentCourse?.fields, courseId: currentCourse?.sys?.id});
         setIsLoading(false)
       } catch (error) {
@@ -47,6 +46,7 @@ const CourseDetails = () => {
       <div className="bg-primary -mt-4">
         <div className="lg:flex justify-between items-center px-6 lg:px-12 pt-12">
           <div className="lg:w-[55%] text-center lg:text-left">
+          <MoveLeft className='my-4 cursor-pointer' onClick={() => navigate(-1)} />
             <h1 className="font-gilroyBold text-[24px] lg:text-[45px]">
               {course?.title}
             </h1>
@@ -54,15 +54,13 @@ const CourseDetails = () => {
               {course?.description}
             </h3>
 
-            <CoursePeriod
+            {/* <CoursePeriod
               duration={course?.studyPeriod}
               time={course?.daysPerWeek}
-            />
-
-            {console.log(course, '-> cour')}
+            /> */}
 
             <Link to={`/explore-courses/user-registration/${course?.courseId}`}>
-              <Button size="lg" className="lg:w-[40%] w-full mt-4">
+              <Button size="lg" className="lg:w-[40%] w-full mt-8">
                 Enroll now <MoveRight className="ml-3" />{' '}
               </Button>
             </Link>
@@ -83,14 +81,14 @@ const CourseDetails = () => {
               {course?.courseSection?.section?.map((outline) => (
                 <li key={outline} className="flex items-center py-4">
                   <Circle
-                    fill={outline === 'About the course' ? '#fff' : '#818992'}
-                    color={outline === 'About the course' ? '#fff' : '#818992'}
+                    fill={outline === 'About this course' ? '#fff' : '#818992'}
+                    color={outline === 'About this course' ? '#fff' : '#818992'}
                     size={9}
                     className="mr-2"
                   />{' '}
                   <p
                     className={`${
-                      outline === 'About the course'
+                      outline === 'About this course'
                         ? 'text-white font-gilroyBold'
                         : 'text-grey font-gilroyMd'
                     }`}
@@ -193,14 +191,14 @@ const CourseDetails = () => {
               {course?.courseSection?.section?.map((outline) => (
                 <li key={outline} className="flex items-center py-4">
                   <Circle
-                    fill={outline === 'Courses schedules' ? '#fff' : '#818992'}
-                    color={outline === 'Courses schedules' ? '#fff' : '#818992'}
+                    fill={outline === 'Course schedules' ? '#fff' : '#818992'}
+                    color={outline === 'Course schedules' ? '#fff' : '#818992'}
                     size={9}
                     className="mr-2"
                   />{' '}
                   <p
                     className={`${
-                      outline === 'Courses schedules'
+                      outline === 'Course schedules'
                         ? 'text-white font-gilroyBold'
                         : 'text-grey font-gilroyMd'
                     }`}
@@ -228,7 +226,7 @@ const CourseDetails = () => {
             ))}
           </div>
         </div>
-        <div className="pt-4 pb-12 bg-secondary w-full px-6 lg:px-24">
+        {/* <div className="pt-4 pb-12 bg-secondary w-full px-6 lg:px-24">
           <h1 className="font-gilroyBold text-[24px] my-8 lg:mt-0 lg:text-[35px]">
             Weekly Schedules
           </h1>
@@ -244,7 +242,7 @@ const CourseDetails = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
 
         <div className="grid lg:grid-cols-1 bg-primary mt-6 lg:mt-16 px-6 lg:px-24 py-8 items-start"         data-aos="fade-up"
@@ -278,9 +276,8 @@ const CourseDetails = () => {
           <p className='font-gilroyMd lg:w-[50%] text-sm lg:text-base'>With our flexible pricing plans, we’ve made it easier for you to pay for the course. You have the option of paying now for a discount or paying in installments</p>
           <div className='grid lg:grid-cols-2 gap-8 mt-10'>
             <Pricing description="Get the best deal by 
-          paying upfront" description2="save 80% by paying instalmentally" title="Upfront" price={course?.upfrontPrice} href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
-            <Pricing description="Get the best deal by 
-          paying upfront" description2="save 80% by paying instalmentally" title="Pay full" price={course?.fullPrice} href="https://buy.stripe.com/test_00g9DJ6374jPbzG9AA" />
+          paying for our training" description2="This covers our training only" title="Training Fee Only" price={course?.upfrontPrice} href="https://book.stripe.com/3cscOh2Dn98I3hCdQT" />
+            <Pricing description="Get the best deal at discounted rate of 80%" description2="This includes additional benefits such as career support, consultation" title="Premium Package" price={course?.fullPrice} href="https://buy.stripe.com/aEU29DgudgBag4obIR" />
 
           </div>
           </div>

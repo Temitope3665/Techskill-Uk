@@ -1,8 +1,6 @@
-export const registerUserApi = "https://api.airtable.com/v0/appyVoGshoAmlEEOg/Users";
-export const contactUsApi = "https://api.airtable.com/v0/appyVoGshoAmlEEOg/ContactUs";
-export const registerEmailApi = "https://api.airtable.com/v0/appyVoGshoAmlEEOg/Emails";
+export const registerUserApi = `${process.env.VITE_REGISTER_USER_API}`;
 
 export const headers_ = {
-    'Authorization': `Bearer ${process.env.VITE_ARITABLE_TOKEN}`,
+    'Authorization': `Bearer ${process.env.VITE_AIRTABLE_TOKEN}`,
     'Content-Type': 'application/json'
 };

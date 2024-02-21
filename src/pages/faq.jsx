@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/dialog';
 import ContactUsForm from '@/components/forms/contact-us-form';
 import axios from 'axios';
-import { contactUsApi, headers_ } from '@/config/api';
+import { headers_, registerUserApi } from '@/config/api';
 import { toast } from '@/components/ui/use-toast';
 import SuccessMessage from '@/components/success-info';
 
@@ -34,11 +34,10 @@ const Faq = () => {
   };
 
   const handleSubmit = (data) => {
-    console.log(data, '-> data');
     setIsSubmitting(true);
     axios
       .post(
-        contactUsApi,
+        registerUserApi,
         {
           fields: data,
         },

@@ -1,151 +1,10 @@
 import { clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { gapi } from "gapi-script";
 import { addDays, format } from "date-fns";
 
 export function cn(...inputs) {
   return twMerge(clsx(inputs))
 }
-
-var CLIENT_ID = `${process.env.REACT_APP_CLIENT_ID}`
-var API_KEY = `${process.env.REACT_APP_GOOGLE_API_KEY}`
-
-const DISCOVERY_DOCS = [`${process.env.REACT_APP_DISCOVERY_DOCS}`]
-const SCOPES = `${process.env.REACT_APP_SCOPES}`
-
-export const handleClick = (event, setBooked) => {
-  gapi.load('client:auth2', () => {
-
-    gapi.client.init({
-      apiKey: API_KEY,
-      clientId: CLIENT_ID,
-      discoveryDocs: DISCOVERY_DOCS,
-      scope: SCOPES,
-    })
-
-    gapi.client.load('calendar', 'v3', () => console.log('bam!'))
-
-    gapi.auth2.getAuthInstance().signIn()
-    .then(() => {
-      var request = gapi.client.calendar.events.insert({
-        'calendarId': 'primary',
-        'resource': event,
-        calendarId: 'primary',
-        sendNotifications: true,
-        conferenceDataVersion: 1,
-        eventId: 'ft5op4im1aqfidi222b7462jks_20240215T130000Z'
-      })
-
-      request.execute(event => {
-        console.log(event, '-> event');
-        // window.open(event.htmlLink)
-
-        // const eventPatch = {
-        //   conferenceData: {
-        //     createRequest: { requestId: "7qxalsvy0e" }
-        //   }
-        // };
-
-        // gapi.client.calendar.events
-        // .patch({
-        //   calendarId: 'primary',
-        //   eventId: event.id + "_" + new Date(event.start.dateTime).toISOString().replace(/[:-]/g, "").replace(".000Z", "Z"), // id + startdate.toISOString()
-        //   resource: eventPatch,
-        //   sendNotifications: true,
-        //   conferenceDataVersion: 1
-        // })
-        // .execute(function(event) {
-        //   console.log("Conference created for event: %s", event);
-        // });
-      })
-      setBooked(true);
-      
-
-      /*
-          Uncomment the following block to get events
-      */
-      /*
-      // get events
-      gapi.client.calendar.events.list({
-        'calendarId': 'primary',
-        'timeMin': (new Date()).toISOString(),
-        'showDeleted': false,
-        'singleEvents': true,
-        'maxResults': 10,
-        'orderBy': 'startTime'
-      }).then(response => {
-        const events = response.result.items
-        console.log('EVENTS: ', events)
-      })
-      */
-  
-
-    })
-  })
-}
-
-export const availableTime = [
-  {
-      time: '1:30',
-      convertedTime: '13:30',
-      spot: '2'
-  },
-  {
-      time: '2:00',
-      convertedTime: '14:00',
-      spot: '1'
-  },
-  {
-      time: '2:30',
-      convertedTime: '14:30',
-      spot: '2'
-  },
-  {
-      time: '3:00',
-      convertedTime: '15:00',
-      spot: '1'
-  },
-  {
-      time: '3:30',
-      convertedTime: '15:30',
-      spot: '2'
-  },
-  {
-      time: '4:00',
-      convertedTime: '16:00',
-      spot: '2'
-  },
-  {
-      time: '4:30',
-      convertedTime: '16:30',
-      spot: '2'
-  },
-  {
-      time: '5:00',
-      convertedTime: '17:00',
-      spot: '2'
-  },
-  {
-      time: '5:30',
-      convertedTime: '17:30',
-      spot: '2'
-  },
-  {
-      time: '6:00',
-      convertedTime: '18:00',
-      spot: '1'
-  },
-  {
-      time: '6:30',
-      convertedTime: '18:30',
-      spot: '2'
-  },
-  {
-      time: '7:00',
-      convertedTime: '19:00',
-      spot: '2'
-  },
-]
 
 // format date filter
 export const formatDate = (date) => {
@@ -181,7 +40,25 @@ export function convertToWAT(dateTimeString) {
   return `${time} WAT`;
 }
 
-// // Example usage:
-// const dateTimeString = "2024-03-21T05:00-10:00";
-// const watTime = convertToWAT(dateTimeString);
-// console.log(watTime); // Output: "5:00 WAT"
+export const paymentPlans = [
+  {
+    paymentLink: `${process.env.REACT_STRIPES_PREMIUM_PACKAGE}`,
+    price: '£1000',
+    title: 'Premium Package (Discounted Price) - £1000'
+  },
+  {
+    paymentLink: `${process.env.REACT_STRIPES_PREMIUM_PACKAGE_TRAINING_ONLY}`,
+    price: '£600',
+    title: 'Premium Package Offer for (Training Only) - £600.00'
+  },
+  {
+    paymentLink: `${process.env.REACT_STRIPES_GLOBAL_TALENT_CONSULTATION}`,
+    price: '£25',
+    title: 'Global Talent Consultation Fee - £25.00'
+  },
+  {
+    paymentLink: `${process.env.REACT_STRIPES_CAREER_SUPPORT_SERVICES}`,
+    price: '£250',
+    title: 'Career Support Services - £250.00'
+  },
+]
