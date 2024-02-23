@@ -132,7 +132,7 @@ const Home = () => {
             </Link>
 
               <Button size="lg" variant="outline" onClick={() => setOpen(true)}>
-                Pay for a cohort
+                Pay for a service
               </Button>
 
           </div>
@@ -332,8 +332,7 @@ const Home = () => {
               Choose Payment Plan
             </DialogTitle>
             <DialogDescription>
-              You have the option of paying now for a discount or paying in
-              installments.
+            Use the options below to pay for any of our services.
             </DialogDescription>
           </DialogHeader>
           <div>

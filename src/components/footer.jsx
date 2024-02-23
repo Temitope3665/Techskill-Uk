@@ -33,7 +33,7 @@ const Footer = () => {
             </>
           )}
         </div>
-        <div>
+        <div className='w-[90%]'>
           <p className="font-gilroyBold mb-2">Our Contact</p>
           {footerData.contact.map((com) => (
             <p key={com.title} className="py-2 font-gilroyMd">

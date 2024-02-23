@@ -394,8 +394,7 @@ const UserRegistrationForm = () => {
               Choose Payment Plan
             </AlertDialogTitle>
             <AlertDialogDescription>
-              You have the option of paying now for a discount or paying in
-              installments.
+             Use the options below to pay for any of our services.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <div>

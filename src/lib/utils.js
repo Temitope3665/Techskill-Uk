@@ -44,21 +44,26 @@ export const paymentPlans = [
   {
     paymentLink: `${process.env.REACT_STRIPES_PREMIUM_PACKAGE}`,
     price: '£1000',
-    title: 'Premium Package (Discounted Price) - £1000'
+    title: 'Premium Package (Training, Mentorship, Practical, Career Support) - £1000.00'
   },
   {
     paymentLink: `${process.env.REACT_STRIPES_PREMIUM_PACKAGE_TRAINING_ONLY}`,
     price: '£600',
-    title: 'Premium Package Offer for (Training Only) - £600.00'
+    title: 'Training - £600.00'
   },
   {
     paymentLink: `${process.env.REACT_STRIPES_GLOBAL_TALENT_CONSULTATION}`,
-    price: '£25',
-    title: 'Global Talent Consultation Fee - £25.00'
+    price: '£150',
+    title: 'Mentorship - £150.00'
+  },
+  {
+    paymentLink: `${process.env.REACT_STRIPES_GLOBAL_TALENT_CONSULTATION}`,
+    price: '£250',
+    title: 'Practical - £250.00'
   },
   {
     paymentLink: `${process.env.REACT_STRIPES_CAREER_SUPPORT_SERVICES}`,
     price: '£250',
-    title: 'Career Support Services - £250.00'
+    title: 'Career Support - £250.00'
   },
 ]
