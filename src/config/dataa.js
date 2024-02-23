@@ -3,7 +3,7 @@ import Skills, { DemoDay, OnlineMentoring } from '@/components/courses/explore-p
 import CoreValueIcon from '@/assets/icons/core-values.png';
 import CoreMissionIcon from '@/assets/icons/mission-icon.png';
 import VisionIcon from '@/assets/icons/vision-icon.png';
-import JohnOnifade from '@/assets/experts/john-onifade.png';
+import MoyoHicks from '@/assets/experts/moyo-hicks.jpg';
 import SegunAllen from '@/assets/experts/segun-allen.png';
 import Hannat from '@/assets/experts/hannat.png';
 import { ABOUT_US_URL, FAQ_URL } from './paths';
@@ -62,15 +62,11 @@ export const footerData = {
     ],
     contact: [
         {
-            title: 'UK: Brandford, London Street.',
+            title: 'Office 6917, 182-184 High Street North, East Ham, London E6 2JA. United Kingdom.',
             href: "#"
         },
         {
-            title: 'Lagos: 2, Ikeja Street.',
-            href: "#"
-        },
-        {
-            title: 'Phone Number: +44 - (7816) - 247 - 864',
+            title: 'Phone Number: +44-7816-247-864',
             href: "#"
         },
         {
@@ -82,8 +78,8 @@ export const footerData = {
 
  export const tabData = (courses) => [
     { id: '0', title: 'Learn a skill', content: Skills(courses) },
-    { id: '1', title: 'One-on-One online mentoring', content: OnlineMentoring({imageWidth : ''}) },
-    { id: '2', title: 'Demo and project', content: DemoDay() },
+    { id: '1', title: 'One-on-One mentoring', content: OnlineMentoring({imageWidth : ''}) },
+    { id: '2', title: 'Practical', content: DemoDay() },
   ];
 
   export const us = [
@@ -106,45 +102,11 @@ export const footerData = {
 
 export const experts = [
     {
-        name: 'Segun Allen',
-        image: SegunAllen,
-        position: 'Business Analyst'
-    },
-    {
-        name: 'John Onifade',
-        image: JohnOnifade,
-        position: 'Business Analyst'
-    },
-    {
-        name: 'Brian-Gabriel Ndubuisi',
-        image: SegunAllen,
-        position: 'Product Designer'
-    },
-    {
-        name: 'Olabode Ajilore',
-        image: JohnOnifade,
-        position: 'Scrum Master'
-    },
-    {
-        name: 'Kolade Norman',
-        image: Hannat,
-        position: 'Cyber Security Specialist'
-    },
-    {
-        name: 'Hannat Amuda',
-        image: Hannat,
-        position: 'Business Analyst'
-    },
-    {
-        name: 'Oge Ojiki',
-        image: JohnOnifade,
-        position: 'IT Support Specialist'
-    },
-    {
-        name: 'Iretiola Fola-Bolumole',
-        image: SegunAllen,
-        position: 'Data Analyst'
-    },
+        name: 'Moyo Hicks',
+        image: MoyoHicks,
+        position: 'Product Management',
+        linkedin: 'https://www.linkedin.com/in/moyohicks/'
+    }
 ];
 
 export const Faque = [

@@ -226,7 +226,7 @@ const Offerings = () => {
             <PopupButton
               url={`${process.env.REACT_CALENDLY_URL}`}
               rootElement={document.getElementById('root')}
-              text="Learn more"
+              text="Book a call"
               styles={{ width: '100%', height: '100%' }}
             />
           </Button>

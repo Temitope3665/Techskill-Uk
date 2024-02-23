@@ -50,10 +50,10 @@ export const Pricing = ({ title, description, description2, price, href }) => {
   return (
     <div className="border-[0.5px] border-yellow rounded-lg grid grid-cols-3 p-4 gap-4 lg:items-center relative lg:w-[85%]">
       <h2 className="text-[18px] lg:text-[24px] font-gilroyMd">{title}</h2>
-      <p className="text-[12px] w-[60%]">{description}</p>
-      <div className='-ml-4'>
+      <p className="text-[12px] w-[90%]">{description}</p>
+      <div className='ml-8'>
         <h3 className="text-[18px] lg:text-[26px] font-gilroyBold">£{price}</h3>
-        <p className="text-[12px]">{description2}</p>
+        {/* <p className="text-[12px]">{description2}</p> */}
         <Link to={href}>
           <Button className="lg:absolute lg:top-[30%] lg:-right-20 mt-2 lg:mt-0 text-[12px] lg:text-sm" size="sm">
             Pay now <ChevronRight className="ml-2" size={16} />{' '}
