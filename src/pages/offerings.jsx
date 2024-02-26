@@ -11,6 +11,7 @@ import { useLocation } from 'react-router-dom';
 import { PopupButton, useCalendlyEventListener } from 'react-calendly';
 import { Button } from '@/components/ui/button';
 import { CourseContext } from '@/contexts/course-context';
+import { OnlineMentoring } from '@/components/courses/explore-programmes';
 
 const Offerings = () => {
   const { allCourses, isLoading } = useContext(CourseContext);
@@ -135,7 +136,7 @@ const Offerings = () => {
                       key={course?.fields?.title}
                       description={course?.fields?.shortDescription}
                       href={`details/${course?.sys?.id}`}
-                      className="lg:w-[300px] my-6 lg:my-0"
+                      className="lg:w-[350px] my-6 lg:my-0"
                     />
                   ))}
                 </>
@@ -232,6 +233,10 @@ const Offerings = () => {
           </Button>
         </div>
       </div>
+
+      <section className='px-6 lg:px-20 pb-8' id="mentorship-call">
+        <OnlineMentoring imageWidth="w-[45%]" title="Book Mentorship and Consultation" />
+      </section>
 
       <Footer />
     </div>
