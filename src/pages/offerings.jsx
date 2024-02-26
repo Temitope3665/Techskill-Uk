@@ -12,6 +12,7 @@ import { PopupButton, useCalendlyEventListener } from 'react-calendly';
 import { Button } from '@/components/ui/button';
 import { CourseContext } from '@/contexts/course-context';
 import { OnlineMentoring } from '@/components/courses/explore-programmes';
+import ReactHelment from '@/components/helmet';
 
 const Offerings = () => {
   const { allCourses, isLoading } = useContext(CourseContext);
@@ -59,6 +60,7 @@ const Offerings = () => {
   }, [location.hash]);
   return (
     <div className="mt-12">
+      <ReactHelment title="Techskill Uk Offerings" />
       <div className="px-6 lg:px-12 relative">
         <div className="lg:flex justify-between items-center lg:px-24">
           <div className="lg:w-[45%]">
@@ -234,8 +236,12 @@ const Offerings = () => {
         </div>
       </div>
 
-      <section className='px-6 lg:px-20 pb-8' id="mentorship-call">
-        <OnlineMentoring imageWidth="w-[45%]" title="Book Mentorship and Consultation" />
+      <section className="px-6 lg:px-20 pb-8" id="mentorship-call">
+        <OnlineMentoring
+          imageWidth="w-[45%]"
+          title="Book Mentorship and Consultation"
+          description="Accelerate your career through our tailored one-on-one mentoring sessions, designed to provide personalised guidance, insights, and strategies to help you reach your professional goals faster. Our experienced mentors offer individualised support, leveraging their expertise to help you navigate challenges, seize opportunities, and make informed decisions that propel your career forward."
+        />
       </section>
 
       <Footer />

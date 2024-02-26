@@ -4,6 +4,8 @@ import CoreValueIcon from '@/assets/icons/core-values.png';
 import CoreMissionIcon from '@/assets/icons/mission-icon.png';
 import VisionIcon from '@/assets/icons/vision-icon.png';
 import MoyoHicks from '@/assets/experts/moyo-hicks.jpg';
+import JenniferNneji from '@/assets/experts/jennifer-nneji.jpeg';
+import IjaolaOpemipo from '@/assets/experts/ijaola-opemipo.jpeg';
 import TobiEsho from '@/assets/experts/tobi-esho.jpg';
 import { ABOUT_US_URL, FAQ_URL } from './paths';
 
@@ -112,6 +114,18 @@ export const experts = [
         image: TobiEsho,
         position: 'Product manager',
         linkedin: 'https://www.linkedin.com/in/tobiesho/'
+    },
+    {
+        name: 'Jennifer Nneji',
+        image: JenniferNneji,
+        position: 'Business Analyst',
+        linkedin: 'https://www.linkedin.com/in/jennifer-nneji-b5a64417b/'
+    },
+    {
+        name: 'David Ijaola',
+        image: IjaolaOpemipo,
+        position: 'Product manager',
+        linkedin: 'https://www.linkedin.com/in/david-ijaola-49942114a/'
     }
 ];
 
@@ -139,5 +153,44 @@ export const Faque = [
     {
         q: 'Is there any financial assistance or payment plan available',
         a: 'Yes, we offer flexible payment plans, and at times, discounted rates to assist our learners.'
+    },
+];
+
+export const alumni = [
+    {
+        name: 'Damilola Fadulu',
+        title: 'Business Analyst',
+        linkedin: 'https://www.linkedin.com/in/damilolafadulu',
+        image: 'https://media.licdn.com/dms/image/D4E35AQH2zeilEnvTRw/profile-framedphoto-shrink_800_800/0/1690143423287?e=1709553600&v=beta&t=nJfOQv1fXgQShwSvWQhAJHhJE9w7IYhMn_jqbL_GFsg'
+    },
+    {
+        name: 'Lolade Olumuyiwa-Biala',
+        title: 'Product Manager',
+        linkedin: 'https://www.linkedin.com/in/ololade-olu-biala-2163027b',
+        image: 'https://media.licdn.com/dms/image/D4E03AQFlWyxXbqZhYw/profile-displayphoto-shrink_400_400/0/1681946632163?e=1714608000&v=beta&t=8K3V74z_wc1giQ3f3JcyC85Ervj-gsN9vjDtuLezdkA'
+    },
+    {
+        name: 'Bibian Igarando',
+        title: 'Data Analyst',
+        linkedin: 'https://www.linkedin.com/in/igarando-bibian-ebinipre',
+        image: 'https://media.licdn.com/dms/image/C4E03AQE3YIGlpBNLDw/profile-displayphoto-shrink_400_400/0/1654601657229?e=1714608000&v=beta&t=z8J6BeBI-TsZ1mYDUuEfM574SR52f87e9E-BV8F0HQ0'
+    },
+    {
+        name: 'Olamide Oyejobi',
+        title: 'Scrum Master/Project Manager',
+        linkedin: 'https://www.linkedin.com/in/olamide-oyejobi',
+        image: 'https://media.licdn.com/dms/image/D4E35AQGPqk53_ymJTQ/profile-framedphoto-shrink_400_400/0/1698923438261?e=1709553600&v=beta&t=hJxRBBQHLnS6ns8cd5VxVw6QJJBqGlf29j04T4fe6vk'
+    },
+    {
+        name: 'Oyewale Oredein',
+        title: 'Data Analyst',
+        linkedin: 'https://www.linkedin.com/in/oyewale-oredein-014b59112',
+        image: 'https://media.licdn.com/dms/image/D4E03AQGJMq84QyU80Q/profile-displayphoto-shrink_400_400/0/1666827035742?e=1714608000&v=beta&t=D8ULPANuLFN_lJJWqOylxu0SX62e4orr0GZ3TUL--zM'
+    },
+    {
+        name: 'Modupe Magbagbeola',
+        title: 'Project Manager',
+        linkedin: 'https://www.linkedin.com/in/modupe-magbagbeola-ba260a181',
+        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },
 ]

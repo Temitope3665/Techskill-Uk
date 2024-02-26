@@ -1,10 +1,12 @@
 import UserRegisterImage from '@/assets/image/register-image.png';
 import ArrowLeftRight from '@/assets/image/arrow-left-right.png';
 import UserRegistrationForm from '@/components/forms/user-register-form';
+import ReactHelment from '@/components/helmet';
 
 const UserRegistration = () => {
   return (
     <div className="my-4 lg:my-10 lg:px-16 px-8">
+      <ReactHelment title="Techskill Uk Registration Form" />
       <section className="w-full lg:flex">
         <div className="w-full lg:w-[45%] hidden lg:block relative">
           <img

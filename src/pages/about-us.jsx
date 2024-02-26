@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 const AboutUs = () => {
   return (
     <div className="">
-      <ReactHelment title="About Us" />
+      <ReactHelment title="About Techskill UK" />
       <div className="px-6 lg:px-12 pb-12">
         <div className="lg:flex justify-between w-full items-center mt-4 lg:mt-16">
           <div className="lg:w-[45%] text-center lg:text-left">

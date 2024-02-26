@@ -15,6 +15,7 @@ import Loading from '@/assets/animation/loading.svg';
 import { useEffect, useState } from 'react';
 import { OnlineMentoring } from '@/components/courses/explore-programmes';
 import Footer from '@/components/footer';
+import ReactHelment from '@/components/helmet';
 
 const CourseDetails = () => {
   const { slug } = useParams();
@@ -52,6 +53,7 @@ const CourseDetails = () => {
 
   return (
     <>
+      <ReactHelment title={`Explore Our ${course?.title || 'Course'} Course`} />
       {isLoading ? (
         <div className="w-full flex justify-center">
           <img src={Loading} alt="loading" />
