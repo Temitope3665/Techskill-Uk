@@ -91,7 +91,7 @@ export const offeringsDropdownList = [
         icon: BookMentorship,
         title: 'Book Mentorship and Consultation',
         desc: 'Accelerate your career through our tailored one-on-one career mentoring sessions',
-        href: '#'
+        href: `${OFFERINGS_URL}/#mentorship-call`
     },
 ];
 

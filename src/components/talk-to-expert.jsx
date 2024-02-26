@@ -21,7 +21,7 @@ const TalkToExpert = () => {
           Talk to an Expert ?
         </h2>
         <p className="text-grey md:text-base text-sm px-8 md:px-0">
-          Talk to an expert: Ready to take a step in your tech career but unsure
+          Ready to take a step in your tech career but unsure
           where to begin? Book a call with our learning advisors today! Get
           personalised guidance, choose the perfect tech program and enrol
           confidently.

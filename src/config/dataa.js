@@ -1,11 +1,10 @@
 import SamuelOni from '@/assets/image/samuel-oni.png';
-import Skills, { DemoDay, OnlineMentoring } from '@/components/courses/explore-programmes';
+import Skills, { DemoDay, Internship, OnlineMentoring } from '@/components/courses/explore-programmes';
 import CoreValueIcon from '@/assets/icons/core-values.png';
 import CoreMissionIcon from '@/assets/icons/mission-icon.png';
 import VisionIcon from '@/assets/icons/vision-icon.png';
 import MoyoHicks from '@/assets/experts/moyo-hicks.jpg';
-import SegunAllen from '@/assets/experts/segun-allen.png';
-import Hannat from '@/assets/experts/hannat.png';
+import TobiEsho from '@/assets/experts/tobi-esho.jpg';
 import { ABOUT_US_URL, FAQ_URL } from './paths';
 
 export const testimonials = [
@@ -62,7 +61,7 @@ export const footerData = {
     ],
     contact: [
         {
-            title: 'Office 6917, 182-184 High Street North, East Ham, London E6 2JA. United Kingdom.',
+            title: 'Office: 6917, 182-184 High Street North, East Ham, London E6 2JA. United Kingdom.',
             href: "#"
         },
         {
@@ -79,7 +78,8 @@ export const footerData = {
  export const tabData = (courses) => [
     { id: '0', title: 'Learn a skill', content: Skills(courses) },
     { id: '1', title: 'One-on-One mentoring', content: OnlineMentoring({imageWidth : ''}) },
-    { id: '2', title: 'Practical', content: DemoDay() },
+    { id: '2', title: 'Practical ', content: DemoDay() },
+    { id: '3', title: 'Internship', content: Internship() },
   ];
 
   export const us = [
@@ -104,19 +104,25 @@ export const experts = [
     {
         name: 'Moyo Hicks',
         image: MoyoHicks,
-        position: 'Product Management',
+        position: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/moyohicks/'
+    },
+    {
+        name: 'Tobi Esho',
+        image: TobiEsho,
+        position: 'Product manager',
+        linkedin: 'https://www.linkedin.com/in/tobiesho/'
     }
 ];
 
 export const Faque = [
     {
         q: 'What skill does Techskill UK offers?',
-        a: 'We offer courses in Business Analysis, product design, product management, project management and more'
+        a: 'We offer courses in business analysis, product management, project management and more'
     },
     {
         q: 'How long are the training programs?',
-        a: 'Our typical courses run for 5 weeks with specialized training sessions, practice sessions and mentorship opportunities.'
+        a: 'The duration of our training programs varies with courses, typically spanning from 5 to 8 weeks.'
     },
     {
         q: 'Do you offer any career support after course completion?',

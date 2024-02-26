@@ -166,9 +166,9 @@ const AboutUs = () => {
           {experts.map((expert) => (
             <div className="text-center mt-8" key={expert.name}>
               <div className="rounded-full w-[120px] h-[120px] mx-auto">
-                <img src={expert.image} alt={expert.name} className='rounded-full object-cover' />
+                <img src={expert.image} alt={expert.name} className='rounded-full w-full h-full object-cover' />
               </div>
-              <p className="text-sm font-gilroylg">{expert.name}</p>
+              <p className="text-sm font-gilroylg mt-2">{expert.name}</p>
               <p className="text-grey text-xs">{expert.position}</p>
               <Link to={expert.linkedin} target='_blank'>
                 <p className='text-[11px] text-yellow'>View expert</p>

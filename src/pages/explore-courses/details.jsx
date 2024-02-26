@@ -203,7 +203,7 @@ const CourseDetails = () => {
                 Learning objectives
               </h1>
               <p className="py-2">
-                Upon the completion of the course you will learn to:
+                Upon completing this course, you will learn to:
               </p>
 
               {course?.courseObjectives?.objectives?.map((obj) => (
