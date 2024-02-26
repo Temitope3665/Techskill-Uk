@@ -66,7 +66,7 @@ export const why = [
     {
         icon: Skills,
         title: 'Immersive skill training',
-        description: 'Transition into in-demand tech skills with our course offerings. Business Analysis, Product Management, Agile Project Management, Product Design, Data Analysis, and Cybersecurity. Develop a strong foundation for a successful career in the industry'
+        description: 'Transition into in-demand tech skills with our course offerings. Business Analysis, Product Management, Agile Project Management, Data Analysis, and Cybersecurity. Develop a strong foundation for a successful career in the industry'
     },
     {
         icon: Portfolio,

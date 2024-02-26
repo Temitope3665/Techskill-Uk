@@ -28,15 +28,14 @@ const Skills = (courses) => {
 
 export default Skills;
 
-export const OnlineMentoring = ({ imageWidth, title }) => (
+export const OnlineMentoring = ({ imageWidth, title, description }) => (
   <div className="flex mt-7 md:mt-14 items-center flex-col-reverse md:flex-row gap-8 justify-between">
     <div className="md:40%">
       <h1 className="text-[24px] md:text-[45px] font-gilroyBold">
         {title || ' One-on-One Mentoring'}
       </h1>
       <p className="text-grey md:text-base text-[13px] md:w-[80%]">
-        Accelerate your career through our tailored one-on-one career mentoring
-        sessions.
+        {description || 'Accelerate your career through our tailored one-on-one career mentoring sessions.'}
       </p>
 
       {/* <div className='my-4 md:my-8 md:flex space-y-3 md:space-y-0 block items-center'>

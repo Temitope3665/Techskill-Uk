@@ -6,7 +6,7 @@ import ReactHelment from '@/components/helmet';
 import JoinOurCommunity from '@/components/join-community';
 import { Button } from '@/components/ui/button';
 import { CourseContext } from '@/contexts/course-context';
-import { convertToWAT, formatDate, formatDatee } from '@/lib/utils';
+import { formatDatee } from '@/lib/utils';
 import { CalendarCheck, MoveRight, TimerIcon } from 'lucide-react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -15,7 +15,7 @@ const Community = () => {
   const { events, loadingEvents } = useContext(CourseContext);
   return (
     <div className="py-8">
-      <ReactHelment title="Our Community" />
+      <ReactHelment title="Techskill Uk Community" />
       <div className="lg:flex justify-between w-full items-center mt-4 lg:mt-16 px-6 lg:px-12">
         <div className="lg:w-[45%] text-center lg:text-left">
           <h1 className="text-[30px] lg:text-[60px] font-gilroyBold">
