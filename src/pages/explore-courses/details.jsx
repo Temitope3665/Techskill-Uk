@@ -334,6 +334,12 @@ const CourseDetails = () => {
                 services.
               </p>
               <div className="grid lg:grid-cols-2 gap-8 mt-10">
+              <Pricing
+                  description="This includes additional benefits such as career support, mentorship and practical"
+                  title="Premium Package"
+                  price={course?.fullPrice}
+                  href={`${process.env.REACT_STRIPES_PREMIUM_PACKAGE}`}
+                />
                 <Pricing
                   description="Get the best deal by 
           paying for our training"
@@ -358,12 +364,6 @@ const CourseDetails = () => {
                   title="Career Support"
                   price={'250'}
                   href={`${process.env.REACT_STRIPES_CAREER_SUPPORT_SERVICES}`}
-                />
-                <Pricing
-                  description="This includes additional benefits such as career support, mentorship and practical"
-                  title="Premium Package"
-                  price={course?.fullPrice}
-                  href={`${process.env.REACT_STRIPES_PREMIUM_PACKAGE}`}
                 />
               </div>
             </div>
