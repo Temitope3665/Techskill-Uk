@@ -19,9 +19,9 @@ const HireAlumni = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-4 mt-12 gap-4">
+      <div className="grid grid-cols-4 mt-6 gap-4">
         {alumni.map((alumnus) => (
-          <div className="rounded-lg w-full text-center mt-4" key={alumnus.name}>
+          <div className="rounded-lg w-full text-center mt-8" key={alumnus.name}>
             <div className="h-[170px] w-[170px] rounded-full mx-auto">
               <img
                 src={alumnus.image}

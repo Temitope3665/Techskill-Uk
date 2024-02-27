@@ -7,7 +7,7 @@ import MoyoHicks from '@/assets/experts/moyo-hicks.jpg';
 import JenniferNneji from '@/assets/experts/jennifer-nneji.jpeg';
 import IjaolaOpemipo from '@/assets/experts/ijaola-opemipo.jpeg';
 import TobiEsho from '@/assets/experts/tobi-esho.jpg';
-import { ABOUT_US_URL, FAQ_URL } from './paths';
+import { ABOUT_US_URL, FAQ_URL, HIRE_ALUMNI_URL } from './paths';
 
 export const testimonials = [
     {
@@ -46,7 +46,7 @@ export const footerData = {
         },
         {
             title: 'Find a Talent',
-            href: "#"
+            href: HIRE_ALUMNI_URL
         },
         {
             title: 'FAQs',
@@ -191,6 +191,12 @@ export const alumni = [
         name: 'Modupe Magbagbeola',
         title: 'Project Manager',
         linkedin: 'https://www.linkedin.com/in/modupe-magbagbeola-ba260a181',
+        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
+    },
+    {
+        name: 'Damilola Oyejobi',
+        title: 'Analyst',
+        linkedin: 'https://www.linkedin.com/in/damilola-oyejobi-a78132b1/1',
         image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },
 ]

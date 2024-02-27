@@ -13,10 +13,12 @@ const Footer = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 text-[#1D1E20] mt-8 gap-x-8 md:gap-x-16 text-xs lg:text-sm">
         <div>
           <p className="font-gilroyBold mb-2">Company</p>
-          {footerData.company.map((com) => (
-            <p key={com.title} className="py-2 font-gilroyMd">
-              {com.title}
-            </p>
+          {footerData.company.map((com) => (       
+            <Link to={com.href} key={com.title} className='w-fit'>
+              <p key={com.title} className="py-2 font-gilroyMd w-fit">
+                {com.title}
+              </p>
+            </Link>
           ))}
         </div>
         <div>
@@ -24,8 +26,8 @@ const Footer = () => {
           {isLoading ? '' : (
             <>
           {allCourses?.map((com) => (
-            <Link  to={`/explore-courses/details/${com?.sys?.id}`} key={com?.fields?.title}>
-              <p className="py-2 font-gilroyMd cursor-pointer">
+            <Link  to={`/explore-courses/details/${com?.sys?.id}`} key={com?.fields?.title} className='w-fit'>
+              <p className="py-2 font-gilroyMd cursor-pointer w-fit">
                 {com?.fields?.title}
               </p>
             </Link>
