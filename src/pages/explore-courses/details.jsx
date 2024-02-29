@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import { OnlineMentoring } from '@/components/courses/explore-programmes';
 import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
+import TalkToExpert from '@/components/talk-to-expert';
 
 const CourseDetails = () => {
   const { slug } = useParams();
@@ -88,7 +89,7 @@ const CourseDetails = () => {
             <div className="lg:w-[40%] mt-6 lg:mt-0">
               <img
                 src={course?.image?.fields?.file?.url}
-                alt="product management course image"
+                alt={`learn-${course?.title.toLowerCase().replace(/ /g,"-")}`}
               />
             </div>
           </div>
@@ -388,6 +389,10 @@ const CourseDetails = () => {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className='bg-primary'>
+            <TalkToExpert title="Need more info" description="Book a Free call with our learning advisors today for instant guidance." />
           </div>
 
           <div className="bg-secondary mt-6 lg:mt-10 px-6 lg:px-36 py-8">

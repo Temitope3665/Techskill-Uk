@@ -6,7 +6,6 @@ export const userRegisterSchema = yup.object({
   email: yup.string().required('Email is required'),
   phoneNumber: yup.string().max(15, 'Phone number must not be greater than 15').required('Valid phone number is required'),
   address: yup.string().required('Full address is required'),
-  dob: yup.string().required('Date of birth is required'),
   interestedCourse: yup.string().required('Interested course is required'),
 });
 
