@@ -12,7 +12,11 @@ import { Input } from '@/components/ui/input';
 import Footer from '@/components/footer';
 import ReactHelment from '@/components/helmet';
 import { Link } from 'react-router-dom';
-import { ABOUT_US_URL, EXPLORE_COURSES_URL } from '@/config/paths';
+import {
+  ABOUT_US_URL,
+  EXPLORE_COURSES_URL,
+  REGISTRATION_URL,
+} from '@/config/paths';
 import { createClient } from 'contentful';
 import { useContext, useEffect, useState } from 'react';
 import Loading from '@/assets/animation/loading.svg';
@@ -28,7 +32,13 @@ import {
 import axios from 'axios';
 import { headers_, registerUserApi } from '@/config/api';
 import { toast } from '@/components/ui/use-toast';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { paymentPlans } from '@/lib/utils';
 
 const Home = () => {
@@ -50,10 +60,12 @@ const Home = () => {
     // Reset error message when the user types
     setShowError(false);
     // Validate email format
-    const isValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+    const isValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+      value
+    );
     setIsValidEmail(isValid);
-  }
-  
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isValidEmail) {
@@ -61,45 +73,42 @@ const Home = () => {
       return;
     }
 
-      setIsSubmitting(true);
-      axios
-        .post(
-          registerUserApi,
-          {
-            "fields": {
-              'Email': email,
-              'Faqs': 'I want to join the community'
-            },
+    setIsSubmitting(true);
+    axios
+      .post(
+        registerUserApi,
+        {
+          fields: {
+            Email: email,
+            Faqs: 'I want to join the community',
           },
-          { headers: headers_ }
-        )
-        .then(() => {
-          setEmail('')
-          toast({
-            description: "You've successfully joined our waiting list",
-          });
-        }
-        )
-        .catch(() =>
-          toast({
-            variant: 'destructive',
-            title: 'Uh oh! Something went wrong.',
-            description: 'There was a problem with your request.',
-          })
-        )
-        .finally(() => setIsSubmitting(false));
+        },
+        { headers: headers_ }
+      )
+      .then(() => {
+        setEmail('');
+        toast({
+          description: "You've successfully joined our waiting list",
+        });
+      })
+      .catch(() =>
+        toast({
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem with your request.',
+        })
+      )
+      .finally(() => setIsSubmitting(false));
   };
 
   useEffect(() => {
     const getAllAssets = async () => {
       try {
-        const assets = await client.getAssets();
-        const total = assets.total;
-        const asset = assets?.items[total - 1];
+        const assets = await client.getAsset('7AjfasF8eGRbl93ohvehWb');
         setBanner({
-          image: asset.fields.url,
-          title: asset.fields.title,
-          desc: asset.fields.description,
+          image: assets.fields.url,
+          title: assets.fields.title,
+          desc: assets.fields.description,
         });
       } catch (error) {
         console.log(error);
@@ -121,7 +130,7 @@ const Home = () => {
 
           <p className="px-4 md:px-0 md:w-[80%] my-4 normal-case">
             {banner.desc ||
-              'TechSkill UK empowers tech enthusiasts through training, mentorship, in other to transition into their desired career.'}
+              'At TechSkill, we believe in empowering tech enthusiasts like you to reach new heights in your career journey with our cutting-edge training programs, personalised mentorship, and career support.'}
           </p>
 
           <div className="md:flex md:space-x-8 mt-4 space-x-2 md:mt-8 space-y-3 md:space-y-0">
@@ -131,10 +140,15 @@ const Home = () => {
               </Button>
             </Link>
 
-              <Button size="lg" variant="outline" onClick={() => setOpen(true)}>
-                Pay for a service
+            <Link to={REGISTRATION_URL}>
+              <Button size="lg" variant="outline" className="mt-4 lg:mt-0">
+                Get started
               </Button>
+            </Link>
 
+            {/* <Button size="lg" variant="outline" onClick={() => setOpen(true)}>
+              Pay for a service
+            </Button> */}
           </div>
         </div>
         <img
@@ -181,7 +195,9 @@ const Home = () => {
               </p>
               <div className="flex text-yellow cursor-pointer mt-12 text-sm md:text-base">
                 <CornerDownRight strokeWidth={1} />
-                <Link to={ABOUT_US_URL} className="ml-1">Learn more</Link>
+                <Link to={ABOUT_US_URL} className="ml-1">
+                  Learn more
+                </Link>
               </div>
             </div>
           </div>
@@ -207,8 +223,8 @@ const Home = () => {
             Explore our courses
           </h1>
           <p className="text-sm md:text-base text-grey font-gilroyMd md:-mt-2">
-            Explore our courses, speak with a learning advisor and transition
-            into tech
+            View our courses, speak with a learning advisor and kickstart your
+            tech journey
           </p>
         </div>
         <div className="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
@@ -224,7 +240,7 @@ const Home = () => {
                   image={course?.fields?.image?.fields?.file?.url}
                   key={course?.fields?.title}
                   description={course?.fields?.shortDescription}
-                  href={`explore-courses/details/${course?.sys?.id}`}
+                  href={`explore-courses/details/${course?.sys?.id}?course=learn-${course?.fields?.title.toLowerCase().replace(/ /g,"-")}`}
                 />
               ))}
             </>
@@ -252,10 +268,10 @@ const Home = () => {
         />
         <div className="text-center w-full py-10 md:py-20">
           <h1 className="text-[#EFF5FB] text-[30px] md:text-[60px] font-gilroyBold">
-            How we help...
+            Unique Selling Points
           </h1>
           <p className="md:text-base text-grey font-gilroyMd text-sm md:-mt-2">
-            Find out how we help
+            Here’s why we are different and stand out
           </p>
         </div>
         <div className="grid md:grid-cols-4 px-4 md:px-12 pb-12 md:gap-y-0 gap-y-4 gap-x-8">
@@ -308,20 +324,26 @@ const Home = () => {
           <h1 className="text-[#EFF5FB] text-[18px] md:text-[30px] font-gilroyBold text-center">
             Ready to join a cohort?
           </h1>
-            <form onSubmit={handleSubmit}>
-          <div className="flex items-center gap-x-4 mt-4">
+          <form onSubmit={handleSubmit}>
+            <div className="flex items-center gap-x-4 mt-4">
               <Input
                 className="bg-secondary"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
-                defaultValue=''
+                defaultValue=""
                 onChange={({ target }) => handleChange(target.value)}
               />
-              <Button size="lg" loading={isSubmitting} loadingText="Joining...">Join</Button>
-          </div>
-            </form>
-            {showError && !isValidEmail && <div className='text-[#c34141] text-sm mt-1'>Please enter a valid email address.</div>}
+              <Button size="lg" loading={isSubmitting} loadingText="Joining...">
+                Join
+              </Button>
+            </div>
+          </form>
+          {showError && !isValidEmail && (
+            <div className="text-[#c34141] text-sm mt-1">
+              Please enter a valid email address.
+            </div>
+          )}
         </div>
       </section>
 
@@ -332,7 +354,7 @@ const Home = () => {
               Choose Payment Plan
             </DialogTitle>
             <DialogDescription>
-            Use the options below to pay for any of our services.
+              Use the options below to pay for any of our services.
             </DialogDescription>
           </DialogHeader>
           <div>
@@ -345,8 +367,10 @@ const Home = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                {paymentPlans.map((plan) => (
-                  <SelectItem value={plan.paymentLink}>{plan.title}</SelectItem>
+                  {paymentPlans.map((plan) => (
+                    <SelectItem value={plan.paymentLink}>
+                      {plan.title}
+                    </SelectItem>
                   ))}
                 </SelectGroup>
               </SelectContent>

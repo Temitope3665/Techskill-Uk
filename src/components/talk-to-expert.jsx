@@ -2,8 +2,9 @@ import { PhoneIncoming } from 'lucide-react';
 import { Button } from './ui/button';
 import Stars from '@/assets/icons/stars.png';
 import { PopupButton } from 'react-calendly';
+import { cn } from '@/lib/utils';
 
-const TalkToExpert = () => {
+const TalkToExpert = ({ title, description, classNames }) => {
   return (
     <div
       className="w-full pb-12 md:pb-16 md:py-14 relative"
@@ -16,15 +17,12 @@ const TalkToExpert = () => {
         alt="stars"
         className="absolute w-[300px] right-0 -top-48 md:-top-20"
       />
-      <div className="mx-auto text-center md:w-[40%]">
+      <div className={cn('mx-auto text-center md:w-[40%]', classNames)}>
         <h2 className="font-gilroyMd text-[30px] md:text-[55px]">
-          Talk to an Expert ?
+          {title || 'Talk to an Expert ?'}
         </h2>
         <p className="text-grey md:text-base text-sm px-8 md:px-0">
-          Ready to take a step in your tech career but unsure
-          where to begin? Book a call with our learning advisors today! Get
-          personalised guidance, choose the perfect tech program and enrol
-          confidently.
+        {description || 'Ready to take a step in your tech career but unsure where to begin? Book a call with our learning advisors today for instant guidance.'}
         </p>
 
         <Button className="font-bold text-[20px] h-[50px] md:w-[25vw] hover:bg-white mt-8 bg-white">
@@ -33,7 +31,7 @@ const TalkToExpert = () => {
             rootElement={document.getElementById('root')}
             text={
               <div className="flex items-center justify-center">
-                Book a free call <PhoneIncoming className="ml-4" size={16} />
+                Talk to us for Free  <PhoneIncoming className="ml-4" size={16} />
               </div>
             }
             styles={{ width: '100%', height: '100%' }}

@@ -1,27 +1,31 @@
 import OurCourses from './our-courses';
-import Mentoring from '@/assets/image/online-mentoring.png';
+import Mentoring from '@/assets/image/online-mentoring.jpg';
 import DemoDayImage from '@/assets/image/demo-day.png';
 import InternshipImage from '@/assets/image/internship-image.jpg';
 import { Button } from '../ui/button';
 import { PopupButton, useCalendlyEventListener } from 'react-calendly';
 import { Link } from 'react-router-dom';
 import { REGISTRATION_URL } from '@/config/paths';
+import TalkToExpert from '../talk-to-expert';
 
 const Skills = (courses) => {
   useCalendlyEventListener({
     onEventScheduled: (e) => console.log(e.data.payload),
   });
   return (
-    <div className="grid md:grid-cols-3 gap-5 md:gap-10 mt-7 md:mt-14">
-      {courses?.map((course) => (
-        <OurCourses
-          title={course?.fields?.title}
-          image={course?.fields?.image?.fields?.file?.url}
-          key={course?.fields?.title}
-          description={course?.fields?.shortDescription}
-          href={`details/${course?.sys?.id}`}
-        />
-      ))}
+    <div className='w-full'>
+      <div className="grid md:grid-cols-3 gap-5 md:gap-10 mt-7 md:mt-14">
+        {courses?.map((course) => (
+          <OurCourses
+            title={course?.fields?.title}
+            image={course?.fields?.image?.fields?.file?.url}
+            key={course?.fields?.title}
+            description={course?.fields?.shortDescription}
+            href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title.toLowerCase().replace(/ /g,"-")}`}
+          />
+        ))}
+      </div>
+        <TalkToExpert title="Need Guidance on the preferred course for you?" description="Speak to our learning advisors today for instant guidance" classNames="md:w-[65%]" />
     </div>
   );
 };
@@ -52,8 +56,8 @@ export const OnlineMentoring = ({ imageWidth, title, description }) => (
     </div>
     <img
       src={Mentoring}
-      alt="online mentoring"
-      className={`${imageWidth || 'md:w-[45%]'}`}
+      alt="speek with our mentor"
+      className={`${imageWidth || 'md:w-[45%]'} rounded-xl`}
     />
   </div>
 );

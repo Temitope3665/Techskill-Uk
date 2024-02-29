@@ -161,7 +161,7 @@ export const alumni = [
         name: 'Damilola Fadulu',
         title: 'Business Analyst',
         linkedin: 'https://www.linkedin.com/in/damilolafadulu',
-        image: 'https://media.licdn.com/dms/image/D4E35AQH2zeilEnvTRw/profile-framedphoto-shrink_800_800/0/1690143423287?e=1709553600&v=beta&t=nJfOQv1fXgQShwSvWQhAJHhJE9w7IYhMn_jqbL_GFsg'
+        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },
     {
         name: 'Lolade Olumuyiwa-Biala',
@@ -179,7 +179,7 @@ export const alumni = [
         name: 'Olamide Oyejobi',
         title: 'Scrum Master/Project Manager',
         linkedin: 'https://www.linkedin.com/in/olamide-oyejobi',
-        image: 'https://media.licdn.com/dms/image/D4E35AQGPqk53_ymJTQ/profile-framedphoto-shrink_400_400/0/1698923438261?e=1709553600&v=beta&t=hJxRBBQHLnS6ns8cd5VxVw6QJJBqGlf29j04T4fe6vk'
+        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },
     {
         name: 'Oyewale Oredein',
@@ -195,7 +195,7 @@ export const alumni = [
     },
     {
         name: 'Damilola Oyejobi',
-        title: 'Analyst',
+        title: 'Project Manager',
         linkedin: 'https://www.linkedin.com/in/damilola-oyejobi-a78132b1/1',
         image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },

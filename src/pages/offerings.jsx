@@ -1,11 +1,10 @@
 import OurOfferings from '@/assets/image/offerings.png';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Star2 from '@/assets/image/stars-2.png';
-import JobSupport from '@/assets/image/job-supporting.png';
+import JobSupport from '@/assets/image/job-supporting.jpg';
 import GlobalTalent from '@/assets/image/global-talent.png';
 import { ChevronLeftCircle, ChevronRightCircle } from 'lucide-react';
 import OurCourses from '@/components/courses/our-courses';
-import { courses } from '@/config/courses';
 import Footer from '@/components/footer';
 import { useLocation } from 'react-router-dom';
 import { PopupButton, useCalendlyEventListener } from 'react-calendly';
@@ -64,10 +63,10 @@ const Offerings = () => {
       <div className="px-6 lg:px-12 relative">
         <div className="lg:flex justify-between items-center lg:px-24">
           <div className="lg:w-[45%]">
-            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
+            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-left">
               Offerings
             </h1>
-            <p className="text-grey lg:text-base text-sm text-center lg:text-left">
+            <p className="text-grey lg:text-base text-sm text-left">
               TechSkill UK empowers tech enthusiasts through comprehensive
               training, personalised mentorship, and dedicated career support.
               Our holistic approach equips individuals with the skills and
@@ -104,8 +103,8 @@ const Offerings = () => {
           Explore our training programmes
         </h1>
         <p className="text-grey text-center">
-          Explore our courses, speak with a learning advisor and transition into
-          tech
+        View our courses, speak with a learning advisor and kickstart your tech journey
+
         </p>
 
         <div className="lg:flex justify-between mt-16 px-1 w-full items-center pb-8">
@@ -137,7 +136,7 @@ const Offerings = () => {
                       image={course?.fields?.image?.fields?.file?.url}
                       key={course?.fields?.title}
                       description={course?.fields?.shortDescription}
-                      href={`details/${course?.sys?.id}`}
+                      href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title.toLowerCase().replace(/ /g,"-")}`}
                       className="lg:w-[350px] my-6 lg:my-0"
                     />
                   ))}
@@ -169,10 +168,10 @@ const Offerings = () => {
           data-aos-duration="1000"
         >
           <div className="lg:w-[50%]">
-            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
+            <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-left">
               Global Talent Visa
             </h1>
-            <p className="text-grey lg:text-base text-sm text-center lg:text-left">
+            <p className="text-grey lg:text-base text-sm text-left">
               Streamline your visa application process with our specialised
               service designed to cater to tech professionals seeking global
               opportunities. Benefit from our expertise and guidance as we
@@ -203,18 +202,18 @@ const Offerings = () => {
         data-aos-easing="linear"
         data-aos-duration="1000"
       >
-        <div className="lg:w-[35%] hidden lg:block h-[500px]">
+        <div className="lg:w-[35%] lg:block h-[200px] lg:h-[400px] w-[90vw]">
           <img
             src={JobSupport}
             alt="groups supporting job"
-            className="h-full"
+            className="h-full object-cover rounded-xl w-full"
           />
         </div>
-        <div className="lg:w-[50%]">
-          <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-center lg:text-left">
+        <div className="lg:w-[50%] mt-4 lg:mt-0">
+          <h1 className="text-[24px] lg:text-[40px] font-gilroyBold text-left">
             Career Support
           </h1>
-          <p className="text-grey lg:text-base text-sm text-center lg:text-left">
+          <p className="text-grey lg:text-base text-sm text-left">
             Elevate your job search with our comprehensive career support
             offerings tailored to tech professionals. Our expert team assists
             you in crafting compelling CVs that highlight your skills and
@@ -238,7 +237,7 @@ const Offerings = () => {
 
       <section className="px-6 lg:px-20 pb-8" id="mentorship-call">
         <OnlineMentoring
-          imageWidth="w-[45%]"
+          imageWidth="lg:w-[45%] w-full"
           title="Book Mentorship and Consultation"
           description="Accelerate your career through our tailored one-on-one mentoring sessions, designed to provide personalised guidance, insights, and strategies to help you reach your professional goals faster. Our experienced mentors offer individualised support, leveraging their expertise to help you navigate challenges, seize opportunities, and make informed decisions that propel your career forward."
         />

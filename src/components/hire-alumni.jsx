@@ -19,22 +19,22 @@ const HireAlumni = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-4 mt-6 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 mt-6 gap-4">
         {alumni.map((alumnus) => (
           <div className="rounded-lg w-full text-center mt-8" key={alumnus.name}>
-            <div className="h-[170px] w-[170px] rounded-full mx-auto">
+            <div className="lg:h-[170px] lg:w-[170px] h-[100px] w-[100px] rounded-full mx-auto">
               <img
                 src={alumnus.image}
                 alt="young girl expert"
                 className="h-full w-full object-cover rounded-full"
               />
             </div>
-            <h2 className="font-gilroyMd text-[20px] mt-2">
+            <h2 className="font-gilroyMd lg:text-[20px] text-sm mt-2">
               {alumnus.name}
             </h2>
             <div className=" items-center space-y-2 justify-center">
-              <p className="text-[#818992] text-sm mb-1">{alumnus.title}</p>
-              <Link to="#" className='text-yellow text-sm border px-2 py-1 rounded-md border-yellow'>
+              <p className="text-[#818992] lg:text-sm text-[12px] mb-1">{alumnus.title}</p>
+              <Link to={alumnus.linkedin} target='_blank' className='text-yellow text-sm border px-2 py-1 rounded-md border-yellow lg:text-sm text-[12px]'>
                 Connect
               </Link>
             </div>

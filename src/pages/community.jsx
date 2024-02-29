@@ -23,9 +23,7 @@ const Community = () => {
           </h1>
           <div className="h-1 w-[30%] bg-yellow -mt-3 hidden lg:flex" />
           <p className="lg:mt-6 lg:w-[80%] text-base text-grey">
-            Ready to take a step in your tech career but unsure where to begin?
-            Book a call with our learning advisor today! Get personalised
-            guidance, choose the perfect tech program, and enrol confidently.
+          Ready to take a step in your tech career but unsure where to begin? Join our community today! Get personalized guidance, choose the perfect tech program, and enroll confidently.
           </p>
           <Link to={`${process.env.REACT_SLACK_URL}`} target="_blank">
             <Button className="px-20 mt-6">Join our community</Button>

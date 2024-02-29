@@ -37,7 +37,7 @@ export const coursesNavDropdown = (lists, w) => {
           key={list?.fields?.title}
           className="flex items-center my-4 hover:after:secondary hover:bg-primary rounded-lg px-2 py-3"
           onClick={() =>
-            (window.location.href = `/explore-courses/details/${list?.sys?.id}`)
+            (window.location.href = `/explore-courses/details/${list?.sys?.id}?course=learn-${list?.fields?.title.toLowerCase().replace(/ /g,"-")}`)
           }
         >
           <div className="rounded-full p-2 bg-primary">
