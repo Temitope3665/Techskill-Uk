@@ -121,7 +121,7 @@ const Home = () => {
 
           <p className="px-4 md:px-0 md:w-[80%] my-4 normal-case">
             {banner.desc ||
-              'TechSkill empowers tech enthusiasts through training, mentorship, in other to transition into their desired career.'}
+              'TechSkill UK empowers tech enthusiasts through training, mentorship, in other to transition into their desired career.'}
           </p>
 
           <div className="md:flex md:space-x-8 mt-4 space-x-2 md:mt-8 space-y-3 md:space-y-0">
@@ -169,7 +169,7 @@ const Home = () => {
             </h2>
             <div className="text-base">
               <p className="">
-                TechSkill Accelerate serves as the gateway connecting tech
+                TechSkill UK Accelerate serves as the gateway connecting tech
                 enthusiasts to the tech industry. Our fervour lies in empowering
                 individuals with easily attainable, no-coding tech skills,
                 catering to those eager to swiftly transition into the tech

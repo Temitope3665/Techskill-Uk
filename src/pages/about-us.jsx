@@ -4,7 +4,7 @@ import Star2 from '@/assets/image/stars-2.png';
 import Star3 from '@/assets/icons/stars-3.png';
 import { experts, us } from '@/config/dataa';
 import Accelerate from '@/assets/image/accelerate-2.png';
-import HumanStanding from '@/assets/image/humans-standing.png';
+import HumanStanding from '@/assets/image/authentic-small-youthful-marketing-agency.jpg';
 import Footer from '@/components/footer';
 import JoinOurCommunity from '@/components/join-community';
 import ReactHelment from '@/components/helmet';
@@ -22,7 +22,7 @@ const AboutUs = () => {
             </h1>
             <div className="h-1 w-[30%] bg-yellow -mt-3 hidden lg:flex" />
             <p className="lg:mt-6 lg:w-[80%] text-base">
-              TechSkill empowers tech enthusiasts through training, mentorship,
+              TechSkill UK empowers tech enthusiasts through training, mentorship,
               and career support to transition into their desired careers.
             </p>
           </div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
           </h1>
           <div className="lg:w-[90%] mt-3 lg:mt-8 text-center lg:text-left">
             <p className="text-[14px] lg:text-[18px]">
-              We are a global training institute. Techskill provides
+              We are a global training institute. Techskill UK provides
               instructor-led, expert training to help motivated professionals
               attain their dream careers.
             </p>
@@ -121,7 +121,7 @@ const AboutUs = () => {
           </h1>
           <div className="lg:w-[90%] mt-2 lg:mt-8">
             <p className="text-[18px]">
-              TechSkill Accelerate serves as the gateway connecting tech
+              TechSkill UK Accelerate serves as the gateway connecting tech
               enthusiasts to the tech industry. Our fervour lies in empowering
               individuals with easily attainable, no-coding tech skills,
               catering to those eager to swiftly transition into the tech field.
@@ -137,7 +137,7 @@ const AboutUs = () => {
           <img
             src={HumanStanding}
             alt="human achieving common goal"
-            className="pb-12"
+            className="rounded-lg"
             data-aos="fade-left"
             data-aos-easing="linear"
             data-aos-duration="1000"

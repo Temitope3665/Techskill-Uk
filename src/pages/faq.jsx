@@ -57,7 +57,7 @@ const Faq = () => {
   };
   return (
     <div className="">
-      <ReactHelment title="Techskill - FAQ" />
+      <ReactHelment title="Techskill UK - FAQ" />
       <div className="px-6 lg:px-12 lg:py-6 lg:flex justify-between items-center">
         <div className="lg:w-[40%]">
           <img src={PuzzleMan} alt="puzzle man" />

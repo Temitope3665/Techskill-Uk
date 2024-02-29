@@ -14,19 +14,19 @@ export const testimonials = [
         image: SamuelOni,
         name: 'Samuel Oni',
         position: 'Data Analyst',
-        review: '"Techskill Accelerate is what I needed. Techskill is that Platform you need to gain the confidence to be able to call yourself a data analyst. My Tutor is good at what he does and I like the mentorship part of Techskill Accelerate too."'
+        review: '"Techskill UK Accelerate is what I needed. Techskill Uk is that Platform you need to gain the confidence to be able to call yourself a data analyst. My Tutor is good at what he does and I like the mentorship part of Techskill Accelerate too."'
     },
     {
-        image: SamuelOni,
+        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png',
         name: 'Violet Simon',
         position: 'Business Analyst',
         review: `"The Business Analysis class is indeed a transformative journey that has pushed the boundaries of my understanding, demanding attention to details, critical thinking and adaptability."`
     },
     {
-        image: SamuelOni,
+        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png',
         name: 'Peace David',
         position: 'Product Manager',
-        review: `TechSkill Accelerate has been a game-changer for my career as a project manager. Their project management training program equipped me with essential skills and practical knowledge. I highly recommend TechSkill Accelerate for professionals seeking career advancement and top-notch training. Thank you for empowering my success as a project manager.`
+        review: `TechSkill UK Accelerate has been a game-changer for my career as a project manager. Their project management training program equipped me with essential skills and practical knowledge. I highly recommend TechSkill Accelerate for professionals seeking career advancement and top-notch training. Thank you for empowering my success as a project manager.`
     }
 ];
 

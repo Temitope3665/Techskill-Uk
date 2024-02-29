@@ -51,13 +51,13 @@ export const courses = [
     {
         image: DigitalMarketing,
         title: 'Digital Marketing',
-        desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
+        desc: 'TechSkill UK empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
         id: 7
     },
     {
         image: ITSupport,
         title: 'IT Support',
-        desc: 'TechSkill empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
+        desc: 'TechSkill UK empowers tech enthusiasts through training, mentorship,  in other to transition into their desired career.',
         id: 8
     },
 ];
