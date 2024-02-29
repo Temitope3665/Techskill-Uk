@@ -68,7 +68,7 @@ const Offerings = () => {
               Offerings
             </h1>
             <p className="text-grey lg:text-base text-sm text-center lg:text-left">
-              TechSkill empowers tech enthusiasts through comprehensive
+              TechSkill UK empowers tech enthusiasts through comprehensive
               training, personalised mentorship, and dedicated career support.
               Our holistic approach equips individuals with the skills and
               guidance needed to seamlessly transition into their desired

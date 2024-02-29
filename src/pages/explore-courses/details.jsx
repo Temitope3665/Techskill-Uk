@@ -209,8 +209,8 @@ const CourseDetails = () => {
               </p>
 
               {course?.courseObjectives?.objectives?.map((obj) => (
-                <div className="flex py-4 items-center text-yellow" key={obj}>
-                  <Check size={16} />
+                <div className="flex py-4 text-yellow" key={obj}>
+                  <Check size={20} className='mt-[3px]' />
                   <p className="ml-4">{obj}</p>
                 </div>
               ))}

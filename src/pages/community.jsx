@@ -19,7 +19,7 @@ const Community = () => {
       <div className="lg:flex justify-between w-full items-center mt-4 lg:mt-16 px-6 lg:px-12">
         <div className="lg:w-[45%] text-center lg:text-left">
           <h1 className="text-[30px] lg:text-[60px] font-gilroyBold">
-            Join the Techskill community
+            Join the Techskill UK community
           </h1>
           <div className="h-1 w-[30%] bg-yellow -mt-3 hidden lg:flex" />
           <p className="lg:mt-6 lg:w-[80%] text-base text-grey">
