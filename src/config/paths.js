@@ -7,4 +7,3 @@ export const HIRE_ALUMNI_URL = '/hire-alumni';
 export const FAQ_URL = '/faq';
 export const OFFERINGS_URL = '/offerings';
 export const REGISTRATION_URL = '/explore-courses/user-registration/:slug';
-
