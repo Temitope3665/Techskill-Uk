@@ -1,5 +1,4 @@
 import { EXPLORE_COURSES_URL } from '@/config/paths';
-import { Link } from 'react-router-dom';
 
 const navDropdown = (lists, w) => {
   return (
@@ -9,7 +8,7 @@ const navDropdown = (lists, w) => {
       } pt-4 max-h-[60vh] overflow-auto`}
     >
       {lists.map((list) => (
-        <Link to={list.href} key={list.title}>
+        <a href={list.href} key={list.title}>
           <div className="flex items-center my-4 hover:after:secondary hover:bg-primary rounded-lg px-2 py-3">
             <img src={list.icon} alt={list.title} width={18} />
             <div className="ml-4">
@@ -17,7 +16,7 @@ const navDropdown = (lists, w) => {
               <p className="text-[12px] text-grey">{list.desc}</p>
             </div>
           </div>
-        </Link>
+        </a>
       ))}
     </div>
   );
@@ -55,11 +54,11 @@ export const coursesNavDropdown = (lists, w) => {
           </div>
         </div>
       ))}
-      <Link to={`${EXPLORE_COURSES_URL}?tab=0`}>
+      <a href={`${EXPLORE_COURSES_URL}?tab=0`}>
         <p className="px-2 py-1 text-sm cursor-pointer text-center italic text-yellow hover:text-white trans">
           View all
         </p>
-      </Link>
+      </a>
     </div>
   );
 };

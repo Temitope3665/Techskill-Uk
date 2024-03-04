@@ -19,7 +19,7 @@ const UserRegistration = () => {
           </h1>
         </div>
         <div className="lg:w-[70%]">
-          <h1 className="text-[25px] lg:hidden flex">Registeration Form</h1>
+          <h1 className="text-[25px] lg:hidden flex">Registration Form</h1>
           <div className="rounded-tr-lg rounded-tl-lg w-full px-4 pt-2 -pb-3 bg-[#242832] mt-6 lg:hidden">
             <p className="text-yellow text-sm">Step 1</p>
             <img src={ArrowLeftRight} alt="direction" className="py-2" />
