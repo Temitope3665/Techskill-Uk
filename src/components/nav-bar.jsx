@@ -1,9 +1,9 @@
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Logo from '../assets/icons/logo.png';
 import navLinks from '../config/nav-links';
-import { HOME_URL, REGISTRATION_URL } from '../config/paths';
+import { HOME_URL } from '../config/paths';
 import { Button } from './ui/button';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { CourseContext } from '@/contexts/course-context';
 
@@ -60,7 +60,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden font-gilroyMd text-sm lg:flex items-center">
-          <Link to={REGISTRATION_URL}>
+          <Link to="/explore-courses/user-registration/new">
             <Button size="lg">Join a cohort</Button>
           </Link>
         </div>
@@ -103,7 +103,7 @@ const Navbar = () => {
             )}
           </nav>
 
-          <Link to={REGISTRATION_URL}>
+          <Link to="/explore-courses/user-registration/new">
             <Button className="font-gilroyMd text-sm w-full mt-4">
               Join a cohort
             </Button>

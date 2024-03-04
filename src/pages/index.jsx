@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
 import {
   ABOUT_US_URL,
   EXPLORE_COURSES_URL,
-  REGISTRATION_URL,
 } from '@/config/paths';
 import { createClient } from 'contentful';
 import { useContext, useEffect, useState } from 'react';
@@ -140,7 +139,7 @@ const Home = () => {
               </Button>
             </Link>
 
-            <Link to={REGISTRATION_URL}>
+            <Link to="/explore-courses/user-registration/new">
               <Button size="lg" variant="outline" className="mt-4 lg:mt-0">
                 Get started
               </Button>

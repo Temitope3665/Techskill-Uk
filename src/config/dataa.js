@@ -6,6 +6,9 @@ import VisionIcon from '@/assets/icons/vision-icon.png';
 import MoyoHicks from '@/assets/experts/moyo-hicks.jpg';
 import JenniferNneji from '@/assets/experts/jennifer-nneji.jpeg';
 import IjaolaOpemipo from '@/assets/experts/ijaola-opemipo.jpeg';
+import HakeemIdowu from '@/assets/experts/hakeem-idowu.jpg';
+import Kenechukwu from '@/assets/experts/kenechukwu.jpg';
+import ModupeMagbagbeola from '@/assets/experts/modupe-magbagbeola.jpg';
 import TobiEsho from '@/assets/experts/tobi-esho.jpg';
 import { ABOUT_US_URL, FAQ_URL, HIRE_ALUMNI_URL } from './paths';
 
@@ -112,7 +115,7 @@ export const experts = [
     {
         name: 'Tobi Esho',
         image: TobiEsho,
-        position: 'Product manager',
+        position: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/tobiesho/'
     },
     {
@@ -124,8 +127,20 @@ export const experts = [
     {
         name: 'David Ijaola',
         image: IjaolaOpemipo,
-        position: 'Product manager',
+        position: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/david-ijaola-49942114a/'
+    },
+    {
+        name: 'Hakeem Idowu',
+        image: HakeemIdowu,
+        position: 'Product Manager',
+        linkedin: 'https://www.linkedin.com/in/idowu-hakeem-4b5b1754/'
+    },
+    {
+        name: 'Kenechukwu Nwankwo',
+        image: Kenechukwu,
+        position: 'Product Manager',
+        linkedin: 'https://www.linkedin.com/in/keneshuku/'
     }
 ];
 
@@ -191,7 +206,7 @@ export const alumni = [
         name: 'Modupe Magbagbeola',
         title: 'Project Manager',
         linkedin: 'https://www.linkedin.com/in/modupe-magbagbeola-ba260a181',
-        image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
+        image: ModupeMagbagbeola
     },
     {
         name: 'Damilola Oyejobi',

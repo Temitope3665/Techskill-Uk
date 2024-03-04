@@ -1,5 +1,6 @@
 import { userRegisterSchema } from '@/lib/validations/schema';
 import { Button } from '../ui/button';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Form,
   FormControl,
@@ -44,6 +45,10 @@ const UserRegistrationForm = () => {
   const { slug } = useParams();
   const { allCourses, isLoading } = useContext(CourseContext);
   const [isChecked, setIsChecked] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  console.log(location, '->');
 
   const form = useForm({
     defaultValues: {
@@ -76,7 +81,7 @@ const UserRegistrationForm = () => {
             'Date of Birth': data.dob,
             'Channel of Engagement': data.howYouAboutUs,
             'Service': data.interestedCourse || slug,
-            'Course ID': slug || '',
+            'Course ID': slug === 'new' ? '' : slug,
             'Reference Code': data.ref,
           },
         },
@@ -86,6 +91,10 @@ const UserRegistrationForm = () => {
         toast({
           description: `You've successfully registered for ${data.interestedCourse} course`,
         });
+        navigate('/explore-courses/user-registration/successful', { shallow: true });
+        gtag('event', 'conversion', {'send_to': 'AW-16481596925/-QjgCJ-1wpgZEP3rhLM9'});
+        // Twitter Tag
+        twq('event', 'tw-ojkiu-ok8tw', {});
         setOpen(true);
       })
       .catch(() =>

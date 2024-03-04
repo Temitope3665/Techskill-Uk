@@ -27,7 +27,7 @@ const TalkToExpert = ({ title, description, classNames }) => {
 
         <Button className="font-bold text-[20px] h-[50px] md:w-[25vw] hover:bg-white mt-8 bg-white">
           <PopupButton
-            url={`${process.env.REACT_CALENDLY_URL}`}
+            url={`https://calendly.com/aroyewontope/global-talent-visa-with-techskill-uk-clone`}
             rootElement={document.getElementById('root')}
             text={
               <div className="flex items-center justify-center">

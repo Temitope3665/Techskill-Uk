@@ -5,7 +5,6 @@ import InternshipImage from '@/assets/image/internship-image.jpg';
 import { Button } from '../ui/button';
 import { PopupButton, useCalendlyEventListener } from 'react-calendly';
 import { Link } from 'react-router-dom';
-import { REGISTRATION_URL } from '@/config/paths';
 import TalkToExpert from '../talk-to-expert';
 
 const Skills = (courses) => {
@@ -77,7 +76,7 @@ export const DemoDay = () => {
           where students are organised into teams and provided with a project
           idea to develop during the training programme.
         </p>
-        <Link to={REGISTRATION_URL}>
+        <Link to="/explore-courses/user-registration/new">
             <Button className="font-gilroyMd text-sm w-[60%] mt-4">
               Join a cohort
             </Button>
@@ -107,7 +106,7 @@ export const Internship = () => {
           Techskill UK, when you meet certain criteria. Participate in ongoing
           projects within the company and gain relevant experience.
         </p>
-        <Link to={REGISTRATION_URL}>
+        <Link to="/explore-courses/user-registration/new">
           <Button className="font-gilroyMd text-sm w-[60%] mt-4">
             Join a cohort
           </Button>
