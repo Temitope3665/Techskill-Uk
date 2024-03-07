@@ -133,7 +133,7 @@ export const experts = [
     {
         name: 'Hakeem Idowu',
         image: HakeemIdowu,
-        position: 'Product Manager',
+        position: 'Project Manager/Scrum Master',
         linkedin: 'https://www.linkedin.com/in/idowu-hakeem-4b5b1754/'
     },
     {
