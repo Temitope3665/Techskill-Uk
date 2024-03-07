@@ -133,7 +133,7 @@ export const experts = [
     {
         name: 'Hakeem Idowu',
         image: HakeemIdowu,
-        position: 'Product Manager',
+        position: 'Project Manager/Scrum Master',
         linkedin: 'https://www.linkedin.com/in/idowu-hakeem-4b5b1754/'
     },
     {
@@ -181,7 +181,7 @@ export const alumni = [
     {
         name: 'Lolade Olumuyiwa-Biala',
         title: 'Product Manager',
-        linkedin: 'https://www.linkedin.com/in/ololade-olu-biala-2163027b',
+        linkedin: 'https://www.linkedin.com/in/ololade-olu-biala-acim-mba-2163027b/ ',
         image: 'https://media.licdn.com/dms/image/D4E03AQFlWyxXbqZhYw/profile-displayphoto-shrink_400_400/0/1681946632163?e=1714608000&v=beta&t=8K3V74z_wc1giQ3f3JcyC85Ervj-gsN9vjDtuLezdkA'
     },
     {
@@ -193,7 +193,7 @@ export const alumni = [
     {
         name: 'Olamide Oyejobi',
         title: 'Scrum Master/Project Manager',
-        linkedin: 'https://www.linkedin.com/in/olamide-oyejobi',
+        linkedin: 'https://www.linkedin.com/in/olamide-oyejobi-306436276/ ',
         image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },
     {
@@ -211,7 +211,7 @@ export const alumni = [
     {
         name: 'Damilola Oyejobi',
         title: 'Project Manager',
-        linkedin: 'https://www.linkedin.com/in/damilola-oyejobi-a78132b1/1',
+        linkedin: 'https://www.linkedin.com/in/damilola-oyejobi-a78132b1/',
         image: 'https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png'
     },
 ]
