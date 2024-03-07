@@ -130,13 +130,13 @@ const Offerings = () => {
                 ''
               ) : (
                 <>
-                  {allCourses?.map((course) => (
+                  {allCourses?.filter((each) => each.sys.id !== "5f9hRYhlxhd3zt7JtxGiY5")?.map((course) => (
                     <OurCourses
                       title={course?.fields?.title}
                       image={course?.fields?.image?.fields?.file?.url}
                       key={course?.fields?.title}
                       description={course?.fields?.shortDescription}
-                      href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`}
+                      href={`/explore-courses/details/${course?.sys?.id}?course=learn-${course?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`}
                       className="lg:w-[350px] my-6 lg:my-0"
                     />
                   ))}
