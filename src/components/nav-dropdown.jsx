@@ -1,4 +1,5 @@
 import { EXPLORE_COURSES_URL } from '@/config/paths';
+import { Link } from 'react-router-dom';
 
 const navDropdown = (lists, w) => {
   return (
@@ -8,7 +9,7 @@ const navDropdown = (lists, w) => {
       } pt-4 max-h-[60vh] overflow-auto`}
     >
       {lists.map((list) => (
-        <a href={list.href} key={list.title}>
+        <Link to={list.href} key={list.title}>
           <div className="flex items-center my-4 hover:after:secondary hover:bg-primary rounded-lg px-2 py-3">
             <img src={list.icon} alt={list.title} width={18} />
             <div className="ml-4">
@@ -16,7 +17,7 @@ const navDropdown = (lists, w) => {
               <p className="text-[12px] text-grey">{list.desc}</p>
             </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -31,12 +32,12 @@ export const coursesNavDropdown = (lists, w) => {
         w || 'lg:w-[25vw] w-[85vw]'
       } pt-4 max-h-[60vh] overflow-auto`}
     >
-      {lists?.slice(2, 5)?.map((list) => (
+      {lists?.filter((each) => each.sys.id !== "5f9hRYhlxhd3zt7JtxGiY5").slice(1, 5)?.map((list) => (
         <div
           key={list?.fields?.title}
           className="flex items-center my-4 hover:after:secondary hover:bg-primary rounded-lg px-2 py-3"
           onClick={() =>
-            (window.location.href = `/explore-courses/details/${list?.sys?.id}?course=learn-${list?.fields?.title.toLowerCase().replace(/ /g,"-")}`)
+            (window.location.href = `/explore-courses/details/${list?.sys?.id}?course=learn-${list?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`)
           }
         >
           <div className="rounded-full p-2 bg-primary">

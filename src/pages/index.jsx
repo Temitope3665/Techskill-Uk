@@ -239,7 +239,7 @@ const Home = () => {
                   image={course?.fields?.image?.fields?.file?.url}
                   key={course?.fields?.title}
                   description={course?.fields?.shortDescription}
-                  href={`explore-courses/details/${course?.sys?.id}?course=learn-${course?.fields?.title.toLowerCase().replace(/ /g,"-")}`}
+                  href={`explore-courses/details/${course?.sys?.id}?course=learn-${course?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`}
                 />
               ))}
             </>
