@@ -11,16 +11,17 @@ const Skills = (courses) => {
   useCalendlyEventListener({
     onEventScheduled: (e) => console.log(e.data.payload),
   });
+  console.log(courses)
   return (
     <div className='w-full'>
       <div className="grid md:grid-cols-3 gap-5 md:gap-10 mt-7 md:mt-14">
-        {courses?.map((course) => (
+        {courses?.filter((each) => each.sys.id !== "5f9hRYhlxhd3zt7JtxGiY5")?.map((course) => (
           <OurCourses
             title={course?.fields?.title}
             image={course?.fields?.image?.fields?.file?.url}
             key={course?.fields?.title}
             description={course?.fields?.shortDescription}
-            href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title.toLowerCase().replace(/ /g,"-")}`}
+            href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`}
           />
         ))}
       </div>

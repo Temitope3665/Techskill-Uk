@@ -17,8 +17,8 @@ const TalkToExpert = ({ title, description, classNames }) => {
         alt="stars"
         className="absolute w-[300px] right-0 -top-48 md:-top-20"
       />
-      <div className={cn('mx-auto text-center md:w-[40%]', classNames)}>
-        <h2 className="font-gilroyMd text-[30px] md:text-[55px]">
+      <div className={cn('mx-auto text-center md:w-[35%]', classNames)}>
+        <h2 className="font-gilroyMd text-[30px] md:text-[45px]">
           {title || 'Talk to an Expert ?'}
         </h2>
         <p className="text-grey md:text-base text-sm px-8 md:px-0">

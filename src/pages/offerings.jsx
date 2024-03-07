@@ -136,7 +136,7 @@ const Offerings = () => {
                       image={course?.fields?.image?.fields?.file?.url}
                       key={course?.fields?.title}
                       description={course?.fields?.shortDescription}
-                      href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title.toLowerCase().replace(/ /g,"-")}`}
+                      href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`}
                       className="lg:w-[350px] my-6 lg:my-0"
                     />
                   ))}

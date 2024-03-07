@@ -94,7 +94,7 @@ const Community = () => {
                 <div className="border border-grey flex items-center rounded-[24px] p-2">
                   <TimerIcon size={20} className="pl-1" color="#818992" />
                   <p className="px-2 md:text-sm text-[12px]">
-                    {events?.fields?.timewat} WAT  {events?.fields?.timeukTime && `| ${events?.fields?.timeukTime}`}
+                    {events?.fields?.timewat} {events?.fields?.timeukTime && `| ${events?.fields?.timeukTime}`}
                   </p>
                 </div>
               </div>
