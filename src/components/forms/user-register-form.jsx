@@ -41,7 +41,7 @@ import { format } from 'date-fns';
 
 const UserRegistrationForm = () => {
   const [open, setOpen] = useState(false);
-  const [paymentPlan, setPaymentPlan] = useState('');
+  const [paymentPlan, setPaymentPlan] = useState(paymentPlans[0]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { slug } = useParams();
   const { allCourses, isLoading } = useContext(CourseContext);
@@ -65,7 +65,6 @@ const UserRegistrationForm = () => {
   const where = ['Twitter', 'Instagram', 'LinkedIn', 'Friends/Colleagues'];
 
   const onSubmit = (data) => {
-    console.log(data, '->');
     setIsSubmitting(true);
     axios
       .post(
@@ -425,7 +424,7 @@ const UserRegistrationForm = () => {
           </div>
           <div className='flex items-center space-x-4 justify-between'>
             <Button className='w-full border border-neutral-600 text-black' variant='outline' size='sm' onClick={() => setOpen(false)}>Close</Button>
-            <Link to={paymentPlan?.paymentLink} className='w-full'>
+            <Link to={paymentPlan?.paymentLink} target='_blank' className='w-full'>
               <Button type="submit" size="sm" className="w-full">
                 Proceed
               </Button>
