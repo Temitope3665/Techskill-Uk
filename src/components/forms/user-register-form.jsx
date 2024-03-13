@@ -40,7 +40,7 @@ import { paymentPlans } from '@/lib/utils';
 import { format } from 'date-fns';
 
 const UserRegistrationForm = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [paymentPlan, setPaymentPlan] = useState(paymentPlans[0]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { slug } = useParams();
