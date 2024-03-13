@@ -1,6 +1,6 @@
 import { userRegisterSchema } from '@/lib/validations/schema';
 import { Button } from '../ui/button';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Form,
   FormControl,
@@ -37,6 +37,7 @@ import {
   AlertDialogTitle,
 } from '../ui/alert-dialog';
 import { paymentPlans } from '@/lib/utils';
+import { format } from 'date-fns';
 
 const UserRegistrationForm = () => {
   const [open, setOpen] = useState(false);
@@ -45,10 +46,7 @@ const UserRegistrationForm = () => {
   const { slug } = useParams();
   const { allCourses, isLoading } = useContext(CourseContext);
   const [isChecked, setIsChecked] = useState(true);
-  const location = useLocation();
   const navigate = useNavigate();
-
-  console.log(location, '->');
 
   const form = useForm({
     defaultValues: {
@@ -67,6 +65,7 @@ const UserRegistrationForm = () => {
   const where = ['Twitter', 'Instagram', 'LinkedIn', 'Friends/Colleagues'];
 
   const onSubmit = (data) => {
+    console.log(data, '->');
     setIsSubmitting(true);
     axios
       .post(
@@ -78,7 +77,7 @@ const UserRegistrationForm = () => {
             Email: data.email,
             'Phone Number': data.phoneNumber,
             Address: data.address,
-            'Date of Birth': data.dob,
+            'Date of Birth': data.dob || format(Date.now(), 'yyyy-MM-dd'),
             'Channel of Engagement': data.howYouAboutUs,
             'Service': data.interestedCourse || slug,
             'Course ID': slug === 'new' ? '' : slug,
@@ -95,6 +94,7 @@ const UserRegistrationForm = () => {
         gtag('event', 'conversion', {'send_to': 'AW-16481596925/-QjgCJ-1wpgZEP3rhLM9'});
         // Twitter Tag
         twq('event', 'tw-ojkiu-ok8tw', {});
+        form.reset()
         setOpen(true);
       })
       .catch(() =>
@@ -409,7 +409,7 @@ const UserRegistrationForm = () => {
           <div>
             <Select
               onValueChange={(value) => setPaymentPlan(value)}
-              defaultValue={paymentPlans[0].paymentLink}
+              defaultValue={paymentPlans[0]}
             >
               <SelectTrigger className="w-full text-primary font-gilroyMd">
                 <SelectValue placeholder="Select a plan" />
@@ -417,17 +417,20 @@ const UserRegistrationForm = () => {
               <SelectContent>
                 <SelectGroup>
                   {paymentPlans.map((plan) => (
-                  <SelectItem value={plan.paymentLink}>{plan.title}</SelectItem>
+                  <SelectItem value={plan}>{plan.title}</SelectItem>
                   ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
-          <Link to={paymentPlan}>
-            <Button type="submit" size="sm" className="w-full">
-              Make payment
-            </Button>
-          </Link>
+          <div className='flex items-center space-x-4 justify-between'>
+            <Button className='w-full border border-neutral-600 text-black' variant='outline' size='sm' onClick={() => setOpen(false)}>Close</Button>
+            <Link to={paymentPlan?.paymentLink} className='w-full'>
+              <Button type="submit" size="sm" className="w-full">
+                Proceed
+              </Button>
+            </Link>
+          </div>
         </AlertDialogContent>
       </AlertDialog>
     </div>
