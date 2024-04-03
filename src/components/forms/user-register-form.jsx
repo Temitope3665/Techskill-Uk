@@ -80,8 +80,9 @@ const UserRegistrationForm = () => {
             'Channel of Engagement': data.howYouAboutUs,
             'Service': data.interestedCourse || slug,
             'Course ID': slug === 'new' ? '' : slug,
-            'Reference Code': data.ref,
+            'Reference Code': '',
           },
+          "typecast": true
         },
         { headers: headers_ }
       )
