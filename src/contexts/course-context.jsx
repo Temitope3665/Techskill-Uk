@@ -20,7 +20,7 @@ export const CourseProvider = ({ children }) => {
     const getAllCourses = async () => {
       try {
         const courses = await client.getEntries();
-        setAllCourses(courses.items.slice(0, courses.items.length - 1));
+        setAllCourses(courses.items.slice(0, courses.items.length));
         setIsLoading(false);
       } catch (error) {
         toast({
