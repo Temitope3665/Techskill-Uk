@@ -381,7 +381,7 @@ const CourseDetails = () => {
               Tools you’ll learn from
             </h1>
             <div
-              className={`grid grid-cols-${course?.linkToToolsToLearn?.links?.length} gap-8 mt-10`}
+              className={`grid grid-cols-4 gap-8 mt-10`}
             >
               {course?.linkToToolsToLearn?.links?.map((link) => (
                 <div className="bg-white px-3 py-8 rounded-lg flex justify-center items-center">
