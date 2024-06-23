@@ -19,24 +19,24 @@ export const CourseProvider = ({ children }) => {
     setIsLoading(true);
     const getAllCourses = async () => {
       try {
-        const courses = await client.getEntries();
-        setAllCourses(courses.items.slice(0, courses.items.length));
+        const courses = await client.getEntries({ content_type: 'course' });
+        setAllCourses(courses.items);
         setIsLoading(false);
       } catch (error) {
         toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem fetching the server.",
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem fetching the server.',
           action: <ToastAction altText="Try again">Try again</ToastAction>,
-        })
-        setIsLoading(false)
+        });
+        setIsLoading(false);
       }
     };
     getAllCourses();
   }, []);
 
   useEffect(() => {
-    setLoadingEvents(true)
+    setLoadingEvents(true);
     const getAllEvents = async () => {
       try {
         const allEvents = await client.getEntry('5f9hRYhlxhd3zt7JtxGiY5');
@@ -44,14 +44,14 @@ export const CourseProvider = ({ children }) => {
         setLoadingEvents(false);
       } catch (error) {
         toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem fetching the server.",
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem fetching the server.',
           action: <ToastAction altText="Try again">Try again</ToastAction>,
-        })
-        setLoadingEvents(false)
+        });
+        setLoadingEvents(false);
       }
-    }
+    };
     getAllEvents();
   }, []);
 

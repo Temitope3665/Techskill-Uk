@@ -11,21 +11,30 @@ const Skills = (courses) => {
   useCalendlyEventListener({
     onEventScheduled: (e) => console.log(e.data.payload),
   });
-  console.log(courses)
   return (
-    <div className='w-full'>
+    <div className="w-full">
       <div className="grid md:grid-cols-3 gap-5 md:gap-10 mt-7 md:mt-14">
-        {courses?.filter((each) => each.sys.id !== "5f9hRYhlxhd3zt7JtxGiY5")?.map((course) => (
-          <OurCourses
-            title={course?.fields?.title}
-            image={course?.fields?.image?.fields?.file?.url}
-            key={course?.fields?.title}
-            description={course?.fields?.shortDescription}
-            href={`details/${course?.sys?.id}?course=learn-${course?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`}
-          />
-        ))}
+        {courses
+          ?.filter((each) => each.sys.id !== '5f9hRYhlxhd3zt7JtxGiY5')
+          ?.map((course) => (
+            <OurCourses
+              title={course?.fields?.title}
+              image={course?.fields?.image?.fields?.file?.url}
+              key={course?.fields?.title}
+              description={course?.fields?.shortDescription}
+              href={`details/${
+                course?.sys?.id
+              }?course=learn-${course?.fields?.title
+                ?.toLowerCase()
+                ?.replace(/ /g, '-')}`}
+            />
+          ))}
       </div>
-        <TalkToExpert title="Need Guidance on the preferred course for you?" description="Speak to our learning advisors today for instant guidance" classNames="md:w-[65%]" />
+      <TalkToExpert
+        title="Need Guidance on the preferred course for you?"
+        description="Speak to our learning advisors today for instant guidance"
+        classNames="md:w-[65%]"
+      />
     </div>
   );
 };
@@ -39,7 +48,8 @@ export const OnlineMentoring = ({ imageWidth, title, description }) => (
         {title || ' One-on-One Mentoring'}
       </h1>
       <p className="text-grey md:text-base text-[13px] md:w-[80%]">
-        {description || 'Accelerate your career through our tailored one-on-one career mentoring sessions.'}
+        {description ||
+          'Accelerate your career through our tailored one-on-one career mentoring sessions.'}
       </p>
 
       {/* <div className='my-4 md:my-8 md:flex space-y-3 md:space-y-0 block items-center'>
@@ -78,10 +88,10 @@ export const DemoDay = () => {
           idea to develop during the training programme.
         </p>
         <Link to="/explore-courses/user-registration/new">
-            <Button className="font-gilroyMd text-sm w-[60%] mt-4">
-              Join a cohort
-            </Button>
-          </Link>
+          <Button className="font-gilroyMd text-sm w-[60%] mt-4">
+            Join a cohort
+          </Button>
+        </Link>
       </div>
       <img
         src={DemoDayImage}

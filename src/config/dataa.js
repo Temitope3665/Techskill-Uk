@@ -182,13 +182,13 @@ export const alumni = [
         name: 'Lolade Olumuyiwa-Biala',
         title: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/ololade-olu-biala-acim-mba-2163027b/ ',
-        image: 'https://media.licdn.com/dms/image/D4E03AQFlWyxXbqZhYw/profile-displayphoto-shrink_400_400/0/1681946632163?e=1714608000&v=beta&t=8K3V74z_wc1giQ3f3JcyC85Ervj-gsN9vjDtuLezdkA'
+        image: 'https://media.licdn.com/dms/image/D4E03AQH_ImtwtKDJBw/profile-displayphoto-shrink_400_400/0/1718369508694?e=1724889600&v=beta&t=5_kOg1fgHNtR7pJroMWIBAKeJnUTyEWCBpRJqqSe47k'
     },
     {
         name: 'Bibian Igarando',
         title: 'Data Analyst',
         linkedin: 'https://www.linkedin.com/in/igarando-bibian-ebinipre',
-        image: 'https://media.licdn.com/dms/image/C4E03AQE3YIGlpBNLDw/profile-displayphoto-shrink_400_400/0/1654601657229?e=1714608000&v=beta&t=z8J6BeBI-TsZ1mYDUuEfM574SR52f87e9E-BV8F0HQ0'
+        image: 'https://media.licdn.com/dms/image/C4E03AQE3YIGlpBNLDw/profile-displayphoto-shrink_400_400/0/1654601657229?e=1724889600&v=beta&t=x0rLcsfxoJMUNmNjLBg8jdoFQvL8uvbu-ugh2uuY8lA'
     },
     {
         name: 'Olamide Oyejobi',
@@ -200,7 +200,7 @@ export const alumni = [
         name: 'Oyewale Oredein',
         title: 'Data Analyst',
         linkedin: 'https://www.linkedin.com/in/oyewale-oredein-014b59112',
-        image: 'https://media.licdn.com/dms/image/D4E03AQGJMq84QyU80Q/profile-displayphoto-shrink_400_400/0/1666827035742?e=1714608000&v=beta&t=D8ULPANuLFN_lJJWqOylxu0SX62e4orr0GZ3TUL--zM'
+        image: 'https://media.licdn.com/dms/image/D4E03AQGc2WHRebv9Jw/profile-displayphoto-shrink_400_400/0/1711972173108?e=1724889600&v=beta&t=5HPpt0jJeGILLyLJyEZmfwTJceKQKK_ruWYmvLmm_1A'
     },
     {
         name: 'Modupe Magbagbeola',

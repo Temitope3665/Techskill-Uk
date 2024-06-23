@@ -1,13 +1,6 @@
 import { Perks, Pricing } from '@/components/courses/course-perks';
 import { Button } from '@/components/ui/button';
-import {
-  Check,
-  ChevronDown,
-  Circle,
-  MoveLeft,
-  MoveRight,
-  Star,
-} from 'lucide-react';
+import { Check, Circle, MoveLeft, MoveRight, Star } from 'lucide-react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import BenefitsArch from '@/assets/icons/benefit-arch.png';
 import { createClient } from 'contentful';
@@ -89,7 +82,7 @@ const CourseDetails = () => {
             <div className="lg:w-[40%] mt-6 lg:mt-0">
               <img
                 src={course?.image?.fields?.file?.url}
-                alt={`learn-${course?.title.toLowerCase().replace(/ /g,"-")}`}
+                alt={`learn-${course?.title.toLowerCase().replace(/ /g, '-')}`}
               />
             </div>
           </div>
@@ -211,7 +204,7 @@ const CourseDetails = () => {
 
               {course?.courseObjectives?.objectives?.map((obj) => (
                 <div className="flex py-4 text-yellow" key={obj}>
-                  <Check size={20} className='mt-[3px]' />
+                  <Check size={20} className="mt-[3px]" />
                   <p className="ml-4">{obj}</p>
                 </div>
               ))}
@@ -337,7 +330,7 @@ const CourseDetails = () => {
                 services.
               </p>
               <div className="grid lg:grid-cols-2 gap-8 mt-10">
-              <Pricing
+                <Pricing
                   description="This includes additional benefits such as career support, mentorship and practical"
                   title="Premium Package"
                   price={course?.fullPrice}
@@ -380,9 +373,7 @@ const CourseDetails = () => {
             <h1 className="font-gilroyBold text-[24px] mt-8 lg:mt-0 lg:text-[35px]">
               Tools you’ll learn from
             </h1>
-            <div
-              className={`grid grid-cols-4 gap-8 mt-10`}
-            >
+            <div className={`grid grid-cols-4 gap-8 mt-10`}>
               {course?.linkToToolsToLearn?.links?.map((link) => (
                 <div className="bg-white px-3 py-8 rounded-lg flex justify-center items-center">
                   <img src={link} alt={link} width={200} />
@@ -391,8 +382,11 @@ const CourseDetails = () => {
             </div>
           </div>
 
-          <div className='bg-primary'>
-            <TalkToExpert title="Need more info" description="Book a Free call with our learning advisors today for instant guidance." />
+          <div className="bg-primary">
+            <TalkToExpert
+              title="Need more info"
+              description="Book a Free call with our learning advisors today for instant guidance."
+            />
           </div>
 
           <div className="bg-secondary mt-6 lg:mt-10 px-6 lg:px-36 py-8">
