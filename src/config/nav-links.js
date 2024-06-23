@@ -126,11 +126,6 @@ export const aboutUsList = [
 ];
 
 const navLinks = (courses) => [
-    // {
-    //     title: 'Home',
-    //     href: HOME_URL,
-    //     hasDropdown: false
-    // },
     {
         title: 'About Us',
         href: "#",

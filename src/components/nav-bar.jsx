@@ -16,13 +16,14 @@ const Navbar = () => {
   return (
     <div className="bg-primary py-4 px-6 md:px-12 fixed w-full z-10">
       <nav className="flex items-center justify-between">
-        <a href={HOME_URL}>
+        <Link to={HOME_URL}>
           <img
             src={Logo}
             alt="Techskill logo"
             className="w-[120px] md:w-[180px]"
+            onClick={() => setShow(false)}
           />
-        </a>
+        </Link>
 
         {!show && <Menu className="lg:hidden" onClick={() => setShow(true)} />}
         {show && <X className="lg:hidden" onClick={() => setShow(false)} />}
@@ -80,7 +81,7 @@ const Navbar = () => {
                     key={nav.title}
                     className={`${nav.hasDropdown && 'group'}`}
                   >
-                    <a href={nav.href} key={nav.title}>
+                    <Link to={nav.href} key={nav.title}>
                       <div className={`${nav.hasDropdown && 'group'}`}>
                         <div
                           className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
@@ -94,9 +95,11 @@ const Navbar = () => {
                           {nav.hasDropdown && <ChevronDown width={14} />}
                         </div>
                       </div>
-                    </a>
+                    </Link>
 
-                    {nav.hasDropdown && nav.options}
+                    <div onClick={() => setShow(false)}>
+                      {nav.hasDropdown && nav.options}
+                    </div>
                   </div>
                 ))}
               </div>

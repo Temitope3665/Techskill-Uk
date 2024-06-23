@@ -32,12 +32,16 @@ export const coursesNavDropdown = (lists, w) => {
         w || 'lg:w-[25vw] w-[85vw]'
       } pt-4 max-h-[60vh] overflow-auto`}
     >
-      {lists?.filter((each) => each.sys.id !== "5f9hRYhlxhd3zt7JtxGiY5").slice(1, 5)?.map((list) => (
+      {lists?.map((list) => (
         <div
           key={list?.fields?.title}
           className="flex items-center my-4 hover:after:secondary hover:bg-primary rounded-lg px-2 py-3"
           onClick={() =>
-            (window.location.href = `/explore-courses/details/${list?.sys?.id}?course=learn-${list?.fields?.title?.toLowerCase()?.replace(/ /g,"-")}`)
+            (window.location.href = `/explore-courses/details/${
+              list?.sys?.id
+            }?course=learn-${list?.fields?.title
+              ?.toLowerCase()
+              ?.replace(/ /g, '-')}`)
           }
         >
           <div className="rounded-full p-2 bg-primary">
@@ -55,11 +59,11 @@ export const coursesNavDropdown = (lists, w) => {
           </div>
         </div>
       ))}
-      <a href={`${EXPLORE_COURSES_URL}?tab=0`}>
+      <Link to={`${EXPLORE_COURSES_URL}?tab=0`}>
         <p className="px-2 py-1 text-sm cursor-pointer text-center italic text-yellow hover:text-white trans">
           View all
         </p>
-      </a>
+      </Link>
     </div>
   );
 };
