@@ -10,6 +10,8 @@ import HakeemIdowu from '@/assets/experts/hakeem-idowu.jpg';
 import Kenechukwu from '@/assets/experts/kenechukwu.jpg';
 import ModupeMagbagbeola from '@/assets/experts/modupe-magbagbeola.jpg';
 import TobiEsho from '@/assets/experts/tobi-esho.jpg';
+import SegunAllen from '@/assets/experts/segun-allen.jpeg';
+import JohnOnifade from '@/assets/experts/john-onifade.jpeg';
 import { ABOUT_US_URL, FAQ_URL, HIRE_ALUMNI_URL } from './paths';
 
 export const testimonials = [
@@ -106,6 +108,18 @@ export const footerData = {
 ];
 
 export const experts = [
+    {
+        name: 'Segun Allen',
+        image: SegunAllen,
+        position: 'Senior Product Manager',
+        linkedin: 'https://www.linkedin.com/in/segunallen/'
+    },
+    {
+        name: 'John Onifade',
+        image: JohnOnifade,
+        position: 'Product Lead',
+        linkedin: 'https://www.linkedin.com/in/johnonifadeoluseye/'
+    },
     {
         name: 'Moyo Hicks',
         image: MoyoHicks,
