@@ -17,12 +17,7 @@ const Navbar = () => {
     <div className="bg-primary py-4 px-6 md:px-12 fixed w-full z-10">
       <nav className="flex items-center justify-between">
         <Link to={HOME_URL}>
-          <img
-            src={Logo}
-            alt="Techskill logo"
-            className="w-[120px] md:w-[180px]"
-            onClick={() => setShow(false)}
-          />
+          <img src={Logo} alt="Techskill logo" className="w-[120px] md:w-[180px]" onClick={() => setShow(false)} />
         </Link>
 
         {!show && <Menu className="lg:hidden" onClick={() => setShow(true)} />}
@@ -34,21 +29,14 @@ const Navbar = () => {
           ) : (
             <>
               {navLinks(allCourses).map((nav) => (
-                <div
-                  key={nav.title}
-                  className={`${nav.hasDropdown && 'group'}`}
-                >
+                <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
                   <Link to={nav.href} key={nav.title}>
                     <div
                       className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center pb-3 ${
-                        pathname.includes(nav.href)
-                          ? 'text-white font-gilroyBold'
-                          : 'text-[#818992]'
+                        pathname.includes(nav.href) ? 'text-white font-gilroyBold' : 'text-[#818992]'
                       }`}
                     >
-                      <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>
-                        {nav.title}
-                      </p>
+                      <p className={`${nav.hasDropdown ? '' : 'mt-[2px]'}`}>{nav.title}</p>
                       {nav.hasDropdown && <ChevronDown width={14} />}
                     </div>
                   </Link>
@@ -73,21 +61,16 @@ const Navbar = () => {
         <div className="lg:hidden h-[100vh] mt-4 font-gilroyMd bg-primary z-30">
           <nav className="justify-between">
             {isLoading ? (
-              'Loading...'
+              'Loading....'
             ) : (
               <div className="w-full">
                 {navLinks(allCourses).map((nav) => (
-                  <div
-                    key={nav.title}
-                    className={`${nav.hasDropdown && 'group'}`}
-                  >
+                  <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
                     <Link to={nav.href} key={nav.title}>
                       <div className={`${nav.hasDropdown && 'group'}`}>
                         <div
                           className={`cursor-pointer hover:text-yellow font-gilroyMd trans text-sm space-x-1 flex items-center py-3 ml-4 ${
-                            pathname.includes(nav.href)
-                              ? 'text-white'
-                              : 'text-[#818992]'
+                            pathname.includes(nav.href) ? 'text-white' : 'text-[#818992]'
                           }`}
                           key={nav.title}
                         >
@@ -97,9 +80,7 @@ const Navbar = () => {
                       </div>
                     </Link>
 
-                    <div onClick={() => setShow(false)}>
-                      {nav.hasDropdown && nav.options}
-                    </div>
+                    <div onClick={() => setShow(false)}>{nav.hasDropdown && nav.options}</div>
                   </div>
                 ))}
               </div>
@@ -107,9 +88,7 @@ const Navbar = () => {
           </nav>
 
           <Link to="/explore-courses/user-registration/new">
-            <Button className="font-gilroyMd text-sm w-full mt-4">
-              Join a cohort
-            </Button>
+            <Button className="font-gilroyMd text-sm w-full mt-4">Join a cohort</Button>
           </Link>
         </div>
       )}
