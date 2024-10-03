@@ -11,6 +11,7 @@ import Kenechukwu from '@/assets/experts/kenechukwu.jpg';
 import ModupeMagbagbeola from '@/assets/experts/modupe-magbagbeola.jpg';
 import TobiEsho from '@/assets/experts/tobi-esho.jpg';
 import SegunAllen from '@/assets/experts/segun-allen.jpeg';
+import IsraelOyinlola from '@/assets/experts/israel-oyinlola.jpg';
 import JohnOnifade from '@/assets/experts/john-onifade.jpeg';
 import { ABOUT_US_URL, FAQ_URL, HIRE_ALUMNI_URL } from './paths';
 
@@ -155,6 +156,12 @@ export const experts = [
         image: Kenechukwu,
         position: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/keneshuku/'
+    },
+    {
+        name: 'Israel Oyinlola',
+        image: IsraelOyinlola,
+        position: 'VP of Artificial Intelligence.',
+        linkedin: 'https://www.linkedin.com/in/israel-oyinlola-2652993b/'
     }
 ];
 
