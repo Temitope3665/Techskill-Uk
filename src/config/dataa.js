@@ -11,6 +11,7 @@ import Kenechukwu from '@/assets/experts/kenechukwu.jpg';
 import ModupeMagbagbeola from '@/assets/experts/modupe-magbagbeola.jpg';
 import TobiEsho from '@/assets/experts/tobi-esho.jpg';
 import SegunAllen from '@/assets/experts/segun-allen.jpeg';
+import IsraelOyinlola from '@/assets/experts/israel-oyinlola.jpg';
 import JohnOnifade from '@/assets/experts/john-onifade.jpeg';
 import { ABOUT_US_URL, FAQ_URL, HIRE_ALUMNI_URL } from './paths';
 
@@ -155,6 +156,12 @@ export const experts = [
         image: Kenechukwu,
         position: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/keneshuku/'
+    },
+    {
+        name: 'Israel Oyinlola',
+        image: IsraelOyinlola,
+        position: 'VP of Artificial Intelligence.',
+        linkedin: 'https://www.linkedin.com/in/israel-oyinlola-2652993b/'
     }
 ];
 
@@ -196,13 +203,13 @@ export const alumni = [
         name: 'Lolade Olumuyiwa-Biala',
         title: 'Product Manager',
         linkedin: 'https://www.linkedin.com/in/ololade-olu-biala-acim-mba-2163027b/ ',
-        image: 'https://media.licdn.com/dms/image/D4E03AQH_ImtwtKDJBw/profile-displayphoto-shrink_400_400/0/1718369508694?e=1724889600&v=beta&t=5_kOg1fgHNtR7pJroMWIBAKeJnUTyEWCBpRJqqSe47k'
+        image: 'https://media.licdn.com/dms/image/v2/D4E03AQH_ImtwtKDJBw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718369508694?e=1733356800&v=beta&t=5OJMYsfTxAF00IdBgc_xKOT1nuPpzL-eB-SCGwVvHC0'
     },
     {
         name: 'Bibian Igarando',
         title: 'Data Analyst',
         linkedin: 'https://www.linkedin.com/in/igarando-bibian-ebinipre',
-        image: 'https://media.licdn.com/dms/image/C4E03AQE3YIGlpBNLDw/profile-displayphoto-shrink_400_400/0/1654601657229?e=1724889600&v=beta&t=x0rLcsfxoJMUNmNjLBg8jdoFQvL8uvbu-ugh2uuY8lA'
+        image: 'https://media.licdn.com/dms/image/v2/C4E03AQE3YIGlpBNLDw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1654601657229?e=1733356800&v=beta&t=2qMJck2XJSmdx0_a8IiSQ5IiMHhwdTp70pI8hJVvemQ'
     },
     {
         name: 'Olamide Oyejobi',
@@ -214,7 +221,7 @@ export const alumni = [
         name: 'Oyewale Oredein',
         title: 'Data Analyst',
         linkedin: 'https://www.linkedin.com/in/oyewale-oredein-014b59112',
-        image: 'https://media.licdn.com/dms/image/D4E03AQGc2WHRebv9Jw/profile-displayphoto-shrink_400_400/0/1711972173108?e=1724889600&v=beta&t=5HPpt0jJeGILLyLJyEZmfwTJceKQKK_ruWYmvLmm_1A'
+        image: 'https://media.licdn.com/dms/image/v2/D4E03AQGc2WHRebv9Jw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1711972173108?e=1733356800&v=beta&t=PwvxxC14OoMEJQee8gWu3LmYBSAq9iitQ_SnT0X619Q'
     },
     {
         name: 'Modupe Magbagbeola',

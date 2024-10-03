@@ -37,32 +37,20 @@ export const coursesNavDropdown = (lists, w) => {
           key={list?.fields?.title}
           className="flex items-center my-4 hover:after:secondary hover:bg-primary rounded-lg px-2 py-3"
           onClick={() =>
-            (window.location.href = `/explore-courses/details/${
-              list?.sys?.id
-            }?course=learn-${list?.fields?.title
-              ?.toLowerCase()
-              ?.replace(/ /g, '-')}`)
+            (window.location.href = `/explore-courses/details/${list?.sys?.id}?course=learn-${list?.fields?.title?.toLowerCase()?.replace(/ /g, '-')}`)
           }
         >
           <div className="rounded-full p-2 bg-primary">
-            <img
-              src={list?.fields?.icon?.fields?.file?.url}
-              alt={list?.fields?.title}
-              width={24}
-            />
+            <img src={list?.fields?.icon?.fields?.file?.url} alt={list?.fields?.title} width={24} />
           </div>
           <div className="ml-4">
-            <p className="font-gilroyBold text-sm">{list?.fields?.title}</p>
-            <p className="text-[12px] text-grey">
-              {list?.fields?.shortDescription}
-            </p>
+            <p className="font-gilroyBold text-sm">{list?.fields?.title || '-'}</p>
+            <p className="text-[12px] text-grey">{list?.fields?.shortDescription || '-'}</p>
           </div>
         </div>
       ))}
       <Link to={`${EXPLORE_COURSES_URL}?tab=0`}>
-        <p className="px-2 py-1 text-sm cursor-pointer text-center italic text-yellow hover:text-white trans">
-          View all
-        </p>
+        <p className="px-2 py-1 text-sm cursor-pointer text-center italic text-yellow hover:text-white trans">View all</p>
       </Link>
     </div>
   );
