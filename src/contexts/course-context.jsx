@@ -39,8 +39,10 @@ export const CourseProvider = ({ children }) => {
     setLoadingEvents(true);
     const getAllEvents = async () => {
       try {
-        const allEvents = await client.getEntry('5f9hRYhlxhd3zt7JtxGiY5');
-        setEvents(allEvents);
+        const getEvents = await client.getEntries({ content_type: 'upcomingEvents' });
+        console.log(getEvents, '-> getEvents');
+        // const allEvents = await client.getEntry('5f9hRYhlxhd3zt7JtxGiY5');
+        setEvents(getEvents.items);
         setLoadingEvents(false);
       } catch (error) {
         toast({
@@ -57,7 +59,5 @@ export const CourseProvider = ({ children }) => {
 
   const value = { allCourses, isLoading, events, loadingEvents };
 
-  return (
-    <CourseContext.Provider value={value}>{children}</CourseContext.Provider>
-  );
+  return <CourseContext.Provider value={value}>{children}</CourseContext.Provider>;
 };
