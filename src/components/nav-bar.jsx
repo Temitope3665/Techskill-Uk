@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className="bg-primary py-4 px-6 md:px-12 fixed w-full z-10">
       <nav className="flex items-center justify-between">
         <Link to={HOME_URL}>
-          <img src={Logo} alt="Techskill logo" className="w-[120px] md:w-[180px]" onClick={() => setShow(false)} />
+          <img src={Logo} alt="Techskill" className="w-[120px] md:w-[180px]" onClick={() => setShow(false)} />
         </Link>
 
         {!show && <Menu className="lg:hidden" onClick={() => setShow(true)} />}
