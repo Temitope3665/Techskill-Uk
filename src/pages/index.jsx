@@ -23,6 +23,8 @@ import { headers_, registerUserApi } from '@/config/api';
 import { toast } from '@/components/ui/use-toast';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { paymentPlans } from '@/lib/utils';
+import Navbar from '@/components/nav-bar';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [email, setEmail] = useState('');
@@ -99,7 +101,11 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <ReactHelment title="Accelerate your career today" />
+      <Helmet>
+        <title>Techskill Accelerate</title>
+        <meta name="description" content="Accelerate your career today with Digital Transformation" />
+      </Helmet>
+      <Navbar />
       <main className="grid items-center justify-between md:grid-cols-2 px-6 md:px-12 md:py-6">
         <div className="md:pl-8 mt-8 text-center md:text-left capitalize">
           <h1 className="font-gilroyBold text-[35px] leading-[1.3] md:text-[55px]">

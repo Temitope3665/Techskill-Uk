@@ -16,10 +16,10 @@ const Navbar = () => {
 
   return (
     <div className="bg-primary py-4 px-6 md:px-12 fixed w-full z-10">
-      <Helmet>
+      {/* <Helmet>
         <title>Techskill Accelerate</title>
         <meta name="description" content="Accelerate your career today with Digital Transformation" />
-      </Helmet>
+      </Helmet> */}
       <nav className="flex items-center justify-between">
         <Link to={HOME_URL}>
           <img src={Logo} alt="Techskill" className="w-[120px] md:w-[180px]" onClick={() => setShow(false)} />
