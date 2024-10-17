@@ -40,8 +40,6 @@ export const CourseProvider = ({ children }) => {
     const getAllEvents = async () => {
       try {
         const getEvents = await client.getEntries({ content_type: 'upcomingEvents' });
-        console.log(getEvents, '-> getEvents');
-        // const allEvents = await client.getEntry('5f9hRYhlxhd3zt7JtxGiY5');
         setEvents(getEvents.items);
         setLoadingEvents(false);
       } catch (error) {
