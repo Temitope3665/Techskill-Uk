@@ -5,11 +5,9 @@ const Layout = ({ children }) => {
   return (
     <CourseProvider>
       <div className="overflow-x-hidden">
-        {/* <Navbar /> */}
+        <Navbar />
 
-        <div className="pt-">{children}</div>
-
-        {/* <div className="pt-20">{children}</div> */}
+        <div className="pt-20">{children}</div>
       </div>
     </CourseProvider>
   );
