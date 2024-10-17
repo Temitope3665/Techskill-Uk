@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { CourseContext } from '@/contexts/course-context';
+import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
   const { allCourses, isLoading } = useContext(CourseContext);
@@ -15,6 +16,10 @@ const Navbar = () => {
 
   return (
     <div className="bg-primary py-4 px-6 md:px-12 fixed w-full z-10">
+      <Helmet>
+        <title>Techskill Accelerate</title>
+        <meta name="description" content="Accelerate your career today with Digital Transformation" />
+      </Helmet>
       <nav className="flex items-center justify-between">
         <Link to={HOME_URL}>
           <img src={Logo} alt="Techskill" className="w-[120px] md:w-[180px]" onClick={() => setShow(false)} />
@@ -27,9 +32,9 @@ const Navbar = () => {
           {isLoading ? (
             ''
           ) : (
-            <>
+            <ul className="hidden lg:flex justify-between w-[100%] font-gilroyMd">
               {navLinks(allCourses).map((nav) => (
-                <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
+                <li key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
                   <Link to={nav.href} key={nav.title}>
                     <div
                       className={`cursor-pointer hover:text-white font-semiBold trans text-sm space-x-1 flex items-center pb-3 ${
@@ -42,9 +47,9 @@ const Navbar = () => {
                   </Link>
 
                   {nav.hasDropdown && nav.options}
-                </div>
+                </li>
               ))}
-            </>
+            </ul>
           )}
         </nav>
 
@@ -63,9 +68,9 @@ const Navbar = () => {
             {isLoading ? (
               'Loading....'
             ) : (
-              <div className="w-full">
+              <ul className="w-full">
                 {navLinks(allCourses).map((nav) => (
-                  <div key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
+                  <li key={nav.title} className={`${nav.hasDropdown && 'group'}`}>
                     <Link to={nav.href} key={nav.title}>
                       <div className={`${nav.hasDropdown && 'group'}`}>
                         <div
@@ -81,9 +86,9 @@ const Navbar = () => {
                     </Link>
 
                     <div onClick={() => setShow(false)}>{nav.hasDropdown && nav.options}</div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
           </nav>
 
