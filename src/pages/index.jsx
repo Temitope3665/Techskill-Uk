@@ -22,6 +22,7 @@ import { headers_, registerUserApi } from '@/config/api';
 import { toast } from '@/components/ui/use-toast';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { paymentPlans } from '@/lib/utils';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [email, setEmail] = useState('');
