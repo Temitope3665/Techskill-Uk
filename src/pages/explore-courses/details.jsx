@@ -206,9 +206,9 @@ const CourseDetails = () => {
           <div className="grid lg:grid-cols-1 bg-primary mt-6 lg:mt-16 px-6 lg:px-24 py-8 items-start" data-aos="fade-up" data-aos-duration="1000">
             <div className="text-center lg:text-left">
               <h1 className="font-gilroyBold text-[24px] mt-2 lg:mt-0 lg:text-[35px]">Benefits</h1>
-              <p className="font-gilroyMd">Our {course?.benefits?.objectives?.length} benefits will give you the confidence to ace a real one</p>
+              <p className="font-gilroyMd">Our {course?.benefits?.Benefits?.length} benefits will give you the confidence to ace a real one</p>
               <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 mt-10">
-                {course?.benefits?.objectives?.map((benefit) => (
+                {course?.benefits?.Benefits?.map((benefit) => (
                   <div key={benefit.title} className="text-sm border-white border-[0.5px] rounded-lg p-4">
                     <img src={BenefitsArch} alt="benefits point" width={20} />
 

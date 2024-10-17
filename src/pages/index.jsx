@@ -180,7 +180,7 @@ const Home = () => {
             </div>
           ) : (
             <>
-              {allCourses?.slice(0, 2).map((course) => (
+              {allCourses?.slice(2, 5).map((course) => (
                 <OurCourses
                   title={course?.fields?.title}
                   image={course?.fields?.image?.fields?.file?.url}
